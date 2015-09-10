@@ -2,9 +2,12 @@ package org.ggp.base.util.statemachine.implementation.prover;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
+import java.util.Map;
 import java.util.Set;
 
 import org.ggp.base.util.gdl.grammar.Gdl;
@@ -36,8 +39,10 @@ public class ProverStateMachine extends StateMachine
 	private List<String> specialKeys = Arrays.asList("distinct","does", "goal","init","legal","next","role","terminal","true","not","<=");
 	private List<String> specialTerminals = Arrays.asList("terminal","<=");
 	private List<String> initialKeys;
-	//private Map<String,List<String>> translatedTerminals;
+	private Map<String,List<String>> translatedKeys;
 	private List<String> terminals;
+	private List<String> goals;
+	private Map<Integer, List<List<String>>> goalsMap;
 
 	/**
 	 * Initialize must be called before using the StateMachine
@@ -54,8 +59,13 @@ public class ProverStateMachine extends StateMachine
 		roles = ImmutableList.copyOf(Role.computeRoles(description));
 		initialState = computeInitialState();
 		initialKeys = computeInitialKeys();
-		//translatedTerminals = new HashMap<String,List<String>>();
-		terminals = ImmutableList.copyOf(computeTerminals(description));
+		translatedKeys = new HashMap<String,List<String>>();
+		terminals = new ArrayList<String>();
+		computeTerminals(description);
+		goals = new ArrayList<String>();
+		computeGoals(description);
+		goalsMap = new HashMap<Integer, List<List<String>>>();
+		computeGoalsMap();
 	}
 
 	private MachineState computeInitialState()
@@ -162,14 +172,20 @@ public class ProverStateMachine extends StateMachine
 		return initialKeys;
 	}
 
-	private List<String> computeTerminals(List<? extends Gdl> description) {
-	   List<String> terminals = new ArrayList<String>();
+	/**
+	 * Finding the translations of GDL keyword in terminal state and applying them
+	 * @param description GDL description
+	 */
+	private void computeTerminals(List<? extends Gdl> description) {
+	   //List<String> terminals = new ArrayList<String>();
 	   List<String> terminalKeys = new ArrayList<String>();
 	   int i = 0;
+
+	   //Finding all the keys translation
 	   while(i < description.size()) {
            String str = description.get(i).toString();
            if (str.contains("terminal")) {
-        	   String terminalResult = "(<= terminal ";
+        	   addTerminals(str);
         	   str = removeOutBracket(str);
                for(String special : specialTerminals) {
             	   str = str.replace(special, "");
@@ -177,24 +193,119 @@ public class ProverStateMachine extends StateMachine
                str = str.trim();
                terminalKeys = splitOutBracket(str);
                for(String key : terminalKeys) {
-            	   //System.out.println("Key is "+key);
-            	   terminalResult += translateRecursive(description, key);
+            	   constructRecursive(description, key);
                }
-               terminalResult += ")";
-               terminals.add(terminalResult);
            }
     	   i++;
 	   }
-	   return terminals;
+
+	   applyTranslation(0); //Apply the translation to the base terminal
 	}
 
+	/**
+	 * Return the terminal state
+	 * @return
+	 */
 	public List<String> getTerminals() {
 		return terminals;
 	}
 
-	private String translateRecursive(List<? extends Gdl> description, String str) {
+
+	/**
+	 * Adding a string to list of terminals
+	 * @param str
+	 */
+	private void addTerminals(String str) {
+		terminals.add(str);
+	}
+
+	/**
+	 * Compute goal state
+	 * @param description
+	 */
+	private void computeGoals(List<? extends Gdl> description) {
+		   List<String> goalKeys = new ArrayList<String>();
+		   int i = 0;
+
+		   //Finding all the keys translation
+		   while(i < description.size()) {
+	           String str = description.get(i).toString();
+	           if (str.contains("goal")) {
+	        	   addGoals(str);
+	        	   str = removeOutBracket(str);
+	               for(String special : specialTerminals) {
+	            	   str = str.replace(special, "");
+	               }
+	               str = str.trim();
+	               goalKeys = splitOutBracket(str);
+	               int j = 0;
+	               for(String key : goalKeys) {
+	            	   if(j == 0) continue;
+	            	   constructRecursive(description, key);
+	            	   j++;
+	               }
+	           }
+	    	   i++;
+		   }
+
+		   applyTranslation(1); //Apply the translation to the base terminal
+	}
+
+	/**
+	 * get list of goal state string
+	 * @return list of goal state string
+	 */
+	public List<String> getGoals() {
+		return goals;
+	}
+
+	/**
+	 * Add a string to goal state list
+	 * @param str the string
+	 */
+	private void addGoals(String str) {
+		goals.add(str);
+	}
+
+	/**
+	 * Construct a map of score to state
+	 */
+	private void computeGoalsMap() {
+		for(String goal : goals) {
+			goal = removeOutBracket(goal);
+			List<String> goalKey = splitOutBracket(goal);
+			List<String> mapKey = new ArrayList<String>();
+			String scoreStr = splitOutBracket(removeOutBracket(goalKey.get(1))).get(2);
+			Integer score;
+
+			if(scoreStr.matches("\\d+")) score = Integer.parseInt(scoreStr);
+			else score = 0;
+			for(int i = 2; i < goalKey.size(); i++) {
+				mapKey.add(goalKey.get(i));
+			}
+
+			//Put the information to the hashmap
+			if(goalsMap.containsKey(score)) {
+				goalsMap.get(score).add(mapKey);
+			} else { //this score is never recorded
+				List<List<String>> lists = new ArrayList<List<String>>();
+				lists.add(mapKey);
+				goalsMap.put(score, lists);
+			}
+		}
+	}
+
+	public Map<Integer, List<List<String>>> getGoalsMap() {
+		return goalsMap;
+	}
+
+	/**
+	 * Recursive function for construction of keyword to be translated
+	 * @param description GDL keyword
+	 * @param str current string to be translated
+	 */
+	private void constructRecursive(List<? extends Gdl> description, String str) {
 		String dummy = removeOutBracket(str).trim();
-		String ret = "";
 		List<String> terminals = new ArrayList<String>();
 		if(!dummy.contains("(") && !dummy.contains(")")) {
 			terminals.add(dummy);
@@ -204,53 +315,237 @@ public class ProverStateMachine extends StateMachine
 
 		for(String terminal : terminals) {
 			if(!terminal.contains("(") && !terminal.contains(")")) {
-				List<String> elements = Arrays.asList(terminal.split(" "));
+				//List<String> elements = Arrays.asList(terminal.split(" "));
+				List<String> elements = splitOutBracket(terminal);
 				int i = 0;
 				while(i < elements.size() && specialKeys.contains(elements.get(i))) {
-					ret += elements.get(i);
 					i++;
 				}
 				if(i < elements.size() && !specialKeys.contains(elements.get(i))) {
 					String key = elements.get(i);
-					//System.out.println("Key is "+key);
+					String fullKey;
 					List<String> variables = new ArrayList<String>();
+					fullKey = key;
 					for(int j = i+1; j < elements.size(); j++) {
+						fullKey = fullKey + " " + elements.get(j);
 						variables.add(elements.get(j));
 					}
 					//Only translate key that has not been translated and is not in initial state
-					if(!initialKeys.contains(key) && !specialKeys.contains(key)) {
-						ret += translate(description, key, variables);
+					if(!translatedKeys.containsKey(fullKey) && !initialKeys.contains(key) && !specialKeys.contains(key)) {
+						if(!key.contains("(") && !key.contains(")")) {
+							translate(description, fullKey, key, variables);
+						} else {
+							constructRecursive(description, fullKey);
+						}
 					}
 				}
 			} else {
-				ret += translateRecursive(description, terminal);
+				constructRecursive(description, terminal);
 			}
 		}
-		//ret += ")";
-		return ret;
 	}
 
-	private String translate(List<? extends Gdl> description, String key, List<String> variables) {
-		String result = "";
+	/**
+	 * Finding the translation of specific key in GDL description, only works for two level? still buggy
+	 * TODO : Improve variable translation and more than two level translation
+	 * @param description GDL description
+	 * @param key the primary key
+	 * @param fullStr topmost key with the variables
+	 */
+	private void translate(List<? extends Gdl> description, String fullStr, String key, List<String> variables) {
 		for(Gdl gdl : description) {
 			String str = gdl.toString();
-			//if(str.contains(key)) System.out.println("Found "+str);
-			//TODO : Might change this later
-			//System.out.println("key is "+key);
+			//Find gdl descriptions which translates the key
 			if(str.matches("^\\s*\\(\\s*\\<\\=\\s*"+key+".*") || str.matches("^\\s*\\(\\s*\\<\\=\\s*\\(\\s*"+key+".*")) { //Find the GDL with description of the key
+				List<String> translations = new ArrayList<String>();
+				translations.add("");
 				str = removeOutBracket(str);
 				str = str.replace("<=", "");
 				str = str.trim();
-				List<String> split = splitOutBracket(str);
-				for(int i = 1; i < split.size(); i++) {
-					result += split.get(i);
+
+				str = replaceVariable(str, splitOutBracket(str).get(0), variables);
+				List<String> splits = splitOutBracket(str);
+
+				//Recursively translate needed key inside translation
+				for(int i = 1; i < splits.size(); i++) {
+					if(i > 1) {
+						for (final ListIterator<String> translation = translations.listIterator(); translation.hasNext();) {
+							final String element = translation.next();
+							translation.set(element + " ");
+						}
+					}
+					String split = splits.get(i);
+					split = removeOutBracket(split);
+					//List<String> splitKeys = Arrays.asList(split.split(" "));
+					List<String> splitKeys = splitOutBracket(split);
+					List<String> splitVariables = new ArrayList<String>();
+
+					//TODO : Better implementation
+					//To check special keys
+					int j = 0;
+					while(j < splitKeys.size() && specialKeys.contains(splitKeys.get(j))) {
+						j++;
+					}
+					if(j < splitKeys.size() && !specialKeys.contains(splitKeys.get(j))) {
+						String splitKey = splitKeys.get(j);
+						if(splitKey.contains("(") && splitKey.contains(")")) {
+							split = removeOutBracket(splitKey);
+							List<String> splitSplitKeys = splitOutBracket(split);
+							splitKey = splitSplitKeys.get(0);
+							for(int k = 1; k < splitSplitKeys.size(); k++) {
+								splitVariables.add(splitSplitKeys.get(k));
+							}
+						} else {
+							for(int k = j+1; k < splitKeys.size(); k++) {
+								splitVariables.add(splitKeys.get(k));
+							}
+						}
+						//System.out.println("Translating : "+splitKey+", with full string : "+split);
+						translate(description, split, splitKey, splitVariables);
+					}
+					/*
+					String splitKey = splitKeys.get(0);
+					for(int k = 1; k < splitKeys.size(); k++) {
+						splitVariables.add(splitKeys.get(k));
+					}*/
+
+
+
+					//Containing something that was successfully translated, translate them first
+					if(translatedKeys.containsKey(split)) {
+						List<String> translationsDummy = new ArrayList<String>(translations);
+						translations.clear();
+						for(String translation : translationsDummy) {
+							for(String translated : translatedKeys.get(split)) {
+								translations.add(translation+" "+translated);
+							}
+						}
+						translatedKeys.remove(split); //Second level translation is only used once
+					} else {
+						for (final ListIterator<String> translation = translations.listIterator(); translation.hasNext();) {
+							final String element = translation.next();
+							translation.set(element + splits.get(i));
+						}
+					}
+				}
+				for(String translation : translations) {
+					addTranslation(fullStr, translation.trim());
 				}
 			}
 		}
-		//result += ")";
-		return result;
 	}
 
+	/**
+	 * Replace variable in a string with the input variable
+	 * @param str string
+	 * @param keyString variable part of string
+	 * @param variables input variable
+	 * @return replaced string
+	 */
+	private String replaceVariable(String str, String keyString, List<String> variables) {
+		if(variables.size() == 0) {
+			return str;
+		}
+		String ret = str;
+		//List<String> keyStrings = Arrays.asList(removeOutBracket(keyString).trim().split(" "));
+		List<String> keyStrings = splitOutBracket(removeOutBracket(keyString).trim());
+		for(int i = 1; i < keyStrings.size(); i++) {
+			if(i-1 < variables.size()) ret = ret.replace(keyStrings.get(i), variables.get(i-1));
+		}
+		return ret;
+	}
+
+	/*
+	private void translateRecursive(List<? extends Gdl> description, String trans, String cur) {
+		List<String> elements = Arrays.asList(cur.split(" "));
+		int i = 0;
+		while(i < elements.size() && specialKeys.contains(elements.get(i))) {
+			i++;
+		}
+		if(i < elements.size() && !specialKeys.contains(elements.get(i))) {
+			String key = elements.get(i);
+		}
+	}*/
+
+	/**
+	 * Adding a translation of GDL key
+	 * @param key the key to be translated
+	 * @param trans the translation
+	 */
+	private void addTranslation(String key, String trans) {
+		List<String> transList = new ArrayList<String>();
+		if(!translatedKeys.containsKey(key)) {
+			transList.add(trans);
+			translatedKeys.put(key, transList);
+		} else {
+			transList = translatedKeys.get(key);
+			transList.add(trans);
+			translatedKeys.put(key, transList);
+		}
+	}
+
+	/**
+	 * Applying the translation of GDL keys to base terminal state
+	 * @param mode 0 is terminal, 1 is goal
+	 */
+	private void applyTranslation(int mode) {
+		List<String> dummies;
+		if(mode == 0){
+			dummies = terminals;
+		} else {
+			dummies = goals;
+		}
+		Set<String> translatedKeysSet = translatedKeys.keySet();
+		if(mode == 0) terminals = new ArrayList<String>();
+		else goals = new ArrayList<String>();
+		//System.out.println("Size is : "+terminalsDummy.size());
+		for(String dummy : dummies) {
+			List<String> keys = new ArrayList<String>();
+			for(String translatedKey : translatedKeysSet) {
+				if(dummy.contains(translatedKey)) {
+					keys.add(translatedKey);
+				}
+			}
+			applyTranslationRecursive(dummy, keys, 0, keys.size(), mode);
+
+		}
+		//System.out.println("Size is : "+terminals.size());
+		//terminals = translated;
+	}
+
+	/**
+	 * Recursive function for >1 possibilities of translation
+	 * e.g. in tic tac toe --> line ?x can means "row ?m ?x", "column ?m ?x", or "diagonal ?x"
+	 * @param curTerminal current terminal (can be semi translated)
+	 * @param keys current keys to be translated
+	 * @param curKey current key index
+	 * @param keySize size of keys for this terminal
+	 */
+	private void applyTranslationRecursive(String curTerminal, List<String> keys, int curKey,  int keySize, int mode) {
+		if(curKey < keySize) { //There is something to translate, translate all possibilities
+			String curKeyString = keys.get(curKey);
+			List<String> translations = translatedKeys.get(curKeyString);
+			for(String translation : translations) {
+				String dummy = "";
+				if(curKeyString.split("\\s+").length > 1) {
+					dummy = curTerminal.replace("( "+curKeyString+" )",translation);
+				} else {
+					dummy = curTerminal.replace(curKeyString, translation);
+				}
+				applyTranslationRecursive(dummy, keys, curKey+1, keySize, mode);
+			}
+		} else { //Nothing else to apply translation
+			//TODO : Crude method of removing double space, might need to change this later
+			if(mode == 0) addTerminals(curTerminal.trim().replaceAll(" +", " "));
+			else addGoals(curTerminal.trim().replaceAll(" +", " "));
+		}
+	}
+
+	/**
+	 * Helper function, removing outer bracket of a string
+	 * @param s
+	 * @return
+	 */
 	private String removeOutBracket(String s) {
 		String output = s;
         if(output.contains("(") && output.contains(")")) {
@@ -262,6 +557,12 @@ public class ProverStateMachine extends StateMachine
         return output;
 	}
 
+	/**
+	 * Helper function, splitting string by the outermost bracket
+	 * e.g. "(a) (b) (c (d))" becomes "a", "b", and "(c (d))"
+	 * @param s
+	 * @return
+	 */
 	private List<String> splitOutBracket(String s){
 	    List<String> l = new LinkedList<String>();
 	    int depth=0;
@@ -282,47 +583,5 @@ public class ProverStateMachine extends StateMachine
 	    l.add(sb.toString());
 	    return l;
 	}
-	/*
-	private boolean isTabulated(String str) {
-		char ch = str.charAt(0);
-		if((str.trim().length() > 0) && (ch == ' ' || ch == '\t' || ch == '\r' || ch == '\n')) {
-			return true;
-		}
-		return false;
-	}*/
-
-	/*
-	private List<String> computeTerminals() {
-		Set<GdlSentence> results = prover.askAll(ProverQueryBuilder.getTerminalQuery2(), new HashSet<GdlSentence>());
-		List<String> goalStates = new ArrayList<String>();
-		for (GdlSentence sentence : results)
-		{
-			goalStates.add(sentence.toString());
-		}
-		return goalStates;
-	}*/
-
-	/*
-	private List<String> computeTerminals(List<? extends Gdl> description) {
-	   List<String> terminals = new ArrayList<String>();
-	    for (Gdl gdl : description) {
-	        if (gdl instanceof GdlRelation) {
-	            GdlRelation relation = (GdlRelation) gdl;
-	            if (relation.getName().getValue().equals("terminal")) {
-	            	System.out.println("success");
-	                terminals.add(relation.toString());
-	            }
-	        }
-	    }
-	    return terminals;
-	}*/
-
-	   /* from above
-	   String result = str;
-	   while(i+1 < description.size() && isTabulated(description.get(i+1).toString())) {
-		   i++;
-		   str = description.get(i).toString();
-		   result += str;
-	   }*/
 
 }
