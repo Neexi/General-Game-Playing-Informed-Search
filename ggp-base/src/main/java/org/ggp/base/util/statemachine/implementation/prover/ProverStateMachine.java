@@ -29,7 +29,7 @@ import org.ggp.base.util.statemachine.implementation.prover.result.ProverResultP
 
 import com.google.common.collect.ImmutableList;
 
-
+//TODO : A lot of bugfixes
 public class ProverStateMachine extends StateMachine
 {
 	private MachineState initialState;
@@ -55,6 +55,7 @@ public class ProverStateMachine extends StateMachine
 	@Override
 	public void initialize(List<Gdl> description)
 	{
+		System.out.println();
 		prover = new AimaProver(description);
 		roles = ImmutableList.copyOf(Role.computeRoles(description));
 		initialState = computeInitialState();
