@@ -32,6 +32,8 @@ import com.google.common.collect.ImmutableList;
 //TODO : A lot of bugfixes
 public class ProverStateMachine extends StateMachine
 {
+
+	private boolean translationEnabled = false;
 	private MachineState initialState;
 	private Prover prover;
 	private ImmutableList<Role> roles;
@@ -62,11 +64,13 @@ public class ProverStateMachine extends StateMachine
 		initialKeys = computeInitialKeys();
 		translatedKeys = new HashMap<String,List<String>>();
 		terminals = new ArrayList<String>();
-		computeTerminals(description);
 		goals = new ArrayList<String>();
-		computeGoals(description);
 		goalsMap = new HashMap<Integer, List<List<String>>>();
-		computeGoalsMap();
+		if(translationEnabled) {
+			computeTerminals(description);
+			computeGoals(description);
+			computeGoalsMap();
+		}
 	}
 
 	private MachineState computeInitialState()

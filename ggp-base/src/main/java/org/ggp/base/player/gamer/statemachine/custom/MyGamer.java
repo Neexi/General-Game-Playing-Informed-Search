@@ -1,9 +1,13 @@
 package org.ggp.base.player.gamer.statemachine.custom;
 
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -32,6 +36,11 @@ import org.ggp.base.util.statemachine.implementation.prover.ProverStateMachine;
  */
 public final class MyGamer extends StateMachineGamer{
 
+	//Hardcoding stuff
+	private boolean hardcode = true;
+	private String hardcodedGame = "eightPuzzle";
+	private String stepString = "step";
+
 	//single player game?
 	private boolean isSinglePlayerGame;
 
@@ -54,12 +63,12 @@ public final class MyGamer extends StateMachineGamer{
 	private PrintWriter writer;
 
 	//All the mode used
-	private int depth_limit = 20; //Search depth limit
+	private int depth_limit = 11; //Search depth limit
 	private long buffer_time = 1500; //Buffer time
 	private boolean usingHC = false; //Using hill climbing?
 	private Double hCWeight = (double) 1;
-	private boolean usingLocalDepthValue = true; //Using only the current depth value as comparison?
-	private boolean usingAvg = false; //Using the average state distance?
+	private boolean usingLocalDepthValue = true; //Using only the current depth value as comparison? TODO : Depreciated
+	private boolean usingAvg = true; //Using the average state distance?
 
 
 	/**
@@ -81,60 +90,74 @@ public final class MyGamer extends StateMachineGamer{
 		if(getStateMachine().getRoles().size() == 1) isSinglePlayerGame = true;
 		else isSinglePlayerGame = false;
 
-		List<Integer> sortedScore = new ArrayList<Integer>(((ProverStateMachine) getStateMachine()).getGoalsMap().keySet());
-		highestGoalScore = 0;
-		for(Integer score : sortedScore) {
-			if(highestGoalScore < score) highestGoalScore = score;
-		}
-		List<List<String>> highestVarGoalStates = new ArrayList<List<String>>();
-		List<List<String>> highestNoVarGoalStates = new ArrayList<List<String>>();
+		highestGoalStates = new ArrayList<List<String>>();
 
-		//Mapping possible value for gdl variables based on initial state
-		Map<String, List<List<String>>> legalVariables = new HashMap<String, List<List<String>>>();
-		String initialState = getStateMachine().getInitialState().toString().substring(1, getStateMachine().getInitialState().toString().length() - 1);
-		String[] initialAtoms = initialState.split(", ");
-		for(String initialAtom : initialAtoms) {
-			String cur = removeTrueString(initialAtom);
-			String[] split = cur.split(" ");
-			String key = split[0];
-			if(!legalVariables.containsKey(key)) legalVariables.put(key, new ArrayList<List<String>>());
-			for(int i = 1; i < split.length; i++) {
-				List<List<String>> curVariables = legalVariables.get(key);
-				while(curVariables.size() < i) curVariables.add(new ArrayList<String>());
-				//Add the legal possible values of variable
-				//Note that list index 0 means first variable, index 1 means second variable, etc
-				if(!curVariables.get(i-1).contains(split[i])) curVariables.get(i-1).add(split[i]);
+		//For hardcoding goal
+		if(hardcode) {
+			addHardcodedGoal(hardcodedGame);
+			System.out.println("goal is ");
+			for(List<String> goals : highestGoalStates) {
+				for(String goal : goals) {
+					System.out.print(goal+" ");
+				}
+				System.out.println();
 			}
-		}
+		} else {
+			List<Integer> sortedScore = new ArrayList<Integer>(((ProverStateMachine) getStateMachine()).getGoalsMap().keySet());
+			highestGoalScore = 0;
+			for(Integer score : sortedScore) {
+				if(highestGoalScore < score) highestGoalScore = score;
+			}
+			List<List<String>> highestVarGoalStates = new ArrayList<List<String>>();
+			List<List<String>> highestNoVarGoalStates = new ArrayList<List<String>>();
 
-		List<List<String>> highestAllGoalStates = ((ProverStateMachine) getStateMachine()).getGoalsMap().get(highestGoalScore);
-		for(List<String> highestGoalState : highestAllGoalStates) {
-			boolean containsVar = false;
-			if(highestGoalState.toString().contains("?")) containsVar = true;
-			if(!containsVar) highestNoVarGoalStates.add(highestGoalState);
-			else {
-				for(List<String> varGoalState : expandVariables(highestGoalState, legalVariables)) {
-					highestVarGoalStates.add(varGoalState);
+			//Mapping possible value for gdl variables based on initial state
+			Map<String, List<List<String>>> legalVariables = new HashMap<String, List<List<String>>>();
+			String initialState = getStateMachine().getInitialState().toString().substring(1, getStateMachine().getInitialState().toString().length() - 1);
+			String[] initialAtoms = initialState.split(", ");
+			for(String initialAtom : initialAtoms) {
+				String cur = removeTrueString(initialAtom);
+				String[] split = cur.split(" ");
+				String key = split[0];
+				if(!legalVariables.containsKey(key)) legalVariables.put(key, new ArrayList<List<String>>());
+				for(int i = 1; i < split.length; i++) {
+					List<List<String>> curVariables = legalVariables.get(key);
+					while(curVariables.size() < i) curVariables.add(new ArrayList<String>());
+					//Add the legal possible values of variable
+					//Note that list index 0 means first variable, index 1 means second variable, etc
+					if(!curVariables.get(i-1).contains(split[i])) curVariables.get(i-1).add(split[i]);
 				}
 			}
-		}
-		highestGoalStates = new ArrayList<List<String>>(highestNoVarGoalStates);
-		highestGoalStates.addAll(highestVarGoalStates);
 
-		System.out.println("Aiming for highest goal scores of "+highestGoalScore);
-		System.out.println("There are "+highestNoVarGoalStates.size()+" goal states without variable");
-		for(List<String> goals : highestNoVarGoalStates) {
-			for(String goal : goals) {
-				System.out.print(goal+" ");
+			List<List<String>> highestAllGoalStates = ((ProverStateMachine) getStateMachine()).getGoalsMap().get(highestGoalScore);
+			for(List<String> highestGoalState : highestAllGoalStates) {
+				boolean containsVar = false;
+				if(highestGoalState.toString().contains("?")) containsVar = true;
+				if(!containsVar) highestNoVarGoalStates.add(highestGoalState);
+				else {
+					for(List<String> varGoalState : expandVariables(highestGoalState, legalVariables)) {
+						highestVarGoalStates.add(varGoalState);
+					}
+				}
 			}
-			System.out.println();
-		}
-		System.out.println("There are "+highestVarGoalStates.size()+" goal states with variable");
-		for(List<String> goals : highestVarGoalStates) {
-			for(String goal : goals) {
-				System.out.print(goal+" ");
+			highestGoalStates.addAll(highestNoVarGoalStates);
+			highestGoalStates.addAll(highestVarGoalStates);
+
+			System.out.println("Aiming for highest goal scores of "+highestGoalScore);
+			System.out.println("There are "+highestNoVarGoalStates.size()+" goal states without variable");
+			for(List<String> goals : highestNoVarGoalStates) {
+				for(String goal : goals) {
+					System.out.print(goal+" ");
+				}
+				System.out.println();
 			}
-			System.out.println();
+			System.out.println("There are "+highestVarGoalStates.size()+" goal states with variable");
+			for(List<String> goals : highestVarGoalStates) {
+				for(String goal : goals) {
+					System.out.print(goal+" ");
+				}
+				System.out.println();
+			}
 		}
 
 		//TODO: Delete or use this
@@ -274,7 +297,7 @@ public final class MyGamer extends StateMachineGamer{
 	private int getMinimalDistance(String currentState) {
 		int minDistance = Integer.MAX_VALUE; //Maximum integer number
 		String curState = currentState.substring(1, currentState.length() - 1);
-		String[] curAtoms = curState.split(", ");
+		List<String> curAtoms = new ArrayList<String>(Arrays.asList(curState.split(", ")));
 
 		for(List<String> goalState : highestGoalStates) {
 			int distance = goalState.size();
@@ -282,8 +305,14 @@ public final class MyGamer extends StateMachineGamer{
 				for(String curAtom : curAtoms) {
 					if(curAtom.equals(goalAtom)) { //TODO: how to solve goal state with variable
 						distance--;
+						curAtoms.remove(curAtom);
 						break;
 					}
+					/*
+					else if(curAtom.equals("!"+goalAtom)) { //TODO: handling "not" goal state
+						distance++;
+						break;
+					}*/
 				}
 			}
 			if(distance < minDistance) minDistance = distance;
@@ -306,6 +335,7 @@ public final class MyGamer extends StateMachineGamer{
 		Move selection = (moves.get(new Random().nextInt(moves.size()))); //return random if nothing is done
 		Double curMinDistance = (double) getMinimalDistance(curState.toString());
 		Double nextMinDistance = Double.MAX_VALUE;
+		Double globalMinimalOccurence = (double) 1;
 		Map<Move, ArrayList<Double>> minAvgValueMoves = new HashMap<Move, ArrayList<Double>>(); //The min average distance found for doing the move
 		Map<Move, List<Integer>> minValueMoves = new HashMap<Move, List<Integer>>(); //The min distance found for this move, plus the number of occurence
 		HashMap<String, Integer> expandedStates = new HashMap<String, Integer>();
@@ -345,6 +375,7 @@ public final class MyGamer extends StateMachineGamer{
 				Collections.shuffle(moves);
 
 				Double localNextMinDistance = Double.MAX_VALUE; //The next min distance of just this depth
+				Double localMinimalOccurence = (double) 1; //In case there are moves with same distance, it will be chosen randomly
 
 				//Get the moves with smallest minimal distance
 				for(Move move : moves) {
@@ -363,20 +394,34 @@ public final class MyGamer extends StateMachineGamer{
 						Integer occurence = minValueMoves.get(move).get(1);
 						if(usingHC) value += hill;
 						writer.println("    Move : "+move.toString()+", minimum: "+value+", occurence: "+occurence+", hillclimb: "+hill);
-						value -= (double) occurence * 0.0001;
+						value -= Math.min((double) occurence * 0.0001, 1);
 					}
 
 					//Only consider the current depth? or everything?
 					if(usingLocalDepthValue) {
-						if(value < localNextMinDistance) {
+						if(Math.abs(value - localNextMinDistance) < 0.0001) {
+							localMinimalOccurence++;
+		    				if(Math.random() < (double) 1 / localMinimalOccurence)  {
+								localNextMinDistance = value;
+								nextMinDistance = localNextMinDistance;
+		    				}
+						} else if(value < localNextMinDistance) {
+							localMinimalOccurence = (double) 1;
 							selection = move;
 							localNextMinDistance = value;
 							nextMinDistance = localNextMinDistance;
 						}
 					} else {
 						if(value < nextMinDistance) {
+							globalMinimalOccurence = (double) 1;
 							selection = move;
 							nextMinDistance = value;
+						} else if(value == nextMinDistance) {
+							globalMinimalOccurence++;
+		    				if(Math.random() < (double) 1 / globalMinimalOccurence)  {
+								selection = move;
+								nextMinDistance = value;
+		    				}
 						}
 					}
 				}
@@ -449,9 +494,9 @@ public final class MyGamer extends StateMachineGamer{
 			try {
 				Integer goal = getStateMachine().getGoal(curState, myRole);
 				if(goal > 0) {
-					writer.println("      With Goal "+goal+" CurState is "+curState.toString());
+					//writer.println("      With Goal "+goal+" CurState is "+curState.toString());
 				}
-				if(goal == highestGoalScore) {
+				if(goal >= highestGoalScore) {
 					winningMoves.add(startingMove);
 				}
 			} catch (GoalDefinitionException e) {
@@ -462,7 +507,7 @@ public final class MyGamer extends StateMachineGamer{
 		}
 		Map<Move, List<MachineState>> nextStatesMap = getStateMachine().getNextStates(curState, myRole);
 		for(Move move : nextStatesMap.keySet()) {
-			if(getRemainingTime(timeout) < buffer_time) break; //Do not expand if less than 3 seconds remaining
+			if(getRemainingTime(timeout) < buffer_time) break; //Do not expand if less buffer time remains
 			MachineState thisState = nextStatesMap.get(move).get(0);
 			String stateString = getNonStepAtoms(thisState);
 
@@ -504,7 +549,7 @@ public final class MyGamer extends StateMachineGamer{
 		List<GdlSentence> stateAtoms = new ArrayList<GdlSentence>(state.getContents());
 		for(GdlSentence atom : stateAtoms) {
 			String atomStr = atom.toString();
-			if(atomStr.contains("step")) continue;
+			if(atomStr.contains(stepString)) continue;
 			ret += atomStr;
 		}
 		return ret;
@@ -674,6 +719,117 @@ public final class MyGamer extends StateMachineGamer{
 		} else {
 			writer.println("Only using the absolute minimum value");
 		}
+	}
+
+	/**
+	 * Hardcoded goal translation
+	 * @param game
+	 */
+	private void addHardcodedGoal(String game) {
+		highestGoalScore = 100;
+		if(game.equals("eightPuzzle")) {
+			highestGoalScore = 99;
+		}
+		if(game.equals("asteroid")) {
+			List<String> dummy = new ArrayList<String>();
+			dummy.add("( true ( north-speed 0 ) )");
+			dummy.add("( true ( east-speed 0 ) )");
+			dummy.add("( true ( x 15 ) )");
+			dummy.add("( true ( y 5 ) ) ");
+			highestGoalStates.add(dummy);
+		} else if(game.equals("circlesolitaire")) {
+			List<String> dummy = new ArrayList<String>();
+			dummy.add("( true ( disk p1 none ) )");
+			dummy.add("( true ( disk p2 none) )");
+			dummy.add("( true ( disk p3 none) )");
+			dummy.add("( true ( disk p4 none) )");
+			dummy.add("( true ( disk p5 none) )");
+			dummy.add("( true ( disk p6 none) )");
+			dummy.add("( true ( disk p7 none) )");
+			dummy.add("( true ( disk p8 none) )");
+			dummy.add("( true ( resets s0 ) )");
+			highestGoalStates.add(dummy);
+		} else if(game.equals("extendedbrainteaser")) {
+			List<String> dummy = new ArrayList<String>();
+			dummy.add("( true ( step 10 ) )");
+			dummy.add("( true ( cell a a orange ) )");
+			dummy.add("( true ( cell a b orange ) )");
+			dummy.add("( true ( cell a c orange ) )");
+			dummy.add("( true ( cell a d orange ) )");
+			dummy.add("( true ( cell b a orange ) )");
+			dummy.add("( true ( cell b b orange ) )");
+			dummy.add("( true ( cell b c orange ) )");
+			dummy.add("( true ( cell b d orange ) )");
+			dummy.add("( true ( cell c a orange ) )");
+			dummy.add("( true ( cell c b orange ) )");
+			dummy.add("( true ( cell c c orange ) )");
+			dummy.add("( true ( cell c d orange ) )");
+			dummy.add("( true ( cell d a orange ) )");
+			dummy.add("( true ( cell d b orange ) )");
+			dummy.add("( true ( cell d c orange ) )");
+			dummy.add("( true ( cell d d orange ) )");
+			highestGoalStates.add(dummy);
+		} else if(game.equals("incredible")) {
+			List<String> dummy = new ArrayList<String>();
+			dummy.add("( true ( gold w ) )");
+			dummy.add("( true ( on d f ) )");
+			dummy.add("( true ( on b d ) )");
+			dummy.add("( true ( on a e ) )");
+			dummy.add("( true ( on c a ) )");
+			highestGoalStates.add(dummy);
+		} else {
+			getHardcoded(game);
+		}
+	}
+
+	/**
+	 * Get hardcoded goal state
+	 * @param game
+	 */
+	private void getHardcoded(String game) {
+        BufferedReader br = null;
+        String strLine = "";
+        try {
+            br = new BufferedReader( new FileReader("hardcodedTranslation/"+game));
+            while( (strLine = br.readLine()) != null){
+            	List<String> dummy = splitOutBracket(strLine);
+            	highestGoalStates.add(dummy);
+            }
+        } catch (FileNotFoundException e) {
+            System.err.println("Unable to find the file: fileName");
+            List<String> dummy = new ArrayList<String>();
+            dummy.add("No file found");
+            highestGoalStates.add(dummy);
+        } catch (IOException e) {
+            System.err.println("Unable to read the file: fileName");
+        }
+	}
+
+	/**
+	 * Helper function, splitting string by the outermost bracket
+	 * e.g. "(a) (b) (c (d))" becomes "a", "b", and "(c (d))"
+	 * @param s
+	 * @return
+	 */
+	private List<String> splitOutBracket(String s){
+	    List<String> l = new LinkedList<String>();
+	    int depth=0;
+	    StringBuilder sb = new StringBuilder();
+	    for(int i=0; i<s.length(); i++){
+	        char c = s.charAt(i);
+	        if(c=='('){
+	            depth++;
+	        }else if(c==')'){
+	            depth--;
+	        }else if(c==' ' && depth==0){
+	            l.add(sb.toString());
+	            sb = new StringBuilder();
+	            continue;
+	        }
+	        sb.append(c);
+	    }
+	    l.add(sb.toString());
+	    return l;
 	}
 
 }

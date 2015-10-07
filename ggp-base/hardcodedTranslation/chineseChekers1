@@ -1,0 +1,4 @@
+(toCount ?player ?x ?y ?z)
+(true (cell ?x ?player))
+(true (cell ?y ?player))
+(true (cell ?z ?player))
