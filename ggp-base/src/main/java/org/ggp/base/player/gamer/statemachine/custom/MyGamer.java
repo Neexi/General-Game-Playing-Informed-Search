@@ -63,12 +63,12 @@ public final class MyGamer extends StateMachineGamer{
 	private PrintWriter writer;
 
 	//All the mode used
-	private int depth_limit = 11; //Search depth limit
+	private int depth_limit = 100; //Search depth limit
 	private long buffer_time = 1500; //Buffer time
 	private boolean usingHC = false; //Using hill climbing?
 	private Double hCWeight = (double) 1;
 	private boolean usingLocalDepthValue = true; //Using only the current depth value as comparison? TODO : Depreciated
-	private boolean usingAvg = true; //Using the average state distance?
+	private boolean usingAvg = false; //Using the average state distance?
 
 
 	/**
