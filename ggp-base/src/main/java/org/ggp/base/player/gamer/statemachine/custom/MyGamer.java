@@ -65,10 +65,15 @@ public final class MyGamer extends StateMachineGamer{
 	//All the mode used
 	private int depth_limit = 100; //Search depth limit
 	private long buffer_time = 1500; //Buffer time
+	private double logShrink = 10;
+	private double maxWeightHalf = 0.5; //For log weight
+	private double maxWeightOne = 1;
 	private boolean usingHC = false; //Using hill climbing?
 	private Double hCWeight = (double) 1;
 	private boolean usingLocalDepthValue = true; //Using only the current depth value as comparison? TODO : Depreciated
 	private boolean usingAvg = false; //Using the average state distance?
+	private boolean usingMin = false; //Using the minimal distance?
+	private boolean usingFlexWeight = false; //Using flexibilityWeight
 
 
 	/**
@@ -301,21 +306,30 @@ public final class MyGamer extends StateMachineGamer{
 
 		for(List<String> goalState : highestGoalStates) {
 			int distance = goalState.size();
-			for(String goalAtom : goalState) {
-				for(String curAtom : curAtoms) {
-					if(curAtom.equals(goalAtom)) { //TODO: how to solve goal state with variable
+			if(curAtoms.size() == goalState.size()) {
+				Collections.sort(curAtoms);
+				for(int i = 0; i < goalState.size(); i++) {
+					if(curAtoms.get(i).equals(goalState.get(i))) {
 						distance--;
-						curAtoms.remove(curAtom);
-						break;
 					}
-					/*
-					else if(curAtom.equals("!"+goalAtom)) { //TODO: handling "not" goal state
-						distance++;
-						break;
-					}*/
+				}
+			} else {
+				for(String goalAtom : goalState) {
+					for(String curAtom : curAtoms) {
+						if(curAtom.equals(goalAtom)) { //TODO: how to solve goal state with variable
+							distance--;
+							curAtoms.remove(curAtom);
+							break;
+						}
+						/*
+						else if(curAtom.equals("!"+goalAtom)) { //TODO: handling "not" goal state
+							distance++;
+							break;
+						}*/
+					}
 				}
 			}
-			if(distance < minDistance) minDistance = distance;
+			if(distance < minDistance) minDistance = distance; //TODO : reapply this if does not work
 		}
 		return minDistance;
 	}
@@ -381,20 +395,36 @@ public final class MyGamer extends StateMachineGamer{
 				for(Move move : moves) {
 					Double hill = hillValue.get(move);
 
-					//We might use average state value or just the absolute minimum
-					Double value;
-					if(usingAvg) {
+					//We might use average state value or absolute minimum or both
+					Double value = Double.MAX_VALUE;
+					if(usingAvg && !usingMin) {
 						Double num = minAvgValueMoves.get(move).get(0);
 						Double sum = minAvgValueMoves.get(move).get(1);
+						Double flexWeight = Math.log(num)/logShrink;
 						value = sum/num;
 						if(usingHC) value += hill;
-						writer.println("    Move : "+move.toString()+", sum: "+sum+", num: "+num+", value: "+value+", hillclimb: "+hill);
-					} else {
+						//TODO important : Add weighing with log
+						if(usingFlexWeight) value -= Math.min(flexWeight, maxWeightOne);
+						writer.println("    Move : "+move.toString()+", sum: "+sum+", num: "+num+", value: "+value+", expansion: "+num+", hillclimb: "+hill);
+					} else if(usingMin && !usingAvg) {
+						Double num = minAvgValueMoves.get(move).get(0);
+						value = (double) minValueMoves.get(move).get(0);
+						Integer occurence = minValueMoves.get(move).get(1);
+						Double flexWeight = Math.log(num)/logShrink;
+						if(usingHC) value += hill;
+						if(usingFlexWeight) value -= Math.min(flexWeight,maxWeightHalf);
+						writer.println("    Move : "+move.toString()+", minimum: "+value+", occurence: "+occurence+", expansion: "+num+", hillclimb: "+hill);
+						value -= Math.min(Math.log((double) occurence) / logShrink, maxWeightHalf);
+					} else if(usingMin && usingAvg) { //TODO important: what to do if using both
+						Double num = minAvgValueMoves.get(move).get(0);
+						Double sum = minAvgValueMoves.get(move).get(1);
+						Double weight = Math.log(sum/num);
 						value = (double) minValueMoves.get(move).get(0);
 						Integer occurence = minValueMoves.get(move).get(1);
 						if(usingHC) value += hill;
-						writer.println("    Move : "+move.toString()+", minimum: "+value+", occurence: "+occurence+", hillclimb: "+hill);
-						value -= Math.min((double) occurence * 0.0001, 1);
+						writer.println("    Move : "+move.toString()+", minimum: "+value+", occurence: "+occurence+", weight: "+weight+", hillclimb: "+hill);
+						value -= Math.min(Math.log((double) occurence) / logShrink, maxWeightHalf);
+						value += Math.min(weight, maxWeightHalf);
 					}
 
 					//Only consider the current depth? or everything?
@@ -470,11 +500,12 @@ public final class MyGamer extends StateMachineGamer{
 					throws MoveDefinitionException, TransitionDefinitionException {
 		//0 remaining depth, check the minimum distance for that move
 		if(curDepth == depthLimit) {
-			if(usingAvg) {
+			if(usingAvg || (usingMin && usingFlexWeight)) {
 				Double minDistance = (double) getMinimalDistance(curState.toString());
 				minAvgValueMoves.get(startingMove).set(0, minAvgValueMoves.get(startingMove).get(0) + 1); //one more state checked
 				minAvgValueMoves.get(startingMove).set(1, minAvgValueMoves.get(startingMove).get(1) + minDistance); //add the minimal distance found
-			} else {
+			}
+			if(usingMin) {
 				Integer minDistance = getMinimalDistance(curState.toString());
 				Integer curMin = minValueMoves.get(startingMove).get(0);
 				Integer minCount = minValueMoves.get(startingMove).get(1);
@@ -714,10 +745,17 @@ public final class MyGamer extends StateMachineGamer{
 			writer.println("Using global depth value as comparison");
 		}
 
-		if(usingAvg) {
-			writer.println("Using average value of all expanded states");
-		} else {
+		if(usingAvg && !usingMin) {
+			writer.print("Using average value of all expanded states ");
+			if(usingFlexWeight) writer.println("with flexibility weight");
+			else writer.println("without flexibility weight");;
+		} else if(!usingAvg && usingMin) {
 			writer.println("Only using the absolute minimum value");
+		} else if(usingAvg && usingMin) {
+			writer.println("Only absolute minimum value then average value of all expanded states with weight");
+		} else { //neither of them is chosen, error
+			System.err.println("Incompatible mode");
+			System.exit(0);
 		}
 	}
 
@@ -793,6 +831,7 @@ public final class MyGamer extends StateMachineGamer{
             br = new BufferedReader( new FileReader("hardcodedTranslation/"+game));
             while( (strLine = br.readLine()) != null){
             	List<String> dummy = splitOutBracket(strLine);
+            	Collections.sort(dummy);
             	highestGoalStates.add(dummy);
             }
         } catch (FileNotFoundException e) {
