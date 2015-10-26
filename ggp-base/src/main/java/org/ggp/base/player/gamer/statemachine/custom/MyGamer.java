@@ -10,10 +10,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.ggp.base.player.gamer.event.GamerSelectedMoveEvent;
 import org.ggp.base.player.gamer.exception.GamePreviewException;
@@ -38,7 +41,8 @@ public final class MyGamer extends StateMachineGamer{
 
 	//Hardcoding stuff
 	private boolean hardcode = true;
-	private String hardcodedGame = "eightPuzzle";
+	private String hardcodedGame = "snake_2009";
+	private boolean testingSnake2009FluentGraphs = false; //To test fluent graphs functionality
 	private String stepString = "step";
 
 	//single player game?
@@ -54,6 +58,12 @@ public final class MyGamer extends StateMachineGamer{
 	//State history and turn number
 	private Integer curStep;
 	private List<String> moveHistory;
+	private List<String> stateHistory;
+	private double totalTime;
+
+	//state expansion
+	private HashMap<String, Integer> expandedStates;
+	private HashMap<String, Integer> statesMinimalDistance;
 
 	//Time related atom
 	//TODO : Fix or delete
@@ -63,18 +73,19 @@ public final class MyGamer extends StateMachineGamer{
 	private PrintWriter writer;
 
 	//All the mode used
-	private int depth_limit = 100; //Search depth limit
+	private int depth_limit = 7; //Search depth limit
 	private long buffer_time = 1500; //Buffer time
 	private double logShrink = 10;
 	private double maxWeightHalf = 0.5; //For log weight
 	private double maxWeightOne = 1;
-	private boolean usingHC = false; //Using hill climbing?
+	private double epsilon = Math.pow(10, -4);
 	private Double hCWeight = (double) 1;
-	private boolean usingLocalDepthValue = true; //Using only the current depth value as comparison? TODO : Depreciated
+	private boolean usingLocalDepthValue = true; //Using only the current depth value as comparison?
+	private boolean usingMin = true; //Using the minimal distance?
 	private boolean usingAvg = false; //Using the average state distance?
-	private boolean usingMin = false; //Using the minimal distance?
-	private boolean usingFlexWeight = false; //Using flexibilityWeight
-
+	private boolean usingOcCombined = false;
+	private boolean usingHC = true; //Using hill climbing?
+	private boolean usingFlexWeight = false; //Using flexibilityWeight?
 
 	/**
 	 * Using the built-in prover state machine for now
@@ -171,10 +182,15 @@ public final class MyGamer extends StateMachineGamer{
 		//Declaring the initial value and history
 		curStep = 0;
 		moveHistory = new ArrayList<String>();
+		stateHistory = new ArrayList<String>();
+		totalTime = 0;
+
+		expandedStates = new HashMap<String, Integer>();
+		statesMinimalDistance = new HashMap<String, Integer>();
 
 		//Output preparation
 		try {
-			writer = new PrintWriter("text/output.txt", "UTF-8");
+			writer = new PrintWriter("output/"+hardcodedGame+".txt", "UTF-8");
 		} catch (FileNotFoundException | UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			System.out.println("File for output is not found");
@@ -245,8 +261,14 @@ public final class MyGamer extends StateMachineGamer{
 		//Add the selected move to history and increase the number of step
 		curStep++;
 		moveHistory.add(selection.toString());
+		stateHistory.add(getNonStepAtomsSorted(curState));
 
 		long stop = System.currentTimeMillis();
+		totalTime += stop - start;
+		double averageTime = (totalTime / curStep);
+
+		writer.println("Average time taken : "+averageTime+" ms");
+		writer.println();
 
 		notifyObservers(new GamerSelectedMoveEvent(moves, selection, stop - start));
 		return selection;
@@ -259,6 +281,16 @@ public final class MyGamer extends StateMachineGamer{
 	@Override
 	public void stateMachineStop() {
 		// nothing
+		/*
+		int turn = 1;
+		for(String state : stateHistory) {
+			System.out.print(turn+" ");
+			System.out.println(state);
+			turn++;
+		}
+		*/
+		double averageTime = (totalTime / curStep);
+		System.out.println("Average time taken : "+averageTime+" ms");
 		writer.close();
 	}
 
@@ -301,6 +333,10 @@ public final class MyGamer extends StateMachineGamer{
 	 */
 	private int getMinimalDistance(String currentState) {
 		int minDistance = Integer.MAX_VALUE; //Maximum integer number
+		if(testingSnake2009FluentGraphs) {
+			minDistance = getMinimalDistanceSnake2009(currentState);
+			return minDistance;
+		}
 		String curState = currentState.substring(1, currentState.length() - 1);
 		List<String> curAtoms = new ArrayList<String>(Arrays.asList(curState.split(", ")));
 
@@ -321,15 +357,36 @@ public final class MyGamer extends StateMachineGamer{
 							curAtoms.remove(curAtom);
 							break;
 						}
-						/*
-						else if(curAtom.equals("!"+goalAtom)) { //TODO: handling "not" goal state
-							distance++;
-							break;
-						}*/
 					}
 				}
 			}
 			if(distance < minDistance) minDistance = distance; //TODO : reapply this if does not work
+		}
+		return minDistance;
+	}
+
+	/**
+	 * Hardcoding function to test fluent graphs performance in maze based game
+	 * TODO : Depreciated
+	 * @param currentState
+	 * @return
+	 */
+	private int getMinimalDistanceSnake2009(String currentState) {
+		int minDistance = 7; //Maximum integer number
+		String curState = currentState.substring(1, currentState.length() - 1);
+		List<String> curAtoms = new ArrayList<String>(Arrays.asList(curState.split(", ")));
+		for(String curAtom : curAtoms) {
+			if(curAtom.contains("points")) {
+				Pattern intsOnly = Pattern.compile("\\d+");
+				Matcher makeMatch = intsOnly.matcher(curAtom);
+				makeMatch.find();
+				Integer inputInt = Integer.parseInt(makeMatch.group());
+				minDistance -= inputInt;
+			} else if(curAtom.contains("pos") && !curAtom.contains("tail")) {
+				if(curAtom.equals("( true ( pos c3 r6 ) )")) {
+					minDistance--;
+				}
+			}
 		}
 		return minDistance;
 	}
@@ -349,12 +406,15 @@ public final class MyGamer extends StateMachineGamer{
 		Move selection = (moves.get(new Random().nextInt(moves.size()))); //return random if nothing is done
 		Double curMinDistance = (double) getMinimalDistance(curState.toString());
 		Double nextMinDistance = Double.MAX_VALUE;
-		Double globalMinimalOccurence = (double) 1;
+		Double globalMinimalOccurrence = (double) 1;
 		Map<Move, ArrayList<Double>> minAvgValueMoves = new HashMap<Move, ArrayList<Double>>(); //The min average distance found for doing the move
-		Map<Move, List<Integer>> minValueMoves = new HashMap<Move, List<Integer>>(); //The min distance found for this move, plus the number of occurence
-		HashMap<String, Integer> expandedStates = new HashMap<String, Integer>();
-		Map<Move, Double> hillValue = new HashMap<Move, Double>();
+		Map<Move, List<Integer>> minValueMoves = new HashMap<Move, List<Integer>>(); //The min distance found for this move, plus the number of occurrence
+		//HashMap<String, Integer> expandedStates = new HashMap<String, Integer>();
+		Map<Move, Double> hillValueMove = new HashMap<Move, Double>();
+		Map<Move, Double> hillValueState = new HashMap<Move, Double>();
 		List<Move> winningMoves = new ArrayList<Move>();
+		List<Integer> expansionNum = new ArrayList<Integer>();
+		expansionNum.add(0);
 
 		for(Move move : moves) {
 			//Map of moves is linked to list with 2 elements
@@ -367,7 +427,8 @@ public final class MyGamer extends StateMachineGamer{
 			newMin.add(Integer.MAX_VALUE);
 			newMin.add(1);
 			minValueMoves.put(move, newMin);
-			hillValue.put(move, hillClimb(move));
+			hillValueMove.put(move, hillClimbMove(move));
+			hillValueState.put(move, hillClimbState(nextStatesMap.get(move).get(0)));
 		}
 
 		int depth = 0;
@@ -375,7 +436,7 @@ public final class MyGamer extends StateMachineGamer{
 			writer.println("  iterative Depth "+depth);
 			boolean clear = true; //Check if the search in this depth is complete
 			for(Move move : nextStatesMap.keySet()) {
-				depthLimitedSearch(move, nextStatesMap.get(move).get(0), myRole, 0, depth, minAvgValueMoves, minValueMoves, expandedStates, winningMoves, timeout);
+				depthLimitedSearch(move, nextStatesMap.get(move).get(0), myRole, 0, depth, minAvgValueMoves, minValueMoves, winningMoves, expansionNum, timeout);
 				if(getRemainingTime(timeout) < buffer_time) {
 					//System.out.println("run out of time!");
 					clear = false;
@@ -389,66 +450,76 @@ public final class MyGamer extends StateMachineGamer{
 				Collections.shuffle(moves);
 
 				Double localNextMinDistance = Double.MAX_VALUE; //The next min distance of just this depth
-				Double localMinimalOccurence = (double) 1; //In case there are moves with same distance, it will be chosen randomly
+				Double localMinimalOccurrence = (double) 1; //In case there are moves with same distance, it will be chosen randomly
 
 				//Get the moves with smallest minimal distance
 				for(Move move : moves) {
-					Double hill = hillValue.get(move);
+					Double hill = hillValueState.get(move);
 
 					//We might use average state value or absolute minimum or both
 					Double value = Double.MAX_VALUE;
 					if(usingAvg && !usingMin) {
 						Double num = minAvgValueMoves.get(move).get(0);
 						Double sum = minAvgValueMoves.get(move).get(1);
-						Double flexWeight = Math.log(num)/logShrink;
+						Double flexWeight = num / expansionNum.get(0);
 						value = sum/num;
+						writer.print("    Move : "+move.toString()+", sum: "+sum+", num: "+num+", value: "+value+", flexWeight: "+flexWeight+", hillclimb: "+hill);
 						if(usingHC) value += hill;
 						//TODO important : Add weighing with log
 						if(usingFlexWeight) value -= Math.min(flexWeight, maxWeightOne);
-						writer.println("    Move : "+move.toString()+", sum: "+sum+", num: "+num+", value: "+value+", expansion: "+num+", hillclimb: "+hill);
+						writer.println(", final value: "+value);
 					} else if(usingMin && !usingAvg) {
 						Double num = minAvgValueMoves.get(move).get(0);
 						value = (double) minValueMoves.get(move).get(0);
-						Integer occurence = minValueMoves.get(move).get(1);
-						Double flexWeight = Math.log(num)/logShrink;
+						Integer occurrence = minValueMoves.get(move).get(1);
+						Double flexWeight = num / expansionNum.get(0);
+						Double occWeight = Math.log10(occurrence)/logShrink;
+						writer.print("    Move : "+move.toString()+", minimum: "+value+", occurrence: "+occurrence+", occWeight: "+occWeight);
+						if(usingFlexWeight) writer.print(", expansion: "+num+", flex weight: "+flexWeight);
+						writer.print(", hillclimb: "+hill);
 						if(usingHC) value += hill;
 						if(usingFlexWeight) value -= Math.min(flexWeight,maxWeightHalf);
-						writer.println("    Move : "+move.toString()+", minimum: "+value+", occurence: "+occurence+", expansion: "+num+", hillclimb: "+hill);
-						value -= Math.min(Math.log((double) occurence) / logShrink, maxWeightHalf);
+						value -= Math.min(occWeight, maxWeightHalf);
+						writer.println(", final value: "+value);
 					} else if(usingMin && usingAvg) { //TODO important: what to do if using both
 						Double num = minAvgValueMoves.get(move).get(0);
 						Double sum = minAvgValueMoves.get(move).get(1);
-						Double weight = Math.log(sum/num);
+						Double weight = Math.log10(sum/num)/logShrink;
 						value = (double) minValueMoves.get(move).get(0);
-						Integer occurence = minValueMoves.get(move).get(1);
+						Integer occurrence = minValueMoves.get(move).get(1);
+						Double flexWeight = num / expansionNum.get(0);
+						Double occWeight = Math.log10(occurrence)/logShrink;
+						if(!usingOcCombined) occWeight = (double) 0;
 						if(usingHC) value += hill;
-						writer.println("    Move : "+move.toString()+", minimum: "+value+", occurence: "+occurence+", weight: "+weight+", hillclimb: "+hill);
-						value -= Math.min(Math.log((double) occurence) / logShrink, maxWeightHalf);
+						if(usingFlexWeight) value -= Math.min(flexWeight,maxWeightHalf);
+						writer.print("    Move : "+move.toString()+", minimum: "+value+", occurrence: "+occurrence+", occWeight: "+occWeight+", avgMinWeight: "+weight+", hillclimb: "+hill);
+						value -= Math.min(Math.log10((double) occurrence) / logShrink, maxWeightHalf);
 						value += Math.min(weight, maxWeightHalf);
+						writer.println(", final value: "+value);
 					}
 
 					//Only consider the current depth? or everything?
 					if(usingLocalDepthValue) {
-						if(Math.abs(value - localNextMinDistance) < 0.0001) {
-							localMinimalOccurence++;
-		    				if(Math.random() < (double) 1 / localMinimalOccurence)  {
+						if(Math.abs(value - localNextMinDistance) < epsilon) {
+							localMinimalOccurrence++;
+		    				if(Math.random() < (double) 1 / localMinimalOccurrence)  {
 								localNextMinDistance = value;
 								nextMinDistance = localNextMinDistance;
 		    				}
 						} else if(value < localNextMinDistance) {
-							localMinimalOccurence = (double) 1;
+							localMinimalOccurrence = (double) 1;
 							selection = move;
 							localNextMinDistance = value;
 							nextMinDistance = localNextMinDistance;
 						}
 					} else {
 						if(value < nextMinDistance) {
-							globalMinimalOccurence = (double) 1;
+							globalMinimalOccurrence = (double) 1;
 							selection = move;
 							nextMinDistance = value;
-						} else if(value == nextMinDistance) {
-							globalMinimalOccurence++;
-		    				if(Math.random() < (double) 1 / globalMinimalOccurence)  {
+						} else if(Math.abs(value - nextMinDistance) < epsilon) {
+							globalMinimalOccurrence++;
+		    				if(Math.random() < (double) 1 / globalMinimalOccurrence)  {
 								selection = move;
 								nextMinDistance = value;
 		    				}
@@ -465,15 +536,17 @@ public final class MyGamer extends StateMachineGamer{
 					minValueMoves.put(move, numSum);
 				}*/
 			}
+			writer.println("Expansion number of depth "+depth+" is "+expansionNum.get(0));
+			expansionNum.set(0, 0);
 			depth++;
 		}
-		expandedStates.clear();
+		//expandedStates.clear();
+		shiftExpandedStates();
 
 		if(winningMoves.size() > 0) selection = winningMoves.get(new Random().nextInt(winningMoves.size()));
 
 		//System.out.println("Selecting move "+selection.toString()+" with distance "+nextMinDistance);
 		writer.println("Selecting move "+selection.toString()+" with distance "+nextMinDistance);
-		writer.println();
 		return selection;
 	}
 
@@ -495,18 +568,24 @@ public final class MyGamer extends StateMachineGamer{
 	private void depthLimitedSearch(Move startingMove, MachineState curState, Role myRole,
 			int curDepth, int depthLimit,
 			Map<Move, ArrayList<Double>> minAvgValueMoves, Map<Move, List<Integer>> minValueMoves,
-			HashMap<String, Integer> expandedStates,
-			List<Move> winningMoves, long timeout)
+			List<Move> winningMoves,
+			List<Integer> expansionNum, long timeout)
 					throws MoveDefinitionException, TransitionDefinitionException {
 		//0 remaining depth, check the minimum distance for that move
+		expansionNum.set(0, expansionNum.get(0) + 1);
 		if(curDepth == depthLimit) {
-			if(usingAvg || (usingMin && usingFlexWeight)) {
-				Double minDistance = (double) getMinimalDistance(curState.toString());
-				minAvgValueMoves.get(startingMove).set(0, minAvgValueMoves.get(startingMove).get(0) + 1); //one more state checked
-				minAvgValueMoves.get(startingMove).set(1, minAvgValueMoves.get(startingMove).get(1) + minDistance); //add the minimal distance found
-			}
+			Double minDistanceD = (double) getMinimalDistance(curState.toString());
+			minAvgValueMoves.get(startingMove).set(0, minAvgValueMoves.get(startingMove).get(0) + 1); //one more state checked
+			minAvgValueMoves.get(startingMove).set(1, minAvgValueMoves.get(startingMove).get(1) + minDistanceD); //add the minimal distance found
 			if(usingMin) {
-				Integer minDistance = getMinimalDistance(curState.toString());
+				String stateString = getNonStepAtoms(curState);
+				Integer minDistance;
+				if(!statesMinimalDistance.containsKey(stateString)) {
+					minDistance = getMinimalDistance(curState.toString());
+					statesMinimalDistance.put(stateString, minDistance);
+				} else {
+					minDistance = statesMinimalDistance.get(stateString);
+				}
 				Integer curMin = minValueMoves.get(startingMove).get(0);
 				Integer minCount = minValueMoves.get(startingMove).get(1);
 				//Update the current minimum value
@@ -515,7 +594,7 @@ public final class MyGamer extends StateMachineGamer{
 					newMin.add(minDistance);
 					newMin.add(1);
 					minValueMoves.put(startingMove, newMin);
-				} else if(curMin == minDistance) { //If equal, increase the occurence
+				} else if(curMin == minDistance) { //If equal, increase the occurrence
 					minValueMoves.get(startingMove).set(1, minCount + 1);
 				}
 			}
@@ -524,9 +603,6 @@ public final class MyGamer extends StateMachineGamer{
 		if(getStateMachine().isTerminal(curState)) {
 			try {
 				Integer goal = getStateMachine().getGoal(curState, myRole);
-				if(goal > 0) {
-					//writer.println("      With Goal "+goal+" CurState is "+curState.toString());
-				}
 				if(goal >= highestGoalScore) {
 					winningMoves.add(startingMove);
 				}
@@ -550,7 +626,7 @@ public final class MyGamer extends StateMachineGamer{
 			} else if(expandedStates.get(stateString) < curDepth) {
 				continue;
 			}
-			depthLimitedSearch(startingMove, thisState, myRole, curDepth + 1, depthLimit, minAvgValueMoves, minValueMoves, expandedStates, winningMoves, timeout);
+			depthLimitedSearch(startingMove, thisState, myRole, curDepth + 1, depthLimit, minAvgValueMoves, minValueMoves, winningMoves, expansionNum, timeout);
 		}
 	}
 
@@ -559,10 +635,21 @@ public final class MyGamer extends StateMachineGamer{
 	 * @param move
 	 * @return
 	 */
-	private Double hillClimb(Move move) {
+	private Double hillClimbMove(Move move) {
 		Double sum = (double) 0;
 		for(int i = 0; i < moveHistory.size(); i++) {
 			if(move.toString().equals(moveHistory.get(i))) {
+				sum += (double) hCWeight/((double)curStep - (double)i);
+			}
+		}
+		return sum;
+	}
+
+	private Double hillClimbState(MachineState nextState) {
+		Double sum = (double) 0;
+		String state = getNonStepAtomsSorted(nextState);
+		for(int i = 0; i < stateHistory.size(); i++) {
+			if(state.equals(stateHistory.get(i))) {
 				sum += (double) hCWeight/((double)curStep - (double)i);
 			}
 		}
@@ -580,6 +667,24 @@ public final class MyGamer extends StateMachineGamer{
 		List<GdlSentence> stateAtoms = new ArrayList<GdlSentence>(state.getContents());
 		for(GdlSentence atom : stateAtoms) {
 			String atomStr = atom.toString();
+			if(atomStr.contains(stepString)) {
+				continue;
+			}
+			ret += atomStr;
+		}
+		return ret;
+	}
+
+	private String getNonStepAtomsSorted(MachineState state) {
+		String ret = "";
+		List<GdlSentence> stateAtoms = new ArrayList<GdlSentence>(state.getContents());
+		List<String> stateAtomsString = new ArrayList<String>();
+		for(GdlSentence atom : stateAtoms) {
+			String atomStr = atom.toString();
+			stateAtomsString.add(atomStr);
+		}
+		Collections.sort(stateAtomsString);
+		for(String atomStr : stateAtomsString) {
 			if(atomStr.contains(stepString)) continue;
 			ret += atomStr;
 		}
@@ -617,6 +722,19 @@ public final class MyGamer extends StateMachineGamer{
 			//put the atom that has same value throughout
 			for(int j = 0; j < metaStates.size(); j++) {
 
+			}
+		}
+	}
+
+	private void shiftExpandedStates() {
+		Iterator<String> iter = expandedStates.keySet().iterator();
+		while (iter.hasNext()) {
+			String states = iter.next();
+			Integer depth = expandedStates.get(states);
+			if(depth > 0) {
+				expandedStates.put(states, depth - 1);
+			} else {
+				iter.remove();
 			}
 		}
 	}
@@ -748,9 +866,11 @@ public final class MyGamer extends StateMachineGamer{
 		if(usingAvg && !usingMin) {
 			writer.print("Using average value of all expanded states ");
 			if(usingFlexWeight) writer.println("with flexibility weight");
-			else writer.println("without flexibility weight");;
+			else writer.println("without flexibility weight");
 		} else if(!usingAvg && usingMin) {
-			writer.println("Only using the absolute minimum value");
+			writer.print("Only using the absolute minimum value ");
+			if(usingFlexWeight) writer.println("with flexibility weight");
+			else writer.println("without flexibility weight");
 		} else if(usingAvg && usingMin) {
 			writer.println("Only absolute minimum value then average value of all expanded states with weight");
 		} else { //neither of them is chosen, error

@@ -1,0 +1,179 @@
+Setting up for MyGamer
+Using depth limit of 7 with buffer time 1500ms
+Using basic Hill Climbing
+Using local depth value as comparison
+Only using the absolute minimum value without flexibility weight
+Current state : 
+  [( true ( cell c8 r2 b ) ), ( true ( cell c5 r3 wall ) ), ( true ( cell c4 r2 wall ) ), ( true ( cell c1 r5 wall ) ), ( true ( cell c8 r5 b ) ), ( true ( cell c3 r3 b ) ), ( true ( cell c6 r7 b ) ), ( true ( cell c4 r4 b ) ), ( true ( cell c4 r6 b ) ), ( true ( tailpos c6 r4 ) ), ( true ( points 0 ) ), ( true ( cell c1 r3 b ) ), ( true ( cell c5 r6 b ) ), ( true ( cell c6 r5 b ) ), ( true ( cell c7 r5 wall ) ), ( true ( cell c3 r1 b ) ), ( true ( cell c5 r7 wall ) ), ( true ( cell c7 r2 b ) ), ( true ( cell c9 r7 b ) ), ( true ( cell c6 r1 b ) ), ( true ( cell c1 r1 b ) ), ( true ( cell c3 r5 b ) ), ( true ( cell c1 r4 point ) ), ( true ( cell c3 r2 point ) ), ( true ( cell c2 r6 wall ) ), ( true ( pos c6 r4 ) ), ( true ( cell c2 r7 wall ) ), ( true ( cell c5 r5 wall ) ), ( true ( cell c6 r4 b ) ), ( true ( cell c7 r1 wall ) ), ( true ( cell c7 r3 point ) ), ( true ( cell c1 r2 wall ) ), ( true ( cell c2 r4 wall ) ), ( true ( cell c9 r3 wall ) ), ( true ( cell c9 r5 wall ) ), ( true ( cell c5 r2 b ) ), ( true ( cell c3 r7 wall ) ), ( true ( cell c8 r3 wall ) ), ( true ( cell c6 r2 b ) ), ( true ( cell c4 r1 wall ) ), ( true ( cell c9 r1 b ) ), ( true ( cell c5 r4 b ) ), ( true ( cell c2 r3 b ) ), ( true ( cell c2 r2 wall ) ), ( true ( cell c1 r6 b ) ), ( true ( cell c8 r1 point ) ), ( true ( cell c6 r3 wall ) ), ( true ( cell c2 r5 wall ) ), ( true ( cell c8 r6 point ) ), ( true ( cell c4 r5 wall ) ), ( true ( cell c1 r7 b ) ), ( true ( cell c4 r7 wall ) ), ( true ( step 0 ) ), ( true ( cell c7 r7 wall ) ), ( true ( cell c2 r1 b ) ), ( true ( cell c9 r4 b ) ), ( true ( cell c5 r1 b ) ), ( true ( cell c7 r4 b ) ), ( true ( cell c8 r4 b ) ), ( true ( cell c3 r4 b ) ), ( true ( cell c6 r6 point ) ), ( true ( cell c9 r2 b ) ), ( true ( cell c7 r6 wall ) ), ( true ( cell c8 r7 b ) ), ( true ( cell c4 r3 wall ) ), ( true ( cell c3 r6 exit ) ), ( true ( cell c9 r6 b ) )]
+This is turn 0
+  iterative Depth 0
+    Move : mov_left, minimum: 2.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 2.0
+    Move : mov_right, minimum: 2.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 2.0
+    Move : mov_down, minimum: 2.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 2.0
+Expansion number of depth 0 is 3
+  iterative Depth 1
+    Move : mov_right, minimum: 2.0, occurrence: 3, occWeight: 0.047712125471966245, hillclimb: 0.0, final value: 1.9522878745280337
+    Move : mov_left, minimum: 2.0, occurrence: 2, occWeight: 0.03010299956639812, hillclimb: 0.0, final value: 1.9698970004336018
+    Move : mov_down, minimum: 2.0, occurrence: 2, occWeight: 0.03010299956639812, hillclimb: 0.0, final value: 1.9698970004336018
+Expansion number of depth 1 is 7
+  iterative Depth 2
+    Move : mov_down, minimum: 2.0, occurrence: 4, occWeight: 0.06020599913279624, hillclimb: 0.0, final value: 1.9397940008672037
+    Move : mov_right, minimum: 2.0, occurrence: 6, occWeight: 0.07781512503836437, hillclimb: 0.0, final value: 1.9221848749616357
+    Move : mov_left, minimum: 2.0, occurrence: 3, occWeight: 0.047712125471966245, hillclimb: 0.0, final value: 1.9522878745280337
+Expansion number of depth 2 is 13
+  iterative Depth 3
+    Move : mov_right, minimum: 2.0, occurrence: 10, occWeight: 0.1, hillclimb: 0.0, final value: 1.9
+    Move : mov_down, minimum: 2.0, occurrence: 6, occWeight: 0.07781512503836437, hillclimb: 0.0, final value: 1.9221848749616357
+    Move : mov_left, minimum: 2.0, occurrence: 5, occWeight: 0.06989700043360189, hillclimb: 0.0, final value: 1.930102999566398
+Expansion number of depth 3 is 21
+  iterative Depth 4
+    Move : mov_right, minimum: 2.0, occurrence: 17, occWeight: 0.12304489213782739, hillclimb: 0.0, final value: 1.8769551078621727
+    Move : mov_down, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+    Move : mov_left, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+Expansion number of depth 4 is 34
+  iterative Depth 5
+    Move : mov_down, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+    Move : mov_left, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+    Move : mov_right, minimum: 2.0, occurrence: 28, occWeight: 0.14471580313422192, hillclimb: 0.0, final value: 1.855284196865778
+Expansion number of depth 5 is 50
+  iterative Depth 6
+    Move : mov_left, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+    Move : mov_right, minimum: 2.0, occurrence: 49, occWeight: 0.16901960800285137, hillclimb: 0.0, final value: 1.8309803919971486
+    Move : mov_down, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+Expansion number of depth 6 is 77
+  iterative Depth 7
+    Move : mov_down, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+    Move : mov_right, minimum: 2.0, occurrence: 89, occWeight: 0.19493900066449127, hillclimb: 0.0, final value: 1.8050609993355087
+    Move : mov_left, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+Expansion number of depth 7 is 123
+Selecting move mov_down with distance 1.0
+Average time taken : 633.0 ms
+
+Current state : 
+  [( true ( cell c8 r2 b ) ), ( true ( cell c5 r3 wall ) ), ( true ( cell c4 r2 wall ) ), ( true ( cell c1 r5 wall ) ), ( true ( cell c8 r5 b ) ), ( true ( cell c6 r7 b ) ), ( true ( cell c3 r3 b ) ), ( true ( cell c4 r4 b ) ), ( true ( cell c4 r6 b ) ), ( true ( tailpos c6 r4 ) ), ( true ( cell c1 r3 b ) ), ( true ( points 0 ) ), ( true ( cell c5 r6 b ) ), ( true evenmove ), ( true ( cell c6 r5 b ) ), ( true ( cell c7 r5 wall ) ), ( true ( cell c3 r1 b ) ), ( true ( cell c5 r7 wall ) ), ( true ( cell c7 r2 b ) ), ( true ( cell c9 r7 b ) ), ( true ( cell c6 r1 b ) ), ( true ( cell c1 r1 b ) ), ( true ( cell c1 r4 point ) ), ( true ( cell c3 r5 b ) ), ( true ( cell c3 r2 point ) ), ( true ( cell c2 r6 wall ) ), ( true ( cell c2 r7 wall ) ), ( true ( cell c5 r5 wall ) ), ( true ( cell c7 r1 wall ) ), ( true ( cell c7 r3 point ) ), ( true ( cell c1 r2 wall ) ), ( true ( cell c2 r4 wall ) ), ( true ( cell c9 r3 wall ) ), ( true ( cell c9 r5 wall ) ), ( true ( cell c5 r2 b ) ), ( true ( cell c3 r7 wall ) ), ( true ( cell c8 r3 wall ) ), ( true ( cell c6 r2 b ) ), ( true ( cell c4 r1 wall ) ), ( true ( pos c6 r5 ) ), ( true ( cell c9 r1 b ) ), ( true ( cell c6 r4 mov_down ) ), ( true ( cell c5 r4 b ) ), ( true ( cell c2 r3 b ) ), ( true ( cell c2 r2 wall ) ), ( true ( cell c1 r6 b ) ), ( true ( cell c8 r1 point ) ), ( true ( cell c6 r3 wall ) ), ( true ( cell c2 r5 wall ) ), ( true ( cell c4 r5 wall ) ), ( true ( cell c8 r6 point ) ), ( true ( cell c1 r7 b ) ), ( true ( cell c4 r7 wall ) ), ( true ( cell c7 r7 wall ) ), ( true ( cell c2 r1 b ) ), ( true ( cell c9 r4 b ) ), ( true ( step 1 ) ), ( true ( cell c5 r1 b ) ), ( true ( cell c7 r4 b ) ), ( true ( cell c8 r4 b ) ), ( true ( cell c6 r6 point ) ), ( true ( cell c3 r4 b ) ), ( true ( cell c7 r6 wall ) ), ( true ( cell c9 r2 b ) ), ( true ( cell c8 r7 b ) ), ( true ( cell c4 r3 wall ) ), ( true ( cell c3 r6 exit ) ), ( true ( cell c9 r6 b ) )]
+This is turn 1
+  iterative Depth 0
+    Move : mov_down, minimum: 2.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 2.0
+Expansion number of depth 0 is 1
+  iterative Depth 1
+    Move : mov_down, minimum: 2.0, occurrence: 3, occWeight: 0.047712125471966245, hillclimb: 0.0, final value: 1.9522878745280337
+Expansion number of depth 1 is 3
+  iterative Depth 2
+    Move : mov_down, minimum: 2.0, occurrence: 5, occWeight: 0.06989700043360189, hillclimb: 0.0, final value: 1.930102999566398
+Expansion number of depth 2 is 5
+  iterative Depth 3
+    Move : mov_down, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+Expansion number of depth 3 is 8
+  iterative Depth 4
+    Move : mov_down, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+Expansion number of depth 4 is 11
+  iterative Depth 5
+    Move : mov_down, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+Expansion number of depth 5 is 15
+  iterative Depth 6
+    Move : mov_down, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+Expansion number of depth 6 is 19
+  iterative Depth 7
+    Move : mov_down, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+Expansion number of depth 7 is 26
+Selecting move mov_down with distance 1.0
+Average time taken : 395.5 ms
+
+Current state : 
+  [( true ( cell c8 r2 b ) ), ( true ( cell c5 r3 wall ) ), ( true ( cell c4 r2 wall ) ), ( true ( cell c1 r5 wall ) ), ( true ( cell c8 r5 b ) ), ( true ( cell c6 r7 b ) ), ( true ( cell c3 r3 b ) ), ( true ( cell c4 r4 b ) ), ( true ( cell c4 r6 b ) ), ( true ( step 2 ) ), ( true ( cell c1 r3 b ) ), ( true ( points 0 ) ), ( true ( cell c5 r6 b ) ), ( true ( cell c7 r5 wall ) ), ( true ( cell c3 r1 b ) ), ( true ( cell c5 r7 wall ) ), ( true ( cell c7 r2 b ) ), ( true ( cell c9 r7 b ) ), ( true ( cell c6 r1 b ) ), ( true ( cell c1 r1 b ) ), ( true ( cell c1 r4 point ) ), ( true ( cell c3 r5 b ) ), ( true ( cell c3 r2 point ) ), ( true ( cell c2 r6 wall ) ), ( true ( cell c2 r7 wall ) ), ( true ( cell c5 r5 wall ) ), ( true ( cell c6 r4 b ) ), ( true ( cell c7 r1 wall ) ), ( true ( cell c7 r3 point ) ), ( true ( cell c1 r2 wall ) ), ( true ( cell c2 r4 wall ) ), ( true ( cell c9 r3 wall ) ), ( true ( cell c9 r5 wall ) ), ( true ( cell c5 r2 b ) ), ( true ( cell c3 r7 wall ) ), ( true ( cell c8 r3 wall ) ), ( true ( cell c6 r2 b ) ), ( true ( tailpos c6 r5 ) ), ( true ( cell c4 r1 wall ) ), ( true ( cell c9 r1 b ) ), ( true ( cell c5 r4 b ) ), ( true ( cell c2 r3 b ) ), ( true ( cell c2 r2 wall ) ), ( true ( pos c6 r6 ) ), ( true ( cell c1 r6 b ) ), ( true ( cell c8 r1 point ) ), ( true ( cell c6 r3 wall ) ), ( true ( cell c2 r5 wall ) ), ( true ( cell c4 r5 wall ) ), ( true ( cell c8 r6 point ) ), ( true ( cell c1 r7 b ) ), ( true ( cell c4 r7 wall ) ), ( true ( cell c7 r7 wall ) ), ( true ( cell c2 r1 b ) ), ( true ( cell c9 r4 b ) ), ( true ( cell c5 r1 b ) ), ( true ( cell c7 r4 b ) ), ( true ( cell c8 r4 b ) ), ( true ( cell c6 r5 mov_down ) ), ( true ( cell c6 r6 point ) ), ( true ( cell c3 r4 b ) ), ( true ( cell c7 r6 wall ) ), ( true ( cell c9 r2 b ) ), ( true ( cell c8 r7 b ) ), ( true ( cell c4 r3 wall ) ), ( true ( cell c3 r6 exit ) ), ( true ( cell c9 r6 b ) )]
+This is turn 2
+  iterative Depth 0
+    Move : mov_left, minimum: 2.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 2.0
+    Move : mov_down, minimum: 2.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 2.0
+Expansion number of depth 0 is 2
+  iterative Depth 1
+    Move : mov_left, minimum: 2.0, occurrence: 2, occWeight: 0.03010299956639812, hillclimb: 0.0, final value: 1.9698970004336018
+    Move : mov_down, minimum: 2.0, occurrence: 2, occWeight: 0.03010299956639812, hillclimb: 0.0, final value: 1.9698970004336018
+Expansion number of depth 1 is 4
+  iterative Depth 2
+    Move : mov_down, minimum: 2.0, occurrence: 4, occWeight: 0.06020599913279624, hillclimb: 0.0, final value: 1.9397940008672037
+    Move : mov_left, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+Expansion number of depth 2 is 7
+  iterative Depth 3
+    Move : mov_left, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+    Move : mov_down, minimum: 2.0, occurrence: 7, occWeight: 0.08450980400142569, hillclimb: 0.0, final value: 1.9154901959985744
+Expansion number of depth 3 is 10
+  iterative Depth 4
+    Move : mov_left, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+    Move : mov_down, minimum: 2.0, occurrence: 11, occWeight: 0.10413926851582252, hillclimb: 0.0, final value: 1.8958607314841776
+Expansion number of depth 4 is 14
+  iterative Depth 5
+    Move : mov_down, minimum: 2.0, occurrence: 15, occWeight: 0.11760912590556813, hillclimb: 0.0, final value: 1.882390874094432
+    Move : mov_left, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+Expansion number of depth 5 is 18
+  iterative Depth 6
+    Move : mov_left, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+    Move : mov_down, minimum: 2.0, occurrence: 22, occWeight: 0.13424226808222062, hillclimb: 0.0, final value: 1.8657577319177794
+Expansion number of depth 6 is 25
+  iterative Depth 7
+    Move : mov_left, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+    Move : mov_down, minimum: 2.0, occurrence: 37, occWeight: 0.1568201724066995, hillclimb: 0.0, final value: 1.8431798275933005
+Expansion number of depth 7 is 40
+Selecting move mov_left with distance 1.0
+Average time taken : 332.0 ms
+
+Current state : 
+  [( true ( cell c8 r2 b ) ), ( true ( cell c5 r3 wall ) ), ( true ( cell c4 r2 wall ) ), ( true ( cell c1 r5 wall ) ), ( true ( cell c8 r5 b ) ), ( true ( cell c6 r6 mov_left ) ), ( true ( cell c6 r7 b ) ), ( true ( cell c3 r3 b ) ), ( true ( cell c4 r4 b ) ), ( true ( cell c4 r6 b ) ), ( true ( cell c1 r3 b ) ), ( true ( cell c5 r6 b ) ), ( true evenmove ), ( true ( cell c7 r5 wall ) ), ( true ( cell c3 r1 b ) ), ( true ( cell c5 r7 wall ) ), ( true ( cell c7 r2 b ) ), ( true ( cell c9 r7 b ) ), ( true ( cell c6 r1 b ) ), ( true ( cell c1 r1 b ) ), ( true ( cell c1 r4 point ) ), ( true ( cell c3 r5 b ) ), ( true ( cell c3 r2 point ) ), ( true ( cell c2 r6 wall ) ), ( true ( step 3 ) ), ( true ( cell c2 r7 wall ) ), ( true ( cell c5 r5 wall ) ), ( true ( cell c6 r4 b ) ), ( true ( cell c7 r1 wall ) ), ( true ( cell c7 r3 point ) ), ( true ( cell c1 r2 wall ) ), ( true ( cell c2 r4 wall ) ), ( true ( cell c9 r3 wall ) ), ( true ( cell c9 r5 wall ) ), ( true ( cell c5 r2 b ) ), ( true ( cell c3 r7 wall ) ), ( true ( cell c8 r3 wall ) ), ( true ( cell c6 r2 b ) ), ( true ( tailpos c6 r5 ) ), ( true ( cell c4 r1 wall ) ), ( true ( cell c9 r1 b ) ), ( true ( cell c5 r4 b ) ), ( true ( cell c2 r3 b ) ), ( true ( cell c2 r2 wall ) ), ( true ( cell c1 r6 b ) ), ( true ( cell c8 r1 point ) ), ( true ( cell c6 r3 wall ) ), ( true ( cell c2 r5 wall ) ), ( true ( cell c4 r5 wall ) ), ( true ( cell c8 r6 point ) ), ( true ( cell c1 r7 b ) ), ( true ( cell c4 r7 wall ) ), ( true ( cell c7 r7 wall ) ), ( true ( pos c5 r6 ) ), ( true ( cell c2 r1 b ) ), ( true ( cell c9 r4 b ) ), ( true ( cell c5 r1 b ) ), ( true ( cell c7 r4 b ) ), ( true ( cell c8 r4 b ) ), ( true ( points 1 ) ), ( true ( cell c6 r5 mov_down ) ), ( true ( cell c3 r4 b ) ), ( true ( cell c7 r6 wall ) ), ( true ( cell c9 r2 b ) ), ( true ( cell c8 r7 b ) ), ( true ( cell c4 r3 wall ) ), ( true ( cell c3 r6 exit ) ), ( true ( cell c9 r6 b ) )]
+This is turn 3
+  iterative Depth 0
+    Move : mov_left, minimum: 2.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 2.0
+Expansion number of depth 0 is 1
+  iterative Depth 1
+    Move : mov_left, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+Expansion number of depth 1 is 2
+  iterative Depth 2
+    Move : mov_left, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+Expansion number of depth 2 is 2
+  iterative Depth 3
+    Move : mov_left, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+Expansion number of depth 3 is 2
+  iterative Depth 4
+    Move : mov_left, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+Expansion number of depth 4 is 2
+  iterative Depth 5
+    Move : mov_left, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+Expansion number of depth 5 is 2
+  iterative Depth 6
+    Move : mov_left, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+Expansion number of depth 6 is 2
+  iterative Depth 7
+    Move : mov_left, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+Expansion number of depth 7 is 2
+Selecting move mov_left with distance 1.0
+Average time taken : 254.0 ms
+
+Current state : 
+  [( true ( cell c8 r2 b ) ), ( true ( cell c5 r3 wall ) ), ( true ( cell c4 r2 wall ) ), ( true ( cell c1 r5 wall ) ), ( true ( cell c8 r5 b ) ), ( true ( cell c6 r6 mov_left ) ), ( true ( cell c6 r7 b ) ), ( true ( cell c3 r3 b ) ), ( true ( cell c4 r4 b ) ), ( true ( cell c4 r6 b ) ), ( true ( tailpos c6 r6 ) ), ( true ( cell c1 r3 b ) ), ( true ( cell c6 r5 b ) ), ( true ( cell c7 r5 wall ) ), ( true ( cell c3 r1 b ) ), ( true ( cell c5 r7 wall ) ), ( true ( cell c7 r2 b ) ), ( true ( cell c9 r7 b ) ), ( true ( cell c6 r1 b ) ), ( true ( cell c1 r1 b ) ), ( true ( cell c1 r4 point ) ), ( true ( cell c3 r5 b ) ), ( true ( cell c3 r2 point ) ), ( true ( cell c2 r6 wall ) ), ( true ( cell c2 r7 wall ) ), ( true ( cell c5 r5 wall ) ), ( true ( cell c6 r4 b ) ), ( true ( cell c7 r1 wall ) ), ( true ( step 4 ) ), ( true ( cell c7 r3 point ) ), ( true ( cell c1 r2 wall ) ), ( true ( cell c2 r4 wall ) ), ( true ( cell c9 r3 wall ) ), ( true ( cell c9 r5 wall ) ), ( true ( cell c5 r2 b ) ), ( true ( cell c3 r7 wall ) ), ( true ( cell c8 r3 wall ) ), ( true ( cell c6 r2 b ) ), ( true ( cell c4 r1 wall ) ), ( true ( cell c5 r6 mov_left ) ), ( true ( cell c9 r1 b ) ), ( true ( pos c4 r6 ) ), ( true ( cell c5 r4 b ) ), ( true ( cell c2 r3 b ) ), ( true ( cell c2 r2 wall ) ), ( true ( cell c1 r6 b ) ), ( true ( cell c8 r1 point ) ), ( true ( cell c6 r3 wall ) ), ( true ( cell c2 r5 wall ) ), ( true ( cell c4 r5 wall ) ), ( true ( cell c8 r6 point ) ), ( true ( cell c1 r7 b ) ), ( true ( cell c4 r7 wall ) ), ( true ( cell c7 r7 wall ) ), ( true ( cell c2 r1 b ) ), ( true ( cell c9 r4 b ) ), ( true ( cell c5 r1 b ) ), ( true ( cell c7 r4 b ) ), ( true ( cell c8 r4 b ) ), ( true ( points 1 ) ), ( true ( cell c3 r4 b ) ), ( true ( cell c7 r6 wall ) ), ( true ( cell c9 r2 b ) ), ( true ( cell c8 r7 b ) ), ( true ( cell c4 r3 wall ) ), ( true ( cell c3 r6 exit ) ), ( true ( cell c9 r6 b ) )]
+This is turn 4
+  iterative Depth 0
+    Move : mov_left, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+Expansion number of depth 0 is 1
+  iterative Depth 1
+    Move : mov_left, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+Expansion number of depth 1 is 1
+  iterative Depth 2
+    Move : mov_left, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+Expansion number of depth 2 is 1
+  iterative Depth 3
+    Move : mov_left, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+Expansion number of depth 3 is 1
+  iterative Depth 4
+    Move : mov_left, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+Expansion number of depth 4 is 1
+  iterative Depth 5
+    Move : mov_left, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+Expansion number of depth 5 is 1
+  iterative Depth 6
+    Move : mov_left, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+Expansion number of depth 6 is 1
+  iterative Depth 7
+    Move : mov_left, minimum: 1.0, occurrence: 1, occWeight: 0.0, hillclimb: 0.0, final value: 1.0
+Expansion number of depth 7 is 1
+Selecting move mov_left with distance 1.0
+Average time taken : 204.0 ms
+

@@ -1,0 +1,631 @@
+Setting up for MyGamer
+Using depth limit of 100 with buffer time 1500ms
+Using basic Hill Climbing
+Using local depth value as comparison
+Only absolute minimum value then average value of all expanded states with weight
+Current state : 
+  [( true ( prev-goal 0 ) ), ( true ( depth level1 ) )]
+This is turn 0
+  iterative Depth 0
+    Move : ( move c2 ), minimum: 14.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.1146128035678238, hillclimb: 0.0, final value: 14.114612803567823
+    Move : ( move c3 ), minimum: 14.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.1146128035678238, hillclimb: 0.0, final value: 14.114612803567823
+    Move : ( move c4 ), minimum: 14.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.1146128035678238, hillclimb: 0.0, final value: 14.114612803567823
+    Move : ( move c1 ), minimum: 13.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.11303337684950061, hillclimb: 0.0, final value: 13.1130333768495
+Expansion number of depth 0 is 4
+  iterative Depth 1
+    Move : ( move c4 ), minimum: 13.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.11409268419924304, hillclimb: 0.0, final value: 13.114092684199242
+    Move : ( move c3 ), minimum: 13.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.11409268419924304, hillclimb: 0.0, final value: 13.114092684199242
+    Move : ( move c1 ), minimum: 12.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.11139433523068368, hillclimb: 0.0, final value: 12.111394335230683
+    Move : ( move c2 ), minimum: 13.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.11409268419924304, hillclimb: 0.0, final value: 13.114092684199242
+Expansion number of depth 1 is 20
+  iterative Depth 2
+    Move : ( move c2 ), minimum: 12.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.11332485075022233, hillclimb: 0.0, final value: 12.113324850750223
+    Move : ( move c1 ), minimum: 11.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.11016221150958701, hillclimb: 0.0, final value: 11.110162211509587
+    Move : ( move c3 ), minimum: 12.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.11332485075022233, hillclimb: 0.0, final value: 12.113324850750223
+    Move : ( move c4 ), minimum: 12.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.11332485075022233, hillclimb: 0.0, final value: 12.113324850750223
+Expansion number of depth 2 is 84
+  iterative Depth 3
+    Move : ( move c2 ), minimum: 11.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.11250649666576999, hillclimb: 0.0, final value: 11.11250649666577
+    Move : ( move c4 ), minimum: 11.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.11250649666576999, hillclimb: 0.0, final value: 11.11250649666577
+    Move : ( move c1 ), minimum: 10.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10916260655018825, hillclimb: 0.0, final value: 10.109162606550187
+    Move : ( move c3 ), minimum: 11.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.11250649666576999, hillclimb: 0.0, final value: 11.11250649666577
+Expansion number of depth 3 is 340
+  iterative Depth 4
+    Move : ( move c4 ), minimum: 10.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.11167669335957957, hillclimb: 0.0, final value: 10.111676693359579
+    Move : ( move c2 ), minimum: 10.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.11167669335957957, hillclimb: 0.0, final value: 10.111676693359579
+    Move : ( move c1 ), minimum: 9.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10823443662351344, hillclimb: 0.0, final value: 9.108234436623514
+    Move : ( move c3 ), minimum: 10.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.11167669335957957, hillclimb: 0.0, final value: 10.111676693359579
+Expansion number of depth 4 is 1364
+  iterative Depth 5
+    Move : ( move c3 ), minimum: 9.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.11083559903988913, hillclimb: 0.0, final value: 9.11083559903989
+    Move : ( move c2 ), minimum: 9.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.11083559903988913, hillclimb: 0.0, final value: 9.11083559903989
+    Move : ( move c1 ), minimum: 8.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10731518751170184, hillclimb: 0.0, final value: 8.107315187511702
+    Move : ( move c4 ), minimum: 9.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.11083559903988913, hillclimb: 0.0, final value: 9.11083559903989
+Expansion number of depth 5 is 5460
+  iterative Depth 6
+    Move : ( move c4 ), minimum: 8.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10998009669082338, hillclimb: 0.0, final value: 8.109980096690823
+    Move : ( move c2 ), minimum: 8.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10998009669082338, hillclimb: 0.0, final value: 8.109980096690823
+    Move : ( move c3 ), minimum: 8.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10998009669082338, hillclimb: 0.0, final value: 8.109980096690823
+    Move : ( move c1 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10638461386554343, hillclimb: 0.0, final value: 7.1063846138655435
+Expansion number of depth 6 is 21844
+  iterative Depth 7
+    Move : ( move c1 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10543611705114211, hillclimb: 0.0, final value: 6.105436117051142
+    Move : ( move c3 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10910820812213944, hillclimb: 0.0, final value: 7.109108208122139
+    Move : ( move c2 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10910820812213944, hillclimb: 0.0, final value: 7.109108208122139
+    Move : ( move c4 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10910820812213944, hillclimb: 0.0, final value: 7.109108208122139
+Expansion number of depth 7 is 87380
+  iterative Depth 8
+Expansion number of depth 8 is 28208
+Selecting move ( move c1 ) with distance 6.105436117051142
+Average time taken : 13520.0 ms
+
+Current state : 
+  [( true ( choice level1 c1 ) ), ( true ( depth level2 ) ), ( true ( prev-goal 0 ) )]
+This is turn 1
+  iterative Depth 0
+    Move : ( move c1 ), minimum: 12.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10969100130080564, hillclimb: 0.0, final value: 12.109691001300806
+    Move : ( move c4 ), minimum: 13.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.11139433523068368, hillclimb: 0.0, final value: 13.111394335230683
+    Move : ( move c3 ), minimum: 13.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.11139433523068368, hillclimb: 0.0, final value: 13.111394335230683
+    Move : ( move c2 ), minimum: 13.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.11139433523068368, hillclimb: 0.0, final value: 13.111394335230683
+Expansion number of depth 0 is 4
+  iterative Depth 1
+    Move : ( move c1 ), minimum: 11.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.1079181246047625, hillclimb: 0.0, final value: 11.107918124604762
+    Move : ( move c4 ), minimum: 12.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.11083394747888382, hillclimb: 0.0, final value: 12.110833947478884
+    Move : ( move c3 ), minimum: 12.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.11083394747888382, hillclimb: 0.0, final value: 12.110833947478884
+    Move : ( move c2 ), minimum: 12.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.11083394747888382, hillclimb: 0.0, final value: 12.110833947478884
+Expansion number of depth 1 is 20
+  iterative Depth 2
+    Move : ( move c3 ), minimum: 11.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.11000570882422422, hillclimb: 0.0, final value: 11.110005708824223
+    Move : ( move c1 ), minimum: 10.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10658172844896434, hillclimb: 0.0, final value: 10.106581728448964
+    Move : ( move c2 ), minimum: 11.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.11000570882422422, hillclimb: 0.0, final value: 11.110005708824223
+    Move : ( move c4 ), minimum: 11.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.11000570882422422, hillclimb: 0.0, final value: 11.110005708824223
+Expansion number of depth 2 is 84
+  iterative Depth 3
+    Move : ( move c4 ), minimum: 10.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.1091216932657773, hillclimb: 0.0, final value: 10.109121693265777
+    Move : ( move c1 ), minimum: 9.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.1054951366423124, hillclimb: 0.0, final value: 9.105495136642313
+    Move : ( move c2 ), minimum: 10.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.1091216932657773, hillclimb: 0.0, final value: 10.109121693265777
+    Move : ( move c3 ), minimum: 10.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.1091216932657773, hillclimb: 0.0, final value: 10.109121693265777
+Expansion number of depth 3 is 340
+  iterative Depth 4
+    Move : ( move c3 ), minimum: 9.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10822392992255732, hillclimb: 0.0, final value: 9.108223929922557
+    Move : ( move c4 ), minimum: 9.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10822392992255732, hillclimb: 0.0, final value: 9.108223929922557
+    Move : ( move c2 ), minimum: 9.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10822392992255732, hillclimb: 0.0, final value: 9.108223929922557
+    Move : ( move c1 ), minimum: 8.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10448422226098937, hillclimb: 0.0, final value: 8.10448422226099
+Expansion number of depth 4 is 1364
+  iterative Depth 5
+    Move : ( move c2 ), minimum: 8.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10731250096020613, hillclimb: 0.0, final value: 8.107312500960207
+    Move : ( move c1 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10348110160494436, hillclimb: 0.0, final value: 7.103481101604944
+    Move : ( move c3 ), minimum: 8.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10731250096020613, hillclimb: 0.0, final value: 8.107312500960207
+    Move : ( move c4 ), minimum: 8.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10731250096020613, hillclimb: 0.0, final value: 8.107312500960207
+Expansion number of depth 5 is 5460
+  iterative Depth 6
+    Move : ( move c3 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10638392744557504, hillclimb: 0.0, final value: 7.106383927445575
+    Move : ( move c4 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10638392744557504, hillclimb: 0.0, final value: 7.106383927445575
+    Move : ( move c1 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10246362484202325, hillclimb: 0.0, final value: 6.102463624842024
+    Move : ( move c2 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10638392744557504, hillclimb: 0.0, final value: 7.106383927445575
+Expansion number of depth 6 is 21844
+  iterative Depth 7
+    Move : ( move c1 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10142442868040794, hillclimb: 0.0, final value: 5.101424428680408
+    Move : ( move c4 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10543594164205491, hillclimb: 0.0, final value: 6.105435941642055
+    Move : ( move c2 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10543594164205491, hillclimb: 0.0, final value: 6.105435941642055
+    Move : ( move c3 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10543594164205491, hillclimb: 0.0, final value: 6.105435941642055
+Expansion number of depth 7 is 87380
+  iterative Depth 8
+Expansion number of depth 8 is 30212
+Selecting move ( move c1 ) with distance 5.101424428680408
+Average time taken : 13528.0 ms
+
+Current state : 
+  [( true ( choice level1 c1 ) ), ( true ( depth level3 ) ), ( true ( prev-goal 0 ) ), ( true ( choice level2 c1 ) )]
+This is turn 2
+  iterative Depth 0
+    Move : ( move c4 ), minimum: 12.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.1079181246047625, hillclimb: 0.0, final value: 12.107918124604762
+    Move : ( move c2 ), minimum: 11.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10606978403536116, hillclimb: 0.0, final value: 11.10606978403536
+    Move : ( move c3 ), minimum: 12.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.1079181246047625, hillclimb: 0.0, final value: 12.107918124604762
+    Move : ( move c1 ), minimum: 12.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.1079181246047625, hillclimb: 0.0, final value: 12.107918124604762
+Expansion number of depth 0 is 4
+  iterative Depth 1
+    Move : ( move c1 ), minimum: 11.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10731070983354316, hillclimb: 0.0, final value: 11.107310709833543
+    Move : ( move c4 ), minimum: 11.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10731070983354316, hillclimb: 0.0, final value: 11.107310709833543
+    Move : ( move c3 ), minimum: 11.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10731070983354316, hillclimb: 0.0, final value: 11.107310709833543
+    Move : ( move c2 ), minimum: 10.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10413926851582252, hillclimb: 0.0, final value: 10.104139268515823
+Expansion number of depth 1 is 20
+  iterative Depth 2
+    Move : ( move c1 ), minimum: 10.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.1064117499611749, hillclimb: 0.0, final value: 10.106411749961175
+    Move : ( move c4 ), minimum: 10.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.1064117499611749, hillclimb: 0.0, final value: 10.106411749961175
+    Move : ( move c2 ), minimum: 9.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10267931765879365, hillclimb: 0.0, final value: 9.102679317658794
+    Move : ( move c3 ), minimum: 10.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.1064117499611749, hillclimb: 0.0, final value: 10.106411749961175
+Expansion number of depth 2 is 84
+  iterative Depth 3
+    Move : ( move c3 ), minimum: 9.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10545061644549691, hillclimb: 0.0, final value: 9.105450616445497
+    Move : ( move c4 ), minimum: 9.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10545061644549691, hillclimb: 0.0, final value: 9.105450616445497
+    Move : ( move c2 ), minimum: 8.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10148915554013452, hillclimb: 0.0, final value: 8.101489155540134
+    Move : ( move c1 ), minimum: 9.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10545061644549691, hillclimb: 0.0, final value: 9.105450616445497
+Expansion number of depth 3 is 340
+  iterative Depth 4
+    Move : ( move c4 ), minimum: 8.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10447276783702997, hillclimb: 0.0, final value: 8.10447276783703
+    Move : ( move c3 ), minimum: 8.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10447276783702997, hillclimb: 0.0, final value: 8.10447276783703
+    Move : ( move c2 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.1003792989017139, hillclimb: 0.0, final value: 7.100379298901714
+    Move : ( move c1 ), minimum: 8.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10447276783702997, hillclimb: 0.0, final value: 8.10447276783703
+Expansion number of depth 4 is 1364
+  iterative Depth 5
+    Move : ( move c1 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.103478167083629, hillclimb: 0.0, final value: 7.103478167083629
+    Move : ( move c4 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.103478167083629, hillclimb: 0.0, final value: 7.103478167083629
+    Move : ( move c2 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.099275464461716, hillclimb: 0.0, final value: 6.099275464461716
+    Move : ( move c3 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.103478167083629, hillclimb: 0.0, final value: 7.103478167083629
+Expansion number of depth 5 is 5460
+  iterative Depth 6
+    Move : ( move c2 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09815318050287432, hillclimb: 0.0, final value: 5.098153180502874
+    Move : ( move c1 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10246287356497112, hillclimb: 0.0, final value: 6.1024628735649715
+    Move : ( move c3 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10246287356497112, hillclimb: 0.0, final value: 6.1024628735649715
+    Move : ( move c4 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10246287356497112, hillclimb: 0.0, final value: 6.1024628735649715
+Expansion number of depth 6 is 21844
+  iterative Depth 7
+    Move : ( move c4 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10142423629636059, hillclimb: 0.0, final value: 5.101424236296361
+    Move : ( move c2 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0970041036562447, hillclimb: 0.0, final value: 4.097004103656245
+    Move : ( move c1 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10142423629636059, hillclimb: 0.0, final value: 5.101424236296361
+    Move : ( move c3 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10142423629636059, hillclimb: 0.0, final value: 5.101424236296361
+Expansion number of depth 7 is 87380
+  iterative Depth 8
+Expansion number of depth 8 is 21412
+Selecting move ( move c2 ) with distance 4.097004103656245
+Average time taken : 13529.666666666666 ms
+
+Current state : 
+  [( true ( choice level1 c1 ) ), ( true ( prev-goal 0 ) ), ( true ( depth level4 ) ), ( true ( choice level3 c2 ) ), ( true ( choice level2 c1 ) )]
+This is turn 3
+  iterative Depth 0
+    Move : ( move c1 ), minimum: 11.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10413926851582252, hillclimb: 0.0, final value: 11.104139268515823
+    Move : ( move c4 ), minimum: 11.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10413926851582252, hillclimb: 0.0, final value: 11.104139268515823
+    Move : ( move c2 ), minimum: 11.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10413926851582252, hillclimb: 0.0, final value: 11.104139268515823
+    Move : ( move c3 ), minimum: 10.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10211892990699381, hillclimb: 0.0, final value: 10.102118929906993
+Expansion number of depth 0 is 4
+  iterative Depth 1
+    Move : ( move c4 ), minimum: 10.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.1034762106259212, hillclimb: 0.0, final value: 10.10347621062592
+    Move : ( move c2 ), minimum: 10.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.1034762106259212, hillclimb: 0.0, final value: 10.10347621062592
+    Move : ( move c1 ), minimum: 10.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.1034762106259212, hillclimb: 0.0, final value: 10.10347621062592
+    Move : ( move c3 ), minimum: 9.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.1, hillclimb: 0.0, final value: 9.1
+Expansion number of depth 1 is 20
+  iterative Depth 2
+    Move : ( move c2 ), minimum: 9.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10249332402038128, hillclimb: 0.0, final value: 9.102493324020381
+    Move : ( move c1 ), minimum: 9.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10249332402038128, hillclimb: 0.0, final value: 9.102493324020381
+    Move : ( move c3 ), minimum: 8.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09839131801065451, hillclimb: 0.0, final value: 8.098391318010654
+    Move : ( move c4 ), minimum: 9.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10249332402038128, hillclimb: 0.0, final value: 9.102493324020381
+Expansion number of depth 2 is 84
+  iterative Depth 3
+    Move : ( move c1 ), minimum: 8.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10144033097266461, hillclimb: 0.0, final value: 8.101440330972665
+    Move : ( move c3 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09707575975048835, hillclimb: 0.0, final value: 7.0970757597504885
+    Move : ( move c4 ), minimum: 8.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10144033097266461, hillclimb: 0.0, final value: 8.101440330972665
+    Move : ( move c2 ), minimum: 8.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10144033097266461, hillclimb: 0.0, final value: 8.101440330972665
+Expansion number of depth 3 is 340
+  iterative Depth 4
+    Move : ( move c1 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10036670883112557, hillclimb: 0.0, final value: 7.1003667088311255
+    Move : ( move c2 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10036670883112557, hillclimb: 0.0, final value: 7.1003667088311255
+    Move : ( move c3 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09584549040727416, hillclimb: 0.0, final value: 6.0958454904072745
+    Move : ( move c4 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10036670883112557, hillclimb: 0.0, final value: 7.1003667088311255
+Expansion number of depth 4 is 1364
+  iterative Depth 5
+    Move : ( move c2 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09927223154042146, hillclimb: 0.0, final value: 6.0992722315404215
+    Move : ( move c1 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09927223154042146, hillclimb: 0.0, final value: 6.0992722315404215
+    Move : ( move c4 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09927223154042146, hillclimb: 0.0, final value: 6.0992722315404215
+    Move : ( move c3 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0946184602157437, hillclimb: 0.0, final value: 5.094618460215743
+Expansion number of depth 5 is 5460
+  iterative Depth 6
+    Move : ( move c1 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09815235083369184, hillclimb: 0.0, final value: 5.098152350833692
+    Move : ( move c2 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09815235083369184, hillclimb: 0.0, final value: 5.098152350833692
+    Move : ( move c3 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09336729614686948, hillclimb: 0.0, final value: 4.0933672961468694
+    Move : ( move c4 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09815235083369184, hillclimb: 0.0, final value: 5.098152350833692
+Expansion number of depth 6 is 21844
+  iterative Depth 7
+    Move : ( move c3 ), minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09208235250822444, hillclimb: 0.0, final value: 3.0920823525082244
+    Move : ( move c2 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09700389065977251, hillclimb: 0.0, final value: 4.0970038906597726
+    Move : ( move c4 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09700389065977251, hillclimb: 0.0, final value: 4.0970038906597726
+    Move : ( move c1 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09700389065977251, hillclimb: 0.0, final value: 4.0970038906597726
+Expansion number of depth 7 is 87380
+  iterative Depth 8
+Expansion number of depth 8 is 8058
+Selecting move ( move c3 ) with distance 3.0920823525082244
+Average time taken : 13532.25 ms
+
+Current state : 
+  [( true ( choice level4 c3 ) ), ( true ( choice level1 c1 ) ), ( true ( depth level5 ) ), ( true ( prev-goal 0 ) ), ( true ( choice level3 c2 ) ), ( true ( choice level2 c1 ) )]
+This is turn 4
+  iterative Depth 0
+    Move : ( move c1 ), minimum: 10.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.1, hillclimb: 0.0, final value: 10.1
+    Move : ( move c3 ), minimum: 10.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.1, hillclimb: 0.0, final value: 10.1
+    Move : ( move c2 ), minimum: 9.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09777236052888477, hillclimb: 0.0, final value: 9.097772360528884
+    Move : ( move c4 ), minimum: 10.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.1, hillclimb: 0.0, final value: 10.1
+Expansion number of depth 0 is 4
+  iterative Depth 1
+    Move : ( move c3 ), minimum: 9.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09927007612585007, hillclimb: 0.0, final value: 9.09927007612585
+    Move : ( move c1 ), minimum: 9.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09927007612585007, hillclimb: 0.0, final value: 9.09927007612585
+    Move : ( move c2 ), minimum: 8.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09542425094393249, hillclimb: 0.0, final value: 8.095424250943932
+    Move : ( move c4 ), minimum: 9.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09927007612585007, hillclimb: 0.0, final value: 9.09927007612585
+Expansion number of depth 1 is 20
+  iterative Depth 2
+    Move : ( move c4 ), minimum: 8.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09818597744754864, hillclimb: 0.0, final value: 8.09818597744755
+    Move : ( move c1 ), minimum: 8.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09818597744754864, hillclimb: 0.0, final value: 8.09818597744755
+    Move : ( move c3 ), minimum: 8.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09818597744754864, hillclimb: 0.0, final value: 8.09818597744755
+    Move : ( move c2 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09363309201306227, hillclimb: 0.0, final value: 7.093633092013063
+Expansion number of depth 2 is 84
+  iterative Depth 3
+    Move : ( move c4 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09702170940351132, hillclimb: 0.0, final value: 7.097021709403512
+    Move : ( move c3 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09702170940351132, hillclimb: 0.0, final value: 7.097021709403512
+    Move : ( move c2 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09216259929987326, hillclimb: 0.0, final value: 6.092162599299873
+    Move : ( move c1 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09702170940351132, hillclimb: 0.0, final value: 7.097021709403512
+Expansion number of depth 3 is 340
+  iterative Depth 4
+    Move : ( move c1 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09583151471988395, hillclimb: 0.0, final value: 6.095831514719884
+    Move : ( move c2 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09078260697171567, hillclimb: 0.0, final value: 5.0907826069717155
+    Move : ( move c4 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09583151471988395, hillclimb: 0.0, final value: 6.095831514719884
+    Move : ( move c3 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09583151471988395, hillclimb: 0.0, final value: 6.095831514719884
+Expansion number of depth 4 is 1364
+  iterative Depth 5
+    Move : ( move c2 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08940142472927222, hillclimb: 0.0, final value: 4.089401424729272
+    Move : ( move c4 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09461486133874224, hillclimb: 0.0, final value: 5.0946148613387425
+    Move : ( move c1 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09461486133874224, hillclimb: 0.0, final value: 5.0946148613387425
+    Move : ( move c3 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09461486133874224, hillclimb: 0.0, final value: 5.0946148613387425
+Expansion number of depth 5 is 5460
+  iterative Depth 6
+    Move : ( move c4 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09336636981994867, hillclimb: 0.0, final value: 4.0933663698199485
+    Move : ( move c2 ), minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08798793685266358, hillclimb: 0.0, final value: 3.0879879368526635
+    Move : ( move c1 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09336636981994867, hillclimb: 0.0, final value: 4.0933663698199485
+    Move : ( move c3 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09336636981994867, hillclimb: 0.0, final value: 4.0933663698199485
+Expansion number of depth 6 is 21844
+  iterative Depth 7
+Expansion number of depth 7 is 87133
+Selecting move ( move c2 ) with distance 3.0879879368526635
+Average time taken : 13535.4 ms
+
+Current state : 
+  [( true ( choice level4 c3 ) ), ( true ( choice level1 c1 ) ), ( true ( choice level5 c2 ) ), ( true ( depth level6 ) ), ( true ( prev-goal 0 ) ), ( true ( choice level3 c2 ) ), ( true ( choice level2 c1 ) )]
+This is turn 5
+  iterative Depth 0
+    Move : ( move c3 ), minimum: 9.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09542425094393249, hillclimb: 0.0, final value: 9.095424250943932
+    Move : ( move c2 ), minimum: 9.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09542425094393249, hillclimb: 0.0, final value: 9.095424250943932
+    Move : ( move c4 ), minimum: 8.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09294189257142928, hillclimb: 0.0, final value: 8.09294189257143
+    Move : ( move c1 ), minimum: 9.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09542425094393249, hillclimb: 0.0, final value: 9.095424250943932
+Expansion number of depth 0 is 4
+  iterative Depth 1
+    Move : ( move c2 ), minimum: 8.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09461246192171455, hillclimb: 0.0, final value: 8.094612461921715
+    Move : ( move c3 ), minimum: 8.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09461246192171455, hillclimb: 0.0, final value: 8.094612461921715
+    Move : ( move c1 ), minimum: 8.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09461246192171455, hillclimb: 0.0, final value: 8.094612461921715
+    Move : ( move c4 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09030899869919436, hillclimb: 0.0, final value: 7.090308998699195
+Expansion number of depth 1 is 20
+  iterative Depth 2
+    Move : ( move c2 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09340391233510378, hillclimb: 0.0, final value: 7.093403912335104
+    Move : ( move c1 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09340391233510378, hillclimb: 0.0, final value: 7.093403912335104
+    Move : ( move c3 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09340391233510378, hillclimb: 0.0, final value: 7.093403912335104
+    Move : ( move c4 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08828866009036566, hillclimb: 0.0, final value: 6.088288660090366
+Expansion number of depth 2 is 84
+  iterative Depth 3
+    Move : ( move c2 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09210207044242323, hillclimb: 0.0, final value: 6.092102070442423
+    Move : ( move c4 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08662186270388172, hillclimb: 0.0, final value: 5.086621862703882
+    Move : ( move c3 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09210207044242323, hillclimb: 0.0, final value: 6.092102070442423
+    Move : ( move c1 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09210207044242323, hillclimb: 0.0, final value: 6.092102070442423
+Expansion number of depth 3 is 340
+  iterative Depth 4
+    Move : ( move c1 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09076690295845821, hillclimb: 0.0, final value: 5.090766902958459
+    Move : ( move c3 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09076690295845821, hillclimb: 0.0, final value: 5.090766902958459
+    Move : ( move c2 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09076690295845821, hillclimb: 0.0, final value: 5.090766902958459
+    Move : ( move c4 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08505065094381135, hillclimb: 0.0, final value: 4.085050650943812
+Expansion number of depth 4 is 1364
+  iterative Depth 5
+    Move : ( move c3 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08939736647125027, hillclimb: 0.0, final value: 4.089397366471251
+    Move : ( move c1 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08939736647125027, hillclimb: 0.0, final value: 4.089397366471251
+    Move : ( move c4 ), minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08347101436918, hillclimb: 0.0, final value: 3.08347101436918
+    Move : ( move c2 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08939736647125027, hillclimb: 0.0, final value: 4.089397366471251
+Expansion number of depth 5 is 5460
+  iterative Depth 6
+    Move : ( move c1 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10471015465864623, hillclimb: 0.0, final value: 4.104710154658647
+    Move : ( move c2 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10471015465864623, hillclimb: 0.0, final value: 4.104710154658647
+    Move : ( move c3 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10471015465864623, hillclimb: 0.0, final value: 4.104710154658647
+    Move : ( move c4 ), minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10372528498966109, hillclimb: 0.0, final value: 3.103725284989661
+Expansion number of depth 6 is 21844
+  iterative Depth 7
+Expansion number of depth 7 is 78754
+Selecting move ( move c4 ) with distance 3.103725284989661
+Average time taken : 13538.666666666666 ms
+
+Current state : 
+  [( true ( choice level4 c3 ) ), ( true ( choice level1 c1 ) ), ( true ( choice level6 c4 ) ), ( true ( choice level5 c2 ) ), ( true ( depth level7 ) ), ( true ( prev-goal 0 ) ), ( true ( choice level3 c2 ) ), ( true ( choice level2 c1 ) )]
+This is turn 6
+  iterative Depth 0
+    Move : ( move c3 ), minimum: 8.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09030899869919436, hillclimb: 0.0, final value: 8.090308998699195
+    Move : ( move c4 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08750612633917002, hillclimb: 0.0, final value: 7.08750612633917
+    Move : ( move c1 ), minimum: 8.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09030899869919436, hillclimb: 0.0, final value: 8.090308998699195
+    Move : ( move c2 ), minimum: 8.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09030899869919436, hillclimb: 0.0, final value: 8.090308998699195
+Expansion number of depth 0 is 4
+  iterative Depth 1
+    Move : ( move c4 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08450980400142569, hillclimb: 0.0, final value: 6.084509804001426
+    Move : ( move c2 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08939466075520738, hillclimb: 0.0, final value: 7.089394660755207
+    Move : ( move c1 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08939466075520738, hillclimb: 0.0, final value: 7.089394660755207
+    Move : ( move c3 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08939466075520738, hillclimb: 0.0, final value: 7.089394660755207
+Expansion number of depth 1 is 20
+  iterative Depth 2
+    Move : ( move c4 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08219301749622308, hillclimb: 0.0, final value: 5.082193017496223
+    Move : ( move c1 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0880293790325377, hillclimb: 0.0, final value: 6.0880293790325375
+    Move : ( move c3 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0880293790325377, hillclimb: 0.0, final value: 6.0880293790325375
+    Move : ( move c2 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0880293790325377, hillclimb: 0.0, final value: 6.0880293790325375
+Expansion number of depth 2 is 84
+  iterative Depth 3
+    Move : ( move c4 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08026941914611695, hillclimb: 0.0, final value: 4.080269419146117
+    Move : ( move c3 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08655309080005666, hillclimb: 0.0, final value: 5.086553090800057
+    Move : ( move c1 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08655309080005666, hillclimb: 0.0, final value: 5.086553090800057
+    Move : ( move c2 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08655309080005666, hillclimb: 0.0, final value: 5.086553090800057
+Expansion number of depth 3 is 340
+  iterative Depth 4
+    Move : ( move c4 ), minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07844546191183824, hillclimb: 0.0, final value: 3.0784454619118384
+    Move : ( move c2 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08503273080813711, hillclimb: 0.0, final value: 4.085032730808138
+    Move : ( move c3 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08503273080813711, hillclimb: 0.0, final value: 4.085032730808138
+    Move : ( move c1 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08503273080813711, hillclimb: 0.0, final value: 4.085032730808138
+Expansion number of depth 4 is 1364
+  iterative Depth 5
+    Move : ( move c3 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10396840593133302, hillclimb: 0.0, final value: 4.103968405931333
+    Move : ( move c2 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10396840593133302, hillclimb: 0.0, final value: 4.103968405931333
+    Move : ( move c4 ), minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.1029674869742715, hillclimb: 0.0, final value: 3.1029674869742716
+    Move : ( move c1 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10396840593133302, hillclimb: 0.0, final value: 4.103968405931333
+Expansion number of depth 5 is 5460
+  iterative Depth 6
+    Move : ( move c3 ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08816476667170461, hillclimb: 0.0, final value: 2.0881647666717047
+    Move : ( move c4 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08326538809580737, hillclimb: 0.0, final value: 1.0832653880958074
+    Move : ( move c2 ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08816476667170461, hillclimb: 0.0, final value: 2.0881647666717047
+    Move : ( move c1 ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08816476667170461, hillclimb: 0.0, final value: 2.0881647666717047
+Expansion number of depth 6 is 21844
+  iterative Depth 7
+Expansion number of depth 7 is 72340
+Selecting move ( move c4 ) with distance 1.0832653880958074
+Average time taken : 13542.142857142857 ms
+
+Current state : 
+  [( true ( choice level4 c3 ) ), ( true ( choice level1 c1 ) ), ( true ( choice level6 c4 ) ), ( true ( choice level5 c2 ) ), ( true ( prev-goal 0 ) ), ( true ( choice level3 c2 ) ), ( true ( choice level7 c4 ) ), ( true ( depth level8 ) ), ( true ( choice level2 c1 ) )]
+This is turn 7
+  iterative Depth 0
+    Move : ( move c4 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08450980400142569, hillclimb: 0.0, final value: 7.084509804001426
+    Move : ( move c1 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08450980400142569, hillclimb: 0.0, final value: 7.084509804001426
+    Move : ( move c3 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08129133566428556, hillclimb: 0.0, final value: 6.081291335664286
+    Move : ( move c2 ), minimum: 7.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08450980400142569, hillclimb: 0.0, final value: 7.084509804001426
+Expansion number of depth 0 is 4
+  iterative Depth 1
+    Move : ( move c3 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07781512503836437, hillclimb: 0.0, final value: 5.077815125038365
+    Move : ( move c4 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08346326063360918, hillclimb: 0.0, final value: 6.083463260633609
+    Move : ( move c1 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08346326063360918, hillclimb: 0.0, final value: 6.083463260633609
+    Move : ( move c2 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08346326063360918, hillclimb: 0.0, final value: 6.083463260633609
+Expansion number of depth 1 is 20
+  iterative Depth 2
+    Move : ( move c3 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07509990043400289, hillclimb: 0.0, final value: 4.075099900434003
+    Move : ( move c1 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08189453214127687, hillclimb: 0.0, final value: 5.081894532141277
+    Move : ( move c4 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08189453214127687, hillclimb: 0.0, final value: 5.081894532141277
+    Move : ( move c2 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08189453214127687, hillclimb: 0.0, final value: 5.081894532141277
+Expansion number of depth 2 is 84
+  iterative Depth 3
+    Move : ( move c4 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08018980510330746, hillclimb: 0.0, final value: 4.080189805103307
+    Move : ( move c3 ), minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07282593804380064, hillclimb: 0.0, final value: 3.0728259380438008
+    Move : ( move c1 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08018980510330746, hillclimb: 0.0, final value: 4.080189805103307
+    Move : ( move c2 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08018980510330746, hillclimb: 0.0, final value: 4.080189805103307
+Expansion number of depth 3 is 340
+  iterative Depth 4
+    Move : ( move c3 ), minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10217935770050561, hillclimb: 0.0, final value: 3.1021793577005057
+    Move : ( move c1 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10319397113905318, hillclimb: 0.0, final value: 4.103193971139053
+    Move : ( move c2 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10319397113905318, hillclimb: 0.0, final value: 4.103193971139053
+    Move : ( move c4 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10319397113905318, hillclimb: 0.0, final value: 4.103193971139053
+Expansion number of depth 4 is 1364
+  iterative Depth 5
+    Move : ( move c4 ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08454158552365654, hillclimb: 0.0, final value: 2.0845415855236564
+    Move : ( move c3 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07919196636935097, hillclimb: 0.0, final value: 1.079191966369351
+    Move : ( move c1 ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08454158552365654, hillclimb: 0.0, final value: 2.0845415855236564
+    Move : ( move c2 ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08454158552365654, hillclimb: 0.0, final value: 2.0845415855236564
+Expansion number of depth 5 is 5460
+  iterative Depth 6
+    Move : ( move c4 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07691127464350546, hillclimb: 0.0, final value: 1.0769112746435054
+    Move : ( move c2 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07691127464350546, hillclimb: 0.0, final value: 1.0769112746435054
+    Move : ( move c3 ), minimum: 0.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06922714067789716, hillclimb: 0.0, final value: 0.06922714067789716
+    Move : ( move c1 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07691127464350546, hillclimb: 0.0, final value: 1.0769112746435054
+Expansion number of depth 6 is 21844
+  iterative Depth 7
+    Move : ( move c3 ), minimum: 0.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06922714067789716, hillclimb: 0.0, final value: 0.06922714067789716
+    Move : ( move c1 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07691127464350546, hillclimb: 0.0, final value: 1.0769112746435054
+    Move : ( move c4 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07691127464350546, hillclimb: 0.0, final value: 1.0769112746435054
+    Move : ( move c2 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07691127464350546, hillclimb: 0.0, final value: 1.0769112746435054
+Expansion number of depth 7 is 21844
+Selecting move ( move c3 ) with distance 0.06922714067789716
+Average time taken : 12773.375 ms
+
+Current state : 
+  [( true ( choice level4 c3 ) ), ( true ( choice level1 c1 ) ), ( true ( choice level8 c3 ) ), ( true ( choice level6 c4 ) ), ( true ( choice level5 c2 ) ), ( true ( depth level9 ) ), ( true ( prev-goal 0 ) ), ( true ( choice level3 c2 ) ), ( true ( choice level7 c4 ) ), ( true ( choice level2 c1 ) )]
+This is turn 8
+  iterative Depth 0
+    Move : ( move c2 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07781512503836437, hillclimb: 0.0, final value: 6.077815125038365
+    Move : ( move c3 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07403626894942439, hillclimb: 0.0, final value: 5.074036268949424
+    Move : ( move c4 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07781512503836437, hillclimb: 0.0, final value: 6.077815125038365
+    Move : ( move c1 ), minimum: 6.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07781512503836437, hillclimb: 0.0, final value: 6.077815125038365
+Expansion number of depth 0 is 4
+  iterative Depth 1
+    Move : ( move c1 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0765916793966632, hillclimb: 0.0, final value: 5.076591679396663
+    Move : ( move c2 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0765916793966632, hillclimb: 0.0, final value: 5.076591679396663
+    Move : ( move c4 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0765916793966632, hillclimb: 0.0, final value: 5.076591679396663
+    Move : ( move c3 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06989700043360189, hillclimb: 0.0, final value: 4.069897000433602
+Expansion number of depth 1 is 20
+  iterative Depth 2
+    Move : ( move c4 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07474824306171916, hillclimb: 0.0, final value: 4.074748243061719
+    Move : ( move c2 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07474824306171916, hillclimb: 0.0, final value: 4.074748243061719
+    Move : ( move c1 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07474824306171916, hillclimb: 0.0, final value: 4.074748243061719
+    Move : ( move c3 ), minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06661774909397114, hillclimb: 0.0, final value: 3.0666177490939712
+Expansion number of depth 2 is 84
+  iterative Depth 3
+    Move : ( move c3 ), minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10129352706434831, hillclimb: 0.0, final value: 3.1012935270643482
+    Move : ( move c4 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10231088358165275, hillclimb: 0.0, final value: 4.102310883581652
+    Move : ( move c1 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10231088358165275, hillclimb: 0.0, final value: 4.102310883581652
+    Move : ( move c2 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10231088358165275, hillclimb: 0.0, final value: 4.102310883581652
+Expansion number of depth 3 is 340
+  iterative Depth 4
+    Move : ( move c3 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07470072611915925, hillclimb: 0.0, final value: 1.0747007261191592
+    Move : ( move c2 ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0805822676981502, hillclimb: 0.0, final value: 2.08058226769815
+    Move : ( move c4 ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0805822676981502, hillclimb: 0.0, final value: 2.08058226769815
+    Move : ( move c1 ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0805822676981502, hillclimb: 0.0, final value: 2.08058226769815
+Expansion number of depth 4 is 1364
+  iterative Depth 5
+    Move : ( move c3 ), minimum: 0.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.062421714534411664, hillclimb: 0.0, final value: 0.062421714534411664
+    Move : ( move c4 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07128000153315286, hillclimb: 0.0, final value: 1.071280001533153
+    Move : ( move c2 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07128000153315286, hillclimb: 0.0, final value: 1.071280001533153
+    Move : ( move c1 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07128000153315286, hillclimb: 0.0, final value: 1.071280001533153
+Expansion number of depth 5 is 5460
+  iterative Depth 6
+    Move : ( move c2 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07128000153315286, hillclimb: 0.0, final value: 1.071280001533153
+    Move : ( move c1 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07128000153315286, hillclimb: 0.0, final value: 1.071280001533153
+    Move : ( move c4 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07128000153315286, hillclimb: 0.0, final value: 1.071280001533153
+    Move : ( move c3 ), minimum: 0.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.062421714534411664, hillclimb: 0.0, final value: 0.062421714534411664
+Expansion number of depth 6 is 5460
+Selecting move ( move c3 ) with distance 0.062421714534411664
+Average time taken : 11565.222222222223 ms
+
+Current state : 
+  [( true ( choice level4 c3 ) ), ( true ( choice level1 c1 ) ), ( true ( choice level8 c3 ) ), ( true ( choice level6 c4 ) ), ( true ( choice level5 c2 ) ), ( true ( choice level9 c3 ) ), ( true ( depth level10 ) ), ( true ( prev-goal 0 ) ), ( true ( choice level3 c2 ) ), ( true ( choice level7 c4 ) ), ( true ( choice level2 c1 ) )]
+This is turn 9
+  iterative Depth 0
+    Move : ( move c2 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06989700043360189, hillclimb: 0.0, final value: 5.069897000433602
+    Move : ( move c3 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06989700043360189, hillclimb: 0.0, final value: 5.069897000433602
+    Move : ( move c4 ), minimum: 5.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06989700043360189, hillclimb: 0.0, final value: 5.069897000433602
+    Move : ( move c1 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06532125137753438, hillclimb: 0.0, final value: 4.065321251377535
+Expansion number of depth 0 is 4
+  iterative Depth 1
+    Move : ( move c4 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06842467475153124, hillclimb: 0.0, final value: 4.068424674751531
+    Move : ( move c2 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06842467475153124, hillclimb: 0.0, final value: 4.068424674751531
+    Move : ( move c3 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06842467475153124, hillclimb: 0.0, final value: 4.068424674751531
+    Move : ( move c1 ), minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06020599913279624, hillclimb: 0.0, final value: 3.0602059991327963
+Expansion number of depth 1 is 20
+  iterative Depth 2
+    Move : ( move c1 ), minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09756406541405553, hillclimb: 0.0, final value: 3.0975640654140557
+    Move : ( move c4 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10174128015176817, hillclimb: 0.0, final value: 4.101741280151768
+    Move : ( move c2 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10174128015176817, hillclimb: 0.0, final value: 4.101741280151768
+    Move : ( move c3 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.10174128015176817, hillclimb: 0.0, final value: 4.101741280151768
+Expansion number of depth 2 is 84
+  iterative Depth 3
+    Move : ( move c2 ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0765339274623678, hillclimb: 0.0, final value: 2.0765339274623678
+    Move : ( move c1 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06845948793831749, hillclimb: 0.0, final value: 1.0684594879383176
+    Move : ( move c3 ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0765339274623678, hillclimb: 0.0, final value: 2.0765339274623678
+    Move : ( move c4 ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0765339274623678, hillclimb: 0.0, final value: 2.0765339274623678
+Expansion number of depth 3 is 340
+  iterative Depth 4
+    Move : ( move c4 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06492437376266695, hillclimb: 0.0, final value: 1.064924373762667
+    Move : ( move c3 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06492437376266695, hillclimb: 0.0, final value: 1.064924373762667
+    Move : ( move c2 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06492437376266695, hillclimb: 0.0, final value: 1.064924373762667
+    Move : ( move c1 ), minimum: 0.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.053932559633076596, hillclimb: 0.0, final value: 0.053932559633076596
+Expansion number of depth 4 is 1364
+  iterative Depth 5
+    Move : ( move c1 ), minimum: 0.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.053932559633076596, hillclimb: 0.0, final value: 0.053932559633076596
+    Move : ( move c3 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06492437376266695, hillclimb: 0.0, final value: 1.064924373762667
+    Move : ( move c2 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06492437376266695, hillclimb: 0.0, final value: 1.064924373762667
+    Move : ( move c4 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06492437376266695, hillclimb: 0.0, final value: 1.064924373762667
+Expansion number of depth 5 is 1364
+Selecting move ( move c1 ) with distance 0.053932559633076596
+Average time taken : 10459.4 ms
+
+Current state : 
+  [( true ( choice level4 c3 ) ), ( true ( choice level1 c1 ) ), ( true ( choice level8 c3 ) ), ( true ( choice level10 c1 ) ), ( true ( choice level6 c4 ) ), ( true ( choice level5 c2 ) ), ( true ( choice level9 c3 ) ), ( true ( depth level11 ) ), ( true ( prev-goal 0 ) ), ( true ( choice level3 c2 ) ), ( true ( choice level7 c4 ) ), ( true ( choice level2 c1 ) )]
+This is turn 10
+  iterative Depth 0
+    Move : ( move c4 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06020599913279624, hillclimb: 0.0, final value: 4.060205999132796
+    Move : ( move c2 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06020599913279624, hillclimb: 0.0, final value: 4.060205999132796
+    Move : ( move c1 ), minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.054406804435027566, hillclimb: 0.0, final value: 3.0544068044350277
+    Move : ( move c3 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06020599913279624, hillclimb: 0.0, final value: 4.060205999132796
+Expansion number of depth 0 is 4
+  iterative Depth 1
+    Move : ( move c2 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09622114391106001, hillclimb: 0.0, final value: 4.09622114391106
+    Move : ( move c4 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09622114391106001, hillclimb: 0.0, final value: 4.09622114391106
+    Move : ( move c3 ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09622114391106001, hillclimb: 0.0, final value: 4.09622114391106
+    Move : ( move c1 ), minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.09208187539523752, hillclimb: 0.0, final value: 3.0920818753952375
+Expansion number of depth 1 is 20
+  iterative Depth 2
+    Move : ( move c2 ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07029002979644512, hillclimb: 0.0, final value: 2.0702900297964453
+    Move : ( move c1 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06118198286171186, hillclimb: 0.0, final value: 1.061181982861712
+    Move : ( move c4 ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07029002979644512, hillclimb: 0.0, final value: 2.0702900297964453
+    Move : ( move c3 ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07029002979644512, hillclimb: 0.0, final value: 2.0702900297964453
+Expansion number of depth 2 is 84
+  iterative Depth 3
+    Move : ( move c4 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.056929223181361344, hillclimb: 0.0, final value: 1.0569292231813614
+    Move : ( move c1 ), minimum: 0.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.04347174061665751, hillclimb: 0.0, final value: 0.04347174061665751
+    Move : ( move c3 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.056929223181361344, hillclimb: 0.0, final value: 1.0569292231813614
+    Move : ( move c2 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.056929223181361344, hillclimb: 0.0, final value: 1.0569292231813614
+Expansion number of depth 3 is 340
+  iterative Depth 4
+    Move : ( move c3 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.056929223181361344, hillclimb: 0.0, final value: 1.0569292231813614
+    Move : ( move c2 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.056929223181361344, hillclimb: 0.0, final value: 1.0569292231813614
+    Move : ( move c1 ), minimum: 0.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.04347174061665751, hillclimb: 0.0, final value: 0.04347174061665751
+    Move : ( move c4 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.056929223181361344, hillclimb: 0.0, final value: 1.0569292231813614
+Expansion number of depth 4 is 340
+Selecting move ( move c1 ) with distance 0.04347174061665751
+Average time taken : 9521.09090909091 ms
+
+Current state : 
+  [( true ( choice level4 c3 ) ), ( true ( choice level9 c3 ) ), ( true ( depth level12 ) ), ( true ( prev-goal 0 ) ), ( true ( choice level2 c1 ) ), ( true ( choice level1 c1 ) ), ( true ( choice level8 c3 ) ), ( true ( choice level6 c4 ) ), ( true ( choice level10 c1 ) ), ( true ( choice level11 c1 ) ), ( true ( choice level5 c2 ) ), ( true ( choice level3 c2 ) ), ( true ( choice level7 c4 ) )]
+This is turn 11
+  iterative Depth 0
+    Move : ( move c3 ), minimum: 11.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08450980400142569, hillclimb: 0.0, final value: 11.084509804001426
+    Move : ( move c1 ), minimum: 11.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08450980400142569, hillclimb: 0.0, final value: 11.084509804001426
+    Move : ( move c4 ), minimum: 10.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08129133566428556, hillclimb: 0.0, final value: 10.081291335664286
+    Move : ( move c2 ), minimum: 11.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.08450980400142569, hillclimb: 0.0, final value: 11.084509804001426
+Expansion number of depth 0 is 4
+  iterative Depth 1
+    Move : ( move c3 ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.061978875828839396, hillclimb: 0.0, final value: 2.0619788758288395
+    Move : ( move c1 ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.061978875828839396, hillclimb: 0.0, final value: 2.0619788758288395
+    Move : ( move c2 ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.061978875828839396, hillclimb: 0.0, final value: 2.0619788758288395
+    Move : ( move c4 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.05228787452803376, hillclimb: 0.0, final value: 1.0522878745280337
+Expansion number of depth 1 is 20
+  iterative Depth 2
+    Move : ( move c3 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.04704906758206494, hillclimb: 0.0, final value: 1.047049067582065
+    Move : ( move c4 ), minimum: 0.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 0.03010299956639812
+    Move : ( move c2 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.04704906758206494, hillclimb: 0.0, final value: 1.047049067582065
+    Move : ( move c1 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.04704906758206494, hillclimb: 0.0, final value: 1.047049067582065
+Expansion number of depth 2 is 84
+  iterative Depth 3
+    Move : ( move c2 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.04704906758206494, hillclimb: 0.0, final value: 1.047049067582065
+    Move : ( move c1 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.04704906758206494, hillclimb: 0.0, final value: 1.047049067582065
+    Move : ( move c3 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.04704906758206494, hillclimb: 0.0, final value: 1.047049067582065
+    Move : ( move c4 ), minimum: 0.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 0.03010299956639812
+Expansion number of depth 3 is 84
+Selecting move ( move c4 ) with distance 0.03010299956639812
+Average time taken : 8732.333333333334 ms
+
+Current state : 
+  [( true ( choice level4 c3 ) ), ( true ( choice level9 c3 ) ), ( true ( prev-goal 0 ) ), ( true ( choice level2 c1 ) ), ( true ( choice level1 c1 ) ), ( true ( choice level8 c3 ) ), ( true ( choice level6 c4 ) ), ( true ( choice level10 c1 ) ), ( true ( choice level11 c1 ) ), ( true ( depth level13 ) ), ( true ( choice level5 c2 ) ), ( true ( choice level3 c2 ) ), ( true ( choice level12 c4 ) ), ( true ( choice level7 c4 ) )]
+This is turn 12
+  iterative Depth 0
+    Move : ( move c4 ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07781512503836437, hillclimb: 0.0, final value: 2.0778151250383643
+    Move : ( move c2 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07403626894942439, hillclimb: 0.0, final value: 1.0740362689494245
+    Move : ( move c1 ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07781512503836437, hillclimb: 0.0, final value: 2.0778151250383643
+    Move : ( move c3 ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.07781512503836437, hillclimb: 0.0, final value: 2.0778151250383643
+Expansion number of depth 0 is 4
+  iterative Depth 1
+    Move : ( move c3 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.050060235056918534, hillclimb: 0.0, final value: 1.0500602350569186
+    Move : ( move c4 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.050060235056918534, hillclimb: 0.0, final value: 1.0500602350569186
+    Move : ( move c2 ), minimum: 0.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03679767852945944, hillclimb: 0.0, final value: 0.03679767852945944
+    Move : ( move c1 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.050060235056918534, hillclimb: 0.0, final value: 1.0500602350569186
+Expansion number of depth 1 is 20
+  iterative Depth 2
+    Move : ( move c1 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.050060235056918534, hillclimb: 0.0, final value: 1.0500602350569186
+    Move : ( move c3 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.050060235056918534, hillclimb: 0.0, final value: 1.0500602350569186
+    Move : ( move c4 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.050060235056918534, hillclimb: 0.0, final value: 1.0500602350569186
+    Move : ( move c2 ), minimum: 0.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03679767852945944, hillclimb: 0.0, final value: 0.03679767852945944
+Expansion number of depth 2 is 20
+Selecting move ( move c2 ) with distance 0.03679767852945944
+Average time taken : 8061.692307692308 ms
+
+Current state : 
+  [( true ( choice level4 c3 ) ), ( true ( choice level9 c3 ) ), ( true ( prev-goal 0 ) ), ( true ( choice level2 c1 ) ), ( true ( depth level14 ) ), ( true ( choice level1 c1 ) ), ( true ( choice level8 c3 ) ), ( true ( choice level11 c1 ) ), ( true ( choice level6 c4 ) ), ( true ( choice level10 c1 ) ), ( true ( choice level5 c2 ) ), ( true ( choice level13 c2 ) ), ( true ( choice level3 c2 ) ), ( true ( choice level12 c4 ) ), ( true ( choice level7 c4 ) )]
+This is turn 13
+  iterative Depth 0
+    Move : ( move c2 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0, hillclimb: 0.0, final value: 1.0
+    Move : ( move c3 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0, hillclimb: 0.0, final value: 1.0
+    Move : ( move c1 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0, hillclimb: 0.0, final value: 1.0
+    Move : ( move c4 ), minimum: 0.0, occurrence: 1, occWeight: 0.0, avgMinWeight: -0.03010299956639812, hillclimb: 0.0, final value: -0.03010299956639812
+Expansion number of depth 0 is 4
+  iterative Depth 1
+    Move : ( move c3 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0, hillclimb: 0.0, final value: 1.0
+    Move : ( move c4 ), minimum: 0.0, occurrence: 1, occWeight: 0.0, avgMinWeight: -0.03010299956639812, hillclimb: 0.0, final value: -0.03010299956639812
+    Move : ( move c1 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0, hillclimb: 0.0, final value: 1.0
+    Move : ( move c2 ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0, hillclimb: 0.0, final value: 1.0
+Expansion number of depth 1 is 4
+Selecting move ( move c4 ) with distance -0.03010299956639812
+Average time taken : 7485.928571428572 ms
+

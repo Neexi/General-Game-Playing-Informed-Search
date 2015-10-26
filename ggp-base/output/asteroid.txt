@@ -1,0 +1,619 @@
+Setting up for MyGamer
+Using depth limit of 100 with buffer time 1500ms
+Using basic Hill Climbing
+Using local depth value as comparison
+Only absolute minimum value then average value of all expanded states with weight
+Current state : 
+  [( true ( x 10 ) ), ( true ( east-speed 2 ) ), ( true ( y 10 ) ), ( true ( north-speed 3 ) ), ( true ( step 1 ) ), ( true ( heading north ) )]
+This is turn 0
+  iterative Depth 0
+    Move : ( turn clock ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06020599913279624, hillclimb: 0.0, final value: 4.060205999132796
+    Move : ( turn counter ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06020599913279624, hillclimb: 0.0, final value: 4.060205999132796
+    Move : thrust, minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06020599913279624, hillclimb: 0.0, final value: 4.060205999132796
+Expansion number of depth 0 is 3
+  iterative Depth 1
+    Move : ( turn counter ), minimum: 4.0, occurrence: 4, occWeight: 0.06020599913279624, avgMinWeight: 0.06020599913279624, hillclimb: 0.0, final value: 4.0
+    Move : thrust, minimum: 4.0, occurrence: 4, occWeight: 0.06020599913279624, avgMinWeight: 0.06020599913279624, hillclimb: 0.0, final value: 4.0
+    Move : ( turn clock ), minimum: 4.0, occurrence: 4, occWeight: 0.06020599913279624, avgMinWeight: 0.06020599913279624, hillclimb: 0.0, final value: 4.0
+Expansion number of depth 1 is 12
+  iterative Depth 2
+    Move : ( turn clock ), minimum: 4.0, occurrence: 13, occWeight: 0.11139433523068368, avgMinWeight: 0.06020599913279624, hillclimb: 0.0, final value: 3.9488116639021125
+    Move : thrust, minimum: 4.0, occurrence: 13, occWeight: 0.11139433523068368, avgMinWeight: 0.06020599913279624, hillclimb: 0.0, final value: 3.9488116639021125
+    Move : ( turn counter ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.05698753079565612, hillclimb: 0.0, final value: 2.056987530795656
+Expansion number of depth 2 is 39
+  iterative Depth 3
+    Move : ( turn clock ), minimum: 4.0, occurrence: 40, occWeight: 0.16020599913279623, avgMinWeight: 0.06020599913279624, hillclimb: 0.0, final value: 3.9
+    Move : thrust, minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.05994037476842223, hillclimb: 0.0, final value: 3.059940374768422
+    Move : ( turn counter ), minimum: 2.0, occurrence: 3, occWeight: 0.047712125471966245, avgMinWeight: 0.057754784145055596, hillclimb: 0.0, final value: 2.0100426586730893
+Expansion number of depth 3 is 120
+  iterative Depth 4
+    Move : thrust, minimum: 3.0, occurrence: 4, occWeight: 0.06020599913279624, avgMinWeight: 0.05984855309696643, hillclimb: 0.0, final value: 2.9996425539641702
+    Move : ( turn clock ), minimum: 3.0, occurrence: 3, occWeight: 0.047712125471966245, avgMinWeight: 0.05993819079275155, hillclimb: 0.0, final value: 3.0122260653207853
+    Move : ( turn counter ), minimum: 2.0, occurrence: 9, occWeight: 0.09542425094393249, avgMinWeight: 0.05782821448813773, hillclimb: 0.0, final value: 1.9624039635442052
+Expansion number of depth 4 is 363
+  iterative Depth 5
+    Move : ( turn counter ), minimum: 2.0, occurrence: 23, occWeight: 0.13617278360175927, avgMinWeight: 0.05797207964602545, hillclimb: 0.0, final value: 1.9217992960442662
+    Move : thrust, minimum: 3.0, occurrence: 21, occWeight: 0.13222192947339192, avgMinWeight: 0.059576792948013046, hillclimb: 0.0, final value: 2.927354863474621
+    Move : ( turn clock ), minimum: 3.0, occurrence: 12, occWeight: 0.1079181246047625, avgMinWeight: 0.05984658095845643, hillclimb: 0.0, final value: 2.9519284563536936
+Expansion number of depth 5 is 1090
+  iterative Depth 6
+    Move : ( turn counter ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0578623367802671, hillclimb: 0.0, final value: 1.057862336780267
+    Move : ( turn clock ), minimum: 3.0, occurrence: 61, occWeight: 0.17853298350107671, avgMinWeight: 0.059592393942433805, hillclimb: 0.0, final value: 2.881059410441357
+    Move : thrust, minimum: 3.0, occurrence: 82, occWeight: 0.19138138523837167, avgMinWeight: 0.059382952833709146, hillclimb: 0.0, final value: 2.8680015675953374
+Expansion number of depth 6 is 3261
+  iterative Depth 7
+    Move : thrust, minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.05919952858989104, hillclimb: 0.0, final value: 2.059199528589891
+    Move : ( turn counter ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.05789262100825525, hillclimb: 0.0, final value: 1.0578926210082553
+    Move : ( turn clock ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.05946631106093249, hillclimb: 0.0, final value: 2.0594663110609326
+Expansion number of depth 7 is 9731
+  iterative Depth 8
+    Move : ( turn counter ), minimum: 1.0, occurrence: 9, occWeight: 0.09542425094393249, avgMinWeight: 0.05783623613267793, hillclimb: 0.0, final value: 0.9624119851887455
+    Move : thrust, minimum: 2.0, occurrence: 5, occWeight: 0.06989700043360189, avgMinWeight: 0.05906851908788383, hillclimb: 0.0, final value: 1.989171518654282
+    Move : ( turn clock ), minimum: 2.0, occurrence: 55, occWeight: 0.1740362689494244, avgMinWeight: 0.0572793635458874, hillclimb: 0.0, final value: 1.883243094596463
+Expansion number of depth 8 is 28953
+  iterative Depth 9
+    Move : ( turn clock ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.05814694752242313, hillclimb: 0.0, final value: 1.0581469475224232
+    Move : thrust, minimum: 2.0, occurrence: 48, occWeight: 0.16812412373755872, avgMinWeight: 0.05841466518163224, hillclimb: 0.0, final value: 1.8902905414440734
+    Move : ( turn counter ), minimum: 1.0, occurrence: 11, occWeight: 0.10413926851582252, avgMinWeight: 0.05770225899335875, hillclimb: 0.0, final value: 0.9535629904775362
+Expansion number of depth 9 is 85499
+  iterative Depth 10
+Expansion number of depth 10 is 19794
+Selecting move ( turn counter ) with distance 0.9535629904775362
+Average time taken : 13502.0 ms
+
+Current state : 
+  [( true ( heading west ) ), ( true ( east-speed 2 ) ), ( true ( north-speed 3 ) ), ( true ( x 12 ) ), ( true ( y 13 ) ), ( true ( step 2 ) )]
+This is turn 1
+  iterative Depth 0
+    Move : thrust, minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06020599913279624, hillclimb: 0.0, final value: 4.060205999132796
+    Move : ( turn counter ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06020599913279624, hillclimb: 0.0, final value: 4.060205999132796
+    Move : ( turn clock ), minimum: 4.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.06020599913279624, hillclimb: 0.0, final value: 4.060205999132796
+Expansion number of depth 0 is 3
+  iterative Depth 1
+    Move : ( turn counter ), minimum: 4.0, occurrence: 4, occWeight: 0.06020599913279624, avgMinWeight: 0.06020599913279624, hillclimb: 0.0, final value: 4.0
+    Move : ( turn clock ), minimum: 4.0, occurrence: 4, occWeight: 0.06020599913279624, avgMinWeight: 0.06020599913279624, hillclimb: 0.0, final value: 4.0
+    Move : thrust, minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.05051499783199061, hillclimb: 0.0, final value: 2.0505149978319905
+Expansion number of depth 1 is 12
+  iterative Depth 2
+    Move : ( turn clock ), minimum: 4.0, occurrence: 13, occWeight: 0.11139433523068368, avgMinWeight: 0.06020599913279624, hillclimb: 0.0, final value: 3.9488116639021125
+    Move : ( turn counter ), minimum: 4.0, occurrence: 13, occWeight: 0.11139433523068368, avgMinWeight: 0.06020599913279624, hillclimb: 0.0, final value: 3.9488116639021125
+    Move : thrust, minimum: 2.0, occurrence: 3, occWeight: 0.047712125471966245, avgMinWeight: 0.05259698222574795, hillclimb: 0.0, final value: 2.004884856753782
+Expansion number of depth 2 is 39
+  iterative Depth 3
+    Move : ( turn counter ), minimum: 3.0, occurrence: 2, occWeight: 0.03010299956639812, avgMinWeight: 0.059673115782289544, hillclimb: 0.0, final value: 3.0295701162158917
+    Move : thrust, minimum: 2.0, occurrence: 9, occWeight: 0.09542425094393249, avgMinWeight: 0.053643525593564445, hillclimb: 0.0, final value: 1.958219274649632
+    Move : ( turn clock ), minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.05994037476842223, hillclimb: 0.0, final value: 3.059940374768422
+Expansion number of depth 3 is 120
+  iterative Depth 4
+    Move : ( turn counter ), minimum: 3.0, occurrence: 7, occWeight: 0.08450980400142569, avgMinWeight: 0.05957330087236638, hillclimb: 0.0, final value: 2.975063496870941
+    Move : thrust, minimum: 2.0, occurrence: 23, occWeight: 0.13617278360175927, avgMinWeight: 0.05430497684279707, hillclimb: 0.0, final value: 1.9181321932410378
+    Move : ( turn clock ), minimum: 3.0, occurrence: 4, occWeight: 0.06020599913279624, avgMinWeight: 0.05984855309696643, hillclimb: 0.0, final value: 2.9996425539641702
+Expansion number of depth 4 is 362
+  iterative Depth 5
+    Move : ( turn counter ), minimum: 3.0, occurrence: 34, occWeight: 0.15314789170422552, avgMinWeight: 0.05916241447657883, hillclimb: 0.0, final value: 2.9060145227723533
+    Move : thrust, minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.054696391944254144, hillclimb: 0.0, final value: 1.0546963919442542
+    Move : ( turn clock ), minimum: 3.0, occurrence: 21, occWeight: 0.13222192947339192, avgMinWeight: 0.059576792948013046, hillclimb: 0.0, final value: 2.927354863474621
+Expansion number of depth 5 is 1083
+  iterative Depth 6
+    Move : thrust, minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.05507316665723645, hillclimb: 0.0, final value: 1.0550731666572364
+    Move : ( turn counter ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.059040037878296904, hillclimb: 0.0, final value: 2.059040037878297
+    Move : ( turn clock ), minimum: 3.0, occurrence: 76, occWeight: 0.18808135922807914, avgMinWeight: 0.0594437074925195, hillclimb: 0.0, final value: 2.8713623482644404
+Expansion number of depth 6 is 3227
+  iterative Depth 7
+    Move : thrust, minimum: 1.0, occurrence: 9, occWeight: 0.09542425094393249, avgMinWeight: 0.055448840569360655, hillclimb: 0.0, final value: 0.9600245896254281
+    Move : ( turn counter ), minimum: 2.0, occurrence: 4, occWeight: 0.06020599913279624, avgMinWeight: 0.058752899591569874, hillclimb: 0.0, final value: 1.9985469004587735
+    Move : ( turn clock ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.05921873226416495, hillclimb: 0.0, final value: 2.059218732264165
+Expansion number of depth 7 is 9583
+  iterative Depth 8
+    Move : ( turn counter ), minimum: 2.0, occurrence: 24, occWeight: 0.13802112417116058, avgMinWeight: 0.058493237485181405, hillclimb: 0.0, final value: 1.9204721133140208
+    Move : thrust, minimum: 1.0, occurrence: 11, occWeight: 0.10413926851582252, avgMinWeight: 0.05580946524076581, hillclimb: 0.0, final value: 0.9516701967249432
+    Move : ( turn clock ), minimum: 2.0, occurrence: 11, occWeight: 0.10413926851582252, avgMinWeight: 0.05874219031926405, hillclimb: 0.0, final value: 1.9546029218034415
+Expansion number of depth 8 is 28207
+  iterative Depth 9
+    Move : thrust, minimum: 1.0, occurrence: 53, occWeight: 0.1724275869600789, avgMinWeight: 0.05611378838193657, hillclimb: 0.0, final value: 0.8836862014218577
+    Move : ( turn clock ), minimum: 2.0, occurrence: 43, occWeight: 0.16334684555795864, avgMinWeight: 0.058423179359713195, hillclimb: 0.0, final value: 1.8950763338017547
+    Move : ( turn counter ), minimum: 2.0, occurrence: 86, occWeight: 0.19344984512435676, avgMinWeight: 0.058104802591554726, hillclimb: 0.0, final value: 1.864654957467198
+Expansion number of depth 9 is 81855
+  iterative Depth 10
+Expansion number of depth 10 is 34942
+Selecting move thrust with distance 0.8836862014218577
+Average time taken : 13502.5 ms
+
+Current state : 
+  [( true ( heading west ) ), ( true ( north-speed 3 ) ), ( true ( east-speed 1 ) ), ( true ( step 3 ) ), ( true ( y 16 ) ), ( true ( x 14 ) )]
+This is turn 2
+  iterative Depth 0
+    Move : ( turn counter ), minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.054406804435027566, hillclimb: 0.0, final value: 3.0544068044350277
+    Move : thrust, minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.047712125471966245, hillclimb: 0.0, final value: 2.0477121254719663
+    Move : ( turn clock ), minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.054406804435027566, hillclimb: 0.0, final value: 3.0544068044350277
+Expansion number of depth 0 is 3
+  iterative Depth 1
+    Move : ( turn counter ), minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.05797835966168101, hillclimb: 0.0, final value: 3.057978359661681
+    Move : ( turn clock ), minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.05797835966168101, hillclimb: 0.0, final value: 3.057978359661681
+    Move : thrust, minimum: 2.0, occurrence: 3, occWeight: 0.047712125471966245, avgMinWeight: 0.0414973347970818, hillclimb: 0.0, final value: 1.9937852093251154
+Expansion number of depth 1 is 12
+  iterative Depth 2
+    Move : thrust, minimum: 2.0, occurrence: 9, occWeight: 0.09542425094393249, avgMinWeight: 0.0422073688388757, hillclimb: 0.0, final value: 1.9467831178949433
+    Move : ( turn counter ), minimum: 3.0, occurrence: 2, occWeight: 0.03010299956639812, avgMinWeight: 0.05862657241447304, hillclimb: 0.0, final value: 3.028523572848075
+    Move : ( turn clock ), minimum: 3.0, occurrence: 2, occWeight: 0.03010299956639812, avgMinWeight: 0.05862657241447304, hillclimb: 0.0, final value: 3.028523572848075
+Expansion number of depth 2 is 39
+  iterative Depth 3
+    Move : ( turn clock ), minimum: 3.0, occurrence: 5, occWeight: 0.06989700043360189, avgMinWeight: 0.058861326760071594, hillclimb: 0.0, final value: 2.98896432632647
+    Move : thrust, minimum: 2.0, occurrence: 23, occWeight: 0.13617278360175927, avgMinWeight: 0.04402945867636842, hillclimb: 0.0, final value: 1.907856675074609
+    Move : ( turn counter ), minimum: 3.0, occurrence: 6, occWeight: 0.07781512503836437, avgMinWeight: 0.05858732302346871, hillclimb: 0.0, final value: 2.9807721979851043
+Expansion number of depth 3 is 120
+  iterative Depth 4
+    Move : ( turn counter ), minimum: 3.0, occurrence: 21, occWeight: 0.13222192947339192, avgMinWeight: 0.05826314394896365, hillclimb: 0.0, final value: 2.9260412144755716
+    Move : ( turn clock ), minimum: 3.0, occurrence: 18, occWeight: 0.1255272505103306, avgMinWeight: 0.05857380272609693, hillclimb: 0.0, final value: 2.9330465522157665
+    Move : thrust, minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.046264343135103955, hillclimb: 0.0, final value: 1.046264343135104
+Expansion number of depth 4 is 361
+  iterative Depth 5
+    Move : ( turn clock ), minimum: 3.0, occurrence: 65, occWeight: 0.18129133566428554, avgMinWeight: 0.05822813431531417, hillclimb: 0.0, final value: 2.8769367986510286
+    Move : thrust, minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.04854848182044645, hillclimb: 0.0, final value: 1.0485484818204465
+    Move : ( turn counter ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.057766555238281295, hillclimb: 0.0, final value: 2.057766555238281
+Expansion number of depth 5 is 1079
+  iterative Depth 6
+    Move : ( turn counter ), minimum: 2.0, occurrence: 4, occWeight: 0.06020599913279624, avgMinWeight: 0.05767499938410416, hillclimb: 0.0, final value: 1.9974690002513078
+    Move : ( turn clock ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.05806860379361326, hillclimb: 0.0, final value: 2.0580686037936133
+    Move : thrust, minimum: 1.0, occurrence: 9, occWeight: 0.09542425094393249, avgMinWeight: 0.05017500976289609, hillclimb: 0.0, final value: 0.9547507588189637
+Expansion number of depth 6 is 3210
+  iterative Depth 7
+    Move : ( turn clock ), minimum: 2.0, occurrence: 6, occWeight: 0.07781512503836437, avgMinWeight: 0.0579159824056828, hillclimb: 0.0, final value: 1.9801008573673184
+    Move : thrust, minimum: 1.0, occurrence: 11, occWeight: 0.10413926851582252, avgMinWeight: 0.05177611440101565, hillclimb: 0.0, final value: 0.9476368458851931
+    Move : ( turn counter ), minimum: 2.0, occurrence: 17, occWeight: 0.12304489213782739, avgMinWeight: 0.0575073280543993, hillclimb: 0.0, final value: 1.934462435916572
+Expansion number of depth 7 is 9416
+  iterative Depth 8
+    Move : ( turn counter ), minimum: 2.0, occurrence: 54, occWeight: 0.17323937598229686, avgMinWeight: 0.057462338969610824, hillclimb: 0.0, final value: 1.884222962987314
+    Move : ( turn clock ), minimum: 2.0, occurrence: 29, occWeight: 0.1462397997898956, avgMinWeight: 0.057868239908934735, hillclimb: 0.0, final value: 1.911628440119039
+    Move : thrust, minimum: 1.0, occurrence: 53, occWeight: 0.1724275869600789, avgMinWeight: 0.05287771757866209, hillclimb: 0.0, final value: 0.8804501306185832
+Expansion number of depth 8 is 27324
+  iterative Depth 9
+    Move : thrust, minimum: 1.0, occurrence: 79, occWeight: 0.18976270912904414, avgMinWeight: 0.05393873014768259, hillclimb: 0.0, final value: 0.8641760210186384
+    Move : ( turn counter ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.057355159747800685, hillclimb: 0.0, final value: 1.0573551597478006
+    Move : ( turn clock ), minimum: 2.0, occurrence: 102, occWeight: 0.20086001717619176, avgMinWeight: 0.05759791212657274, hillclimb: 0.0, final value: 1.856737894950381
+Expansion number of depth 9 is 78151
+  iterative Depth 10
+Expansion number of depth 10 is 37567
+Selecting move thrust with distance 0.8641760210186384
+Average time taken : 13502.333333333334 ms
+
+Current state : 
+  [( true ( heading west ) ), ( true ( north-speed 3 ) ), ( true ( step 4 ) ), ( true ( east-speed 0 ) ), ( true ( y 19 ) ), ( true ( x 15 ) )]
+This is turn 3
+  iterative Depth 0
+    Move : ( turn counter ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 2.030102999566398
+    Move : thrust, minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03979400086720376, hillclimb: 0.0, final value: 3.0397940008672037
+    Move : ( turn clock ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 2.030102999566398
+Expansion number of depth 0 is 3
+  iterative Depth 1
+    Move : ( turn clock ), minimum: 2.0, occurrence: 4, occWeight: 0.06020599913279624, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 1.9698970004336018
+    Move : thrust, minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.053147891704225514, hillclimb: 0.0, final value: 3.0531478917042256
+    Move : ( turn counter ), minimum: 2.0, occurrence: 4, occWeight: 0.06020599913279624, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 1.9698970004336018
+Expansion number of depth 1 is 12
+  iterative Depth 2
+    Move : ( turn counter ), minimum: 2.0, occurrence: 11, occWeight: 0.10413926851582252, avgMinWeight: 0.03309932190414244, hillclimb: 0.0, final value: 1.92896005338832
+    Move : thrust, minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0578147833922551, hillclimb: 0.0, final value: 3.057814783392255
+    Move : ( turn clock ), minimum: 2.0, occurrence: 11, occWeight: 0.10413926851582252, avgMinWeight: 0.03309932190414244, hillclimb: 0.0, final value: 1.92896005338832
+Expansion number of depth 2 is 39
+  iterative Depth 3
+    Move : ( turn counter ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.037398787754650935, hillclimb: 0.0, final value: 1.0373987877546509
+    Move : ( turn clock ), minimum: 2.0, occurrence: 30, occWeight: 0.14771212547196624, avgMinWeight: 0.03784422189727594, hillclimb: 0.0, final value: 1.8901320964253097
+    Move : thrust, minimum: 3.0, occurrence: 3, occWeight: 0.047712125471966245, avgMinWeight: 0.058861326760071594, hillclimb: 0.0, final value: 3.0111492012881054
+Expansion number of depth 3 is 120
+  iterative Depth 4
+    Move : thrust, minimum: 3.0, occurrence: 10, occWeight: 0.1, avgMinWeight: 0.05912471220457449, hillclimb: 0.0, final value: 2.9591247122045745
+    Move : ( turn clock ), minimum: 2.0, occurrence: 77, occWeight: 0.1886490725172482, avgMinWeight: 0.041606728930968444, hillclimb: 0.0, final value: 1.8529576564137202
+    Move : ( turn counter ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.04189525137310248, hillclimb: 0.0, final value: 1.0418952513731026
+Expansion number of depth 4 is 358
+  iterative Depth 5
+    Move : ( turn counter ), minimum: 1.0, occurrence: 7, occWeight: 0.08450980400142569, avgMinWeight: 0.04502937451950778, hillclimb: 0.0, final value: 0.960519570518082
+    Move : thrust, minimum: 3.0, occurrence: 41, occWeight: 0.16127838567197356, avgMinWeight: 0.05890769857909857, hillclimb: 0.0, final value: 2.897629312907125
+    Move : ( turn clock ), minimum: 1.0, occurrence: 2, occWeight: 0.03010299956639812, avgMinWeight: 0.044630730730544285, hillclimb: 0.0, final value: 1.014527731164146
+Expansion number of depth 5 is 1072
+  iterative Depth 6
+    Move : ( turn clock ), minimum: 1.0, occurrence: 4, occWeight: 0.06020599913279624, avgMinWeight: 0.04722867578740455, hillclimb: 0.0, final value: 0.9870226766546083
+    Move : ( turn counter ), minimum: 1.0, occurrence: 7, occWeight: 0.08450980400142569, avgMinWeight: 0.04808876747670338, hillclimb: 0.0, final value: 0.9635789634752777
+    Move : thrust, minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.05868413885945274, hillclimb: 0.0, final value: 2.058684138859453
+Expansion number of depth 6 is 3165
+  iterative Depth 7
+    Move : ( turn clock ), minimum: 1.0, occurrence: 22, occWeight: 0.13424226808222062, avgMinWeight: 0.04915798555316835, hillclimb: 0.0, final value: 0.9149157174709477
+    Move : ( turn counter ), minimum: 1.0, occurrence: 31, occWeight: 0.14913616938342728, avgMinWeight: 0.05017934979176184, hillclimb: 0.0, final value: 0.9010431804083346
+    Move : thrust, minimum: 2.0, occurrence: 9, occWeight: 0.09542425094393249, avgMinWeight: 0.058374751318404895, hillclimb: 0.0, final value: 1.9629505003744725
+Expansion number of depth 7 is 9227
+  iterative Depth 8
+    Move : ( turn counter ), minimum: 1.0, occurrence: 35, occWeight: 0.15440680443502758, avgMinWeight: 0.05200336934941846, hillclimb: 0.0, final value: 0.8975965649143909
+    Move : ( turn clock ), minimum: 1.0, occurrence: 44, occWeight: 0.16434526764861873, avgMinWeight: 0.0508059602895931, hillclimb: 0.0, final value: 0.8864606926409743
+    Move : thrust, minimum: 2.0, occurrence: 31, occWeight: 0.14913616938342728, avgMinWeight: 0.0582944104671661, hillclimb: 0.0, final value: 1.9091582410837389
+Expansion number of depth 8 is 26560
+  iterative Depth 9
+    Move : ( turn clock ), minimum: 1.0, occurrence: 150, occWeight: 0.21760912590556813, avgMinWeight: 0.05223081629543659, hillclimb: 0.0, final value: 0.8346216903898684
+    Move : ( turn counter ), minimum: 1.0, occurrence: 119, occWeight: 0.20755469613925306, avgMinWeight: 0.05327096471006858, hillclimb: 0.0, final value: 0.8457162685708155
+    Move : thrust, minimum: 2.0, occurrence: 131, occWeight: 0.21172712956557643, avgMinWeight: 0.057802162037246904, hillclimb: 0.0, final value: 1.8460750324716704
+Expansion number of depth 9 is 74752
+  iterative Depth 10
+Expansion number of depth 10 is 38895
+Selecting move ( turn clock ) with distance 0.8346216903898684
+Average time taken : 13502.25 ms
+
+Current state : 
+  [( true ( north-speed 3 ) ), ( true ( east-speed 0 ) ), ( true ( heading north ) ), ( true ( step 5 ) ), ( true ( y 2 ) ), ( true ( x 15 ) )]
+This is turn 4
+  iterative Depth 0
+    Move : thrust, minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 2.030102999566398
+    Move : ( turn clock ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 2.030102999566398
+    Move : ( turn counter ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 2.030102999566398
+Expansion number of depth 0 is 3
+  iterative Depth 1
+    Move : ( turn counter ), minimum: 2.0, occurrence: 3, occWeight: 0.047712125471966245, avgMinWeight: 0.034242268082220625, hillclimb: 0.0, final value: 1.9865301426102542
+    Move : ( turn clock ), minimum: 2.0, occurrence: 3, occWeight: 0.047712125471966245, avgMinWeight: 0.034242268082220625, hillclimb: 0.0, final value: 1.9865301426102542
+    Move : thrust, minimum: 2.0, occurrence: 4, occWeight: 0.06020599913279624, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 1.9698970004336018
+Expansion number of depth 1 is 12
+  iterative Depth 2
+    Move : ( turn clock ), minimum: 2.0, occurrence: 9, occWeight: 0.09542425094393249, avgMinWeight: 0.03979400086720376, hillclimb: 0.0, final value: 1.9443697499232713
+    Move : thrust, minimum: 2.0, occurrence: 11, occWeight: 0.10413926851582252, avgMinWeight: 0.03309932190414244, hillclimb: 0.0, final value: 1.92896005338832
+    Move : ( turn counter ), minimum: 2.0, occurrence: 9, occWeight: 0.09542425094393249, avgMinWeight: 0.03979400086720376, hillclimb: 0.0, final value: 1.9443697499232713
+Expansion number of depth 2 is 39
+  iterative Depth 3
+    Move : thrust, minimum: 2.0, occurrence: 30, occWeight: 0.14771212547196624, avgMinWeight: 0.03784422189727594, hillclimb: 0.0, final value: 1.8901320964253097
+    Move : ( turn counter ), minimum: 2.0, occurrence: 23, occWeight: 0.13617278360175927, avgMinWeight: 0.0432539122066922, hillclimb: 0.0, final value: 1.907081128604933
+    Move : ( turn clock ), minimum: 2.0, occurrence: 23, occWeight: 0.13617278360175927, avgMinWeight: 0.0432539122066922, hillclimb: 0.0, final value: 1.907081128604933
+Expansion number of depth 3 is 120
+  iterative Depth 4
+    Move : ( turn counter ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.04601828328033828, hillclimb: 0.0, final value: 1.0460182832803382
+    Move : thrust, minimum: 2.0, occurrence: 77, occWeight: 0.1886490725172482, avgMinWeight: 0.041606728930968444, hillclimb: 0.0, final value: 1.8529576564137202
+    Move : ( turn clock ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.04601828328033828, hillclimb: 0.0, final value: 1.0460182832803382
+Expansion number of depth 4 is 363
+  iterative Depth 5
+    Move : ( turn counter ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.048469519165620326, hillclimb: 0.0, final value: 1.0484695191656204
+    Move : ( turn clock ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.048469519165620326, hillclimb: 0.0, final value: 1.0484695191656204
+    Move : thrust, minimum: 1.0, occurrence: 2, occWeight: 0.03010299956639812, avgMinWeight: 0.044630730730544285, hillclimb: 0.0, final value: 1.014527731164146
+Expansion number of depth 5 is 1082
+  iterative Depth 6
+    Move : thrust, minimum: 1.0, occurrence: 4, occWeight: 0.06020599913279624, avgMinWeight: 0.04722867578740455, hillclimb: 0.0, final value: 0.9870226766546083
+    Move : ( turn clock ), minimum: 1.0, occurrence: 9, occWeight: 0.09542425094393249, avgMinWeight: 0.050118145286065494, hillclimb: 0.0, final value: 0.954693894342133
+    Move : ( turn counter ), minimum: 1.0, occurrence: 9, occWeight: 0.09542425094393249, avgMinWeight: 0.05013942535966932, hillclimb: 0.0, final value: 0.9547151744157368
+Expansion number of depth 6 is 3213
+  iterative Depth 7
+    Move : ( turn clock ), minimum: 1.0, occurrence: 11, occWeight: 0.10413926851582252, avgMinWeight: 0.051596523837007816, hillclimb: 0.0, final value: 0.9474572553211853
+    Move : thrust, minimum: 1.0, occurrence: 22, occWeight: 0.13424226808222062, avgMinWeight: 0.049153234773538314, hillclimb: 0.0, final value: 0.9149109666913177
+    Move : ( turn counter ), minimum: 1.0, occurrence: 11, occWeight: 0.10413926851582252, avgMinWeight: 0.051703033032746024, hillclimb: 0.0, final value: 0.9475637645169235
+Expansion number of depth 7 is 9379
+  iterative Depth 8
+    Move : thrust, minimum: 1.0, occurrence: 44, occWeight: 0.16434526764861873, avgMinWeight: 0.0509283367724362, hillclimb: 0.0, final value: 0.8865830691238175
+    Move : ( turn clock ), minimum: 1.0, occurrence: 53, occWeight: 0.1724275869600789, avgMinWeight: 0.052738123198482575, hillclimb: 0.0, final value: 0.8803105362384037
+    Move : ( turn counter ), minimum: 1.0, occurrence: 53, occWeight: 0.1724275869600789, avgMinWeight: 0.05295640442131936, hillclimb: 0.0, final value: 0.8805288174612405
+Expansion number of depth 8 is 26567
+  iterative Depth 9
+    Move : ( turn counter ), minimum: 1.0, occurrence: 79, occWeight: 0.18976270912904414, avgMinWeight: 0.054696689876741936, hillclimb: 0.0, final value: 0.8649339807476978
+    Move : ( turn clock ), minimum: 1.0, occurrence: 79, occWeight: 0.18976270912904414, avgMinWeight: 0.054310469153495786, hillclimb: 0.0, final value: 0.8645477600244517
+    Move : thrust, minimum: 1.0, occurrence: 150, occWeight: 0.21760912590556813, avgMinWeight: 0.05288593092512169, hillclimb: 0.0, final value: 0.8352768050195536
+Expansion number of depth 9 is 70044
+  iterative Depth 10
+Expansion number of depth 10 is 32534
+Selecting move ( turn counter ) with distance 0.8352768050195536
+Average time taken : 13502.2 ms
+
+Current state : 
+  [( true ( heading west ) ), ( true ( y 5 ) ), ( true ( north-speed 3 ) ), ( true ( east-speed 0 ) ), ( true ( step 6 ) ), ( true ( x 15 ) )]
+This is turn 5
+  iterative Depth 0
+    Move : thrust, minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03979400086720376, hillclimb: 0.0, final value: 3.0397940008672037
+    Move : ( turn clock ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 2.030102999566398
+    Move : ( turn counter ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 2.030102999566398
+Expansion number of depth 0 is 3
+  iterative Depth 1
+    Move : thrust, minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.053147891704225514, hillclimb: 0.0, final value: 3.0531478917042256
+    Move : ( turn clock ), minimum: 2.0, occurrence: 4, occWeight: 0.06020599913279624, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 1.9698970004336018
+    Move : ( turn counter ), minimum: 2.0, occurrence: 4, occWeight: 0.06020599913279624, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 1.9698970004336018
+Expansion number of depth 1 is 12
+  iterative Depth 2
+    Move : ( turn counter ), minimum: 2.0, occurrence: 11, occWeight: 0.10413926851582252, avgMinWeight: 0.03309932190414244, hillclimb: 0.0, final value: 1.92896005338832
+    Move : thrust, minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0578147833922551, hillclimb: 0.0, final value: 3.057814783392255
+    Move : ( turn clock ), minimum: 2.0, occurrence: 11, occWeight: 0.10413926851582252, avgMinWeight: 0.03309932190414244, hillclimb: 0.0, final value: 1.92896005338832
+Expansion number of depth 2 is 39
+  iterative Depth 3
+    Move : ( turn counter ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.037398787754650935, hillclimb: 0.0, final value: 1.0373987877546509
+    Move : thrust, minimum: 3.0, occurrence: 3, occWeight: 0.047712125471966245, avgMinWeight: 0.058861326760071594, hillclimb: 0.0, final value: 3.0111492012881054
+    Move : ( turn clock ), minimum: 2.0, occurrence: 30, occWeight: 0.14771212547196624, avgMinWeight: 0.03784422189727594, hillclimb: 0.0, final value: 1.8901320964253097
+Expansion number of depth 3 is 120
+  iterative Depth 4
+    Move : thrust, minimum: 3.0, occurrence: 10, occWeight: 0.1, avgMinWeight: 0.05912471220457449, hillclimb: 0.0, final value: 2.9591247122045745
+    Move : ( turn counter ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.04189525137310248, hillclimb: 0.0, final value: 1.0418952513731026
+    Move : ( turn clock ), minimum: 2.0, occurrence: 77, occWeight: 0.1886490725172482, avgMinWeight: 0.041606728930968444, hillclimb: 0.0, final value: 1.8529576564137202
+Expansion number of depth 4 is 358
+  iterative Depth 5
+    Move : ( turn clock ), minimum: 1.0, occurrence: 2, occWeight: 0.03010299956639812, avgMinWeight: 0.044630730730544285, hillclimb: 0.0, final value: 1.014527731164146
+    Move : ( turn counter ), minimum: 1.0, occurrence: 7, occWeight: 0.08450980400142569, avgMinWeight: 0.044889320243524426, hillclimb: 0.0, final value: 0.9603795162420987
+    Move : thrust, minimum: 3.0, occurrence: 40, occWeight: 0.16020599913279623, avgMinWeight: 0.058934802581182465, hillclimb: 0.0, final value: 2.8987288034483862
+Expansion number of depth 5 is 1065
+  iterative Depth 6
+    Move : thrust, minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.05875035623137455, hillclimb: 0.0, final value: 2.0587503562313745
+    Move : ( turn counter ), minimum: 1.0, occurrence: 7, occWeight: 0.08450980400142569, avgMinWeight: 0.04780269786806864, hillclimb: 0.0, final value: 0.963292893866643
+    Move : ( turn clock ), minimum: 1.0, occurrence: 4, occWeight: 0.06020599913279624, avgMinWeight: 0.047200709884157525, hillclimb: 0.0, final value: 0.9869947107513612
+Expansion number of depth 6 is 3114
+  iterative Depth 7
+    Move : ( turn counter ), minimum: 1.0, occurrence: 31, occWeight: 0.14913616938342728, avgMinWeight: 0.050008154492069315, hillclimb: 0.0, final value: 0.9008719851086421
+    Move : thrust, minimum: 2.0, occurrence: 8, occWeight: 0.09030899869919436, avgMinWeight: 0.05843471024784774, hillclimb: 0.0, final value: 1.9681257115486535
+    Move : ( turn clock ), minimum: 1.0, occurrence: 22, occWeight: 0.13424226808222062, avgMinWeight: 0.04931987947173508, hillclimb: 0.0, final value: 0.9150776113895145
+Expansion number of depth 7 is 8842
+  iterative Depth 8
+    Move : thrust, minimum: 2.0, occurrence: 22, occWeight: 0.13424226808222062, avgMinWeight: 0.058395968526351635, hillclimb: 0.0, final value: 1.924153700444131
+    Move : ( turn counter ), minimum: 1.0, occurrence: 35, occWeight: 0.15440680443502758, avgMinWeight: 0.05248584461248068, hillclimb: 0.0, final value: 0.8980790401774532
+    Move : ( turn clock ), minimum: 1.0, occurrence: 44, occWeight: 0.16434526764861873, avgMinWeight: 0.051801807552498524, hillclimb: 0.0, final value: 0.8874565399038797
+Expansion number of depth 8 is 23840
+  iterative Depth 9
+    Move : thrust, minimum: 2.0, occurrence: 72, occWeight: 0.18573324964312685, avgMinWeight: 0.05794281067088354, hillclimb: 0.0, final value: 1.8722095610277567
+    Move : ( turn counter ), minimum: 1.0, occurrence: 35, occWeight: 0.15440680443502758, avgMinWeight: 0.05503813177233145, hillclimb: 0.0, final value: 0.9006313273373039
+    Move : ( turn clock ), minimum: 1.0, occurrence: 44, occWeight: 0.16434526764861873, avgMinWeight: 0.05472601540285236, hillclimb: 0.0, final value: 0.8903807477542336
+Expansion number of depth 9 is 58132
+Selecting move ( turn clock ) with distance 0.8903807477542336
+Average time taken : 12839.0 ms
+
+Current state : 
+  [( true ( north-speed 3 ) ), ( true ( east-speed 0 ) ), ( true ( heading north ) ), ( true ( y 8 ) ), ( true ( step 7 ) ), ( true ( x 15 ) )]
+This is turn 6
+  iterative Depth 0
+    Move : ( turn clock ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 2.030102999566398
+    Move : ( turn counter ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 2.030102999566398
+    Move : thrust, minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 2.030102999566398
+Expansion number of depth 0 is 3
+  iterative Depth 1
+    Move : ( turn clock ), minimum: 2.0, occurrence: 3, occWeight: 0.047712125471966245, avgMinWeight: 0.034242268082220625, hillclimb: 0.0, final value: 1.9865301426102542
+    Move : thrust, minimum: 2.0, occurrence: 4, occWeight: 0.06020599913279624, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 1.9698970004336018
+    Move : ( turn counter ), minimum: 2.0, occurrence: 3, occWeight: 0.047712125471966245, avgMinWeight: 0.034242268082220625, hillclimb: 0.0, final value: 1.9865301426102542
+Expansion number of depth 1 is 12
+  iterative Depth 2
+    Move : ( turn counter ), minimum: 2.0, occurrence: 9, occWeight: 0.09542425094393249, avgMinWeight: 0.03979400086720376, hillclimb: 0.0, final value: 1.9443697499232713
+    Move : thrust, minimum: 2.0, occurrence: 11, occWeight: 0.10413926851582252, avgMinWeight: 0.03309932190414244, hillclimb: 0.0, final value: 1.92896005338832
+    Move : ( turn clock ), minimum: 2.0, occurrence: 9, occWeight: 0.09542425094393249, avgMinWeight: 0.03979400086720376, hillclimb: 0.0, final value: 1.9443697499232713
+Expansion number of depth 2 is 39
+  iterative Depth 3
+    Move : ( turn counter ), minimum: 2.0, occurrence: 23, occWeight: 0.13617278360175927, avgMinWeight: 0.0432539122066922, hillclimb: 0.0, final value: 1.907081128604933
+    Move : ( turn clock ), minimum: 2.0, occurrence: 23, occWeight: 0.13617278360175927, avgMinWeight: 0.0432539122066922, hillclimb: 0.0, final value: 1.907081128604933
+    Move : thrust, minimum: 2.0, occurrence: 30, occWeight: 0.14771212547196624, avgMinWeight: 0.03784422189727594, hillclimb: 0.0, final value: 1.8901320964253097
+Expansion number of depth 3 is 120
+  iterative Depth 4
+    Move : ( turn counter ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.04601828328033828, hillclimb: 0.0, final value: 1.0460182832803382
+    Move : thrust, minimum: 2.0, occurrence: 77, occWeight: 0.1886490725172482, avgMinWeight: 0.041606728930968444, hillclimb: 0.0, final value: 1.8529576564137202
+    Move : ( turn clock ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.04601828328033828, hillclimb: 0.0, final value: 1.0460182832803382
+Expansion number of depth 4 is 363
+  iterative Depth 5
+    Move : thrust, minimum: 1.0, occurrence: 2, occWeight: 0.03010299956639812, avgMinWeight: 0.044630730730544285, hillclimb: 0.0, final value: 1.014527731164146
+    Move : ( turn counter ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0484319670597818, hillclimb: 0.0, final value: 1.0484319670597817
+    Move : ( turn clock ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0484319670597818, hillclimb: 0.0, final value: 1.0484319670597817
+Expansion number of depth 5 is 1080
+  iterative Depth 6
+    Move : thrust, minimum: 1.0, occurrence: 4, occWeight: 0.06020599913279624, avgMinWeight: 0.047200709884157525, hillclimb: 0.0, final value: 0.9869947107513612
+    Move : ( turn clock ), minimum: 1.0, occurrence: 9, occWeight: 0.09542425094393249, avgMinWeight: 0.05008195738428097, hillclimb: 0.0, final value: 0.9546577064403485
+    Move : ( turn counter ), minimum: 1.0, occurrence: 9, occWeight: 0.09542425094393249, avgMinWeight: 0.05008195738428097, hillclimb: 0.0, final value: 0.9546577064403485
+Expansion number of depth 6 is 3183
+  iterative Depth 7
+    Move : ( turn counter ), minimum: 1.0, occurrence: 11, occWeight: 0.10413926851582252, avgMinWeight: 0.05267342701245785, hillclimb: 0.0, final value: 0.9485341584966352
+    Move : thrust, minimum: 1.0, occurrence: 22, occWeight: 0.13424226808222062, avgMinWeight: 0.05018868756549516, hillclimb: 0.0, final value: 0.9159464194832745
+    Move : ( turn clock ), minimum: 1.0, occurrence: 11, occWeight: 0.10413926851582252, avgMinWeight: 0.05231207594866023, hillclimb: 0.0, final value: 0.9481728074328377
+Expansion number of depth 7 is 8428
+  iterative Depth 8
+    Move : ( turn clock ), minimum: 1.0, occurrence: 27, occWeight: 0.14313637641589874, avgMinWeight: 0.05456356389319579, hillclimb: 0.0, final value: 0.9114271874772971
+    Move : ( turn counter ), minimum: 1.0, occurrence: 27, occWeight: 0.14313637641589874, avgMinWeight: 0.055040756035721616, hillclimb: 0.0, final value: 0.911904379619823
+    Move : thrust, minimum: 1.0, occurrence: 26, occWeight: 0.1414973347970818, avgMinWeight: 0.05351812643163364, hillclimb: 0.0, final value: 0.9120207916345519
+Expansion number of depth 8 is 19784
+Selecting move thrust with distance 0.9114271874772971
+Average time taken : 11489.857142857143 ms
+
+Current state : 
+  [( true ( north-speed 3 ) ), ( true ( step 8 ) ), ( true ( y 11 ) ), ( true ( east-speed 0 ) ), ( true ( heading north ) ), ( true ( x 15 ) )]
+This is turn 7
+  iterative Depth 0
+    Move : ( turn counter ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 2.030102999566398
+    Move : ( turn clock ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 2.030102999566398
+    Move : thrust, minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 2.030102999566398
+Expansion number of depth 0 is 3
+  iterative Depth 1
+    Move : thrust, minimum: 2.0, occurrence: 4, occWeight: 0.06020599913279624, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 1.9698970004336018
+    Move : ( turn clock ), minimum: 2.0, occurrence: 3, occWeight: 0.047712125471966245, avgMinWeight: 0.034242268082220625, hillclimb: 0.0, final value: 1.9865301426102542
+    Move : ( turn counter ), minimum: 2.0, occurrence: 3, occWeight: 0.047712125471966245, avgMinWeight: 0.034242268082220625, hillclimb: 0.0, final value: 1.9865301426102542
+Expansion number of depth 1 is 12
+  iterative Depth 2
+    Move : ( turn counter ), minimum: 2.0, occurrence: 9, occWeight: 0.09542425094393249, avgMinWeight: 0.03979400086720376, hillclimb: 0.0, final value: 1.9443697499232713
+    Move : thrust, minimum: 2.0, occurrence: 11, occWeight: 0.10413926851582252, avgMinWeight: 0.03309932190414244, hillclimb: 0.0, final value: 1.92896005338832
+    Move : ( turn clock ), minimum: 2.0, occurrence: 9, occWeight: 0.09542425094393249, avgMinWeight: 0.03979400086720376, hillclimb: 0.0, final value: 1.9443697499232713
+Expansion number of depth 2 is 39
+  iterative Depth 3
+    Move : thrust, minimum: 2.0, occurrence: 30, occWeight: 0.14771212547196624, avgMinWeight: 0.03784422189727594, hillclimb: 0.0, final value: 1.8901320964253097
+    Move : ( turn counter ), minimum: 2.0, occurrence: 23, occWeight: 0.13617278360175927, avgMinWeight: 0.0432539122066922, hillclimb: 0.0, final value: 1.907081128604933
+    Move : ( turn clock ), minimum: 2.0, occurrence: 23, occWeight: 0.13617278360175927, avgMinWeight: 0.0432539122066922, hillclimb: 0.0, final value: 1.907081128604933
+Expansion number of depth 3 is 120
+  iterative Depth 4
+    Move : ( turn counter ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.04601828328033828, hillclimb: 0.0, final value: 1.0460182832803382
+    Move : ( turn clock ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.04601828328033828, hillclimb: 0.0, final value: 1.0460182832803382
+    Move : thrust, minimum: 2.0, occurrence: 77, occWeight: 0.1886490725172482, avgMinWeight: 0.041606728930968444, hillclimb: 0.0, final value: 1.8529576564137202
+Expansion number of depth 4 is 363
+  iterative Depth 5
+    Move : thrust, minimum: 1.0, occurrence: 2, occWeight: 0.03010299956639812, avgMinWeight: 0.044630730730544285, hillclimb: 0.0, final value: 1.014527731164146
+    Move : ( turn counter ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0484319670597818, hillclimb: 0.0, final value: 1.0484319670597817
+    Move : ( turn clock ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0484319670597818, hillclimb: 0.0, final value: 1.0484319670597817
+Expansion number of depth 5 is 1080
+  iterative Depth 6
+    Move : ( turn clock ), minimum: 1.0, occurrence: 9, occWeight: 0.09542425094393249, avgMinWeight: 0.05078668146867833, hillclimb: 0.0, final value: 0.9553624305247459
+    Move : ( turn counter ), minimum: 1.0, occurrence: 9, occWeight: 0.09542425094393249, avgMinWeight: 0.050879896540390504, hillclimb: 0.0, final value: 0.955455645596458
+    Move : thrust, minimum: 1.0, occurrence: 4, occWeight: 0.06020599913279624, avgMinWeight: 0.0481516985382908, hillclimb: 0.0, final value: 0.9879456994054946
+Expansion number of depth 6 is 2966
+  iterative Depth 7
+    Move : ( turn clock ), minimum: 1.0, occurrence: 9, occWeight: 0.09542425094393249, avgMinWeight: 0.053600210999204666, hillclimb: 0.0, final value: 0.9581759600552722
+    Move : thrust, minimum: 1.0, occurrence: 8, occWeight: 0.09030899869919436, avgMinWeight: 0.0524700360628894, hillclimb: 0.0, final value: 0.962161037363695
+    Move : ( turn counter ), minimum: 1.0, occurrence: 9, occWeight: 0.09542425094393249, avgMinWeight: 0.05402010131401512, hillclimb: 0.0, final value: 0.9585958503700827
+Expansion number of depth 7 is 6974
+Selecting move ( turn counter ) with distance 0.9581759600552722
+Average time taken : 10199.625 ms
+
+Current state : 
+  [( true ( heading west ) ), ( true ( step 9 ) ), ( true ( north-speed 3 ) ), ( true ( east-speed 0 ) ), ( true ( y 14 ) ), ( true ( x 15 ) )]
+This is turn 8
+  iterative Depth 0
+    Move : ( turn counter ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 2.030102999566398
+    Move : thrust, minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03979400086720376, hillclimb: 0.0, final value: 3.0397940008672037
+    Move : ( turn clock ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 2.030102999566398
+Expansion number of depth 0 is 3
+  iterative Depth 1
+    Move : ( turn counter ), minimum: 2.0, occurrence: 4, occWeight: 0.06020599913279624, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 1.9698970004336018
+    Move : thrust, minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.053147891704225514, hillclimb: 0.0, final value: 3.0531478917042256
+    Move : ( turn clock ), minimum: 2.0, occurrence: 4, occWeight: 0.06020599913279624, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 1.9698970004336018
+Expansion number of depth 1 is 12
+  iterative Depth 2
+    Move : ( turn counter ), minimum: 2.0, occurrence: 11, occWeight: 0.10413926851582252, avgMinWeight: 0.03309932190414244, hillclimb: 0.0, final value: 1.92896005338832
+    Move : ( turn clock ), minimum: 2.0, occurrence: 11, occWeight: 0.10413926851582252, avgMinWeight: 0.03309932190414244, hillclimb: 0.0, final value: 1.92896005338832
+    Move : thrust, minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.0578147833922551, hillclimb: 0.0, final value: 3.057814783392255
+Expansion number of depth 2 is 39
+  iterative Depth 3
+    Move : thrust, minimum: 3.0, occurrence: 3, occWeight: 0.047712125471966245, avgMinWeight: 0.058861326760071594, hillclimb: 0.0, final value: 3.0111492012881054
+    Move : ( turn counter ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.037398787754650935, hillclimb: 0.0, final value: 1.0373987877546509
+    Move : ( turn clock ), minimum: 2.0, occurrence: 30, occWeight: 0.14771212547196624, avgMinWeight: 0.03784422189727594, hillclimb: 0.0, final value: 1.8901320964253097
+Expansion number of depth 3 is 120
+  iterative Depth 4
+    Move : ( turn counter ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.041698463927538655, hillclimb: 0.0, final value: 1.0416984639275386
+    Move : ( turn clock ), minimum: 2.0, occurrence: 77, occWeight: 0.1886490725172482, avgMinWeight: 0.041606728930968444, hillclimb: 0.0, final value: 1.8529576564137202
+    Move : thrust, minimum: 3.0, occurrence: 10, occWeight: 0.1, avgMinWeight: 0.05912471220457449, hillclimb: 0.0, final value: 2.9591247122045745
+Expansion number of depth 4 is 357
+  iterative Depth 5
+    Move : ( turn counter ), minimum: 1.0, occurrence: 7, occWeight: 0.08450980400142569, avgMinWeight: 0.045139893315137694, hillclimb: 0.0, final value: 0.960630089313712
+    Move : ( turn clock ), minimum: 1.0, occurrence: 2, occWeight: 0.03010299956639812, avgMinWeight: 0.045580190789253065, hillclimb: 0.0, final value: 1.0154771912228548
+    Move : thrust, minimum: 3.0, occurrence: 40, occWeight: 0.16020599913279623, avgMinWeight: 0.05892767501506394, hillclimb: 0.0, final value: 2.8987216758822676
+Expansion number of depth 5 is 1006
+  iterative Depth 6
+    Move : ( turn clock ), minimum: 1.0, occurrence: 4, occWeight: 0.06020599913279624, avgMinWeight: 0.05028674469834258, hillclimb: 0.0, final value: 0.9900807455655464
+    Move : ( turn counter ), minimum: 1.0, occurrence: 7, occWeight: 0.08450980400142569, avgMinWeight: 0.049348260944623745, hillclimb: 0.0, final value: 0.964838456943198
+    Move : thrust, minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.05877269202892856, hillclimb: 0.0, final value: 2.0587726920289287
+Expansion number of depth 6 is 2565
+Selecting move ( turn counter ) with distance 0.964838456943198
+Average time taken : 9112.0 ms
+
+Current state : 
+  [( true ( heading south ) ), ( true ( north-speed 3 ) ), ( true ( step 10 ) ), ( true ( east-speed 0 ) ), ( true ( x 15 ) ), ( true ( y 17 ) )]
+This is turn 9
+  iterative Depth 0
+    Move : thrust, minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 2.030102999566398
+    Move : ( turn clock ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 2.030102999566398
+    Move : ( turn counter ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 2.030102999566398
+Expansion number of depth 0 is 3
+  iterative Depth 1
+    Move : ( turn clock ), minimum: 2.0, occurrence: 3, occWeight: 0.047712125471966245, avgMinWeight: 0.034242268082220625, hillclimb: 0.0, final value: 1.9865301426102542
+    Move : thrust, minimum: 2.0, occurrence: 4, occWeight: 0.06020599913279624, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 1.9698970004336018
+    Move : ( turn counter ), minimum: 2.0, occurrence: 3, occWeight: 0.047712125471966245, avgMinWeight: 0.034242268082220625, hillclimb: 0.0, final value: 1.9865301426102542
+Expansion number of depth 1 is 12
+  iterative Depth 2
+    Move : ( turn clock ), minimum: 2.0, occurrence: 9, occWeight: 0.09542425094393249, avgMinWeight: 0.03979400086720376, hillclimb: 0.0, final value: 1.9443697499232713
+    Move : ( turn counter ), minimum: 2.0, occurrence: 9, occWeight: 0.09542425094393249, avgMinWeight: 0.03979400086720376, hillclimb: 0.0, final value: 1.9443697499232713
+    Move : thrust, minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03162699622207181, hillclimb: 0.0, final value: 1.0316269962220719
+Expansion number of depth 2 is 39
+  iterative Depth 3
+    Move : ( turn clock ), minimum: 2.0, occurrence: 23, occWeight: 0.13617278360175927, avgMinWeight: 0.0432539122066922, hillclimb: 0.0, final value: 1.907081128604933
+    Move : thrust, minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.037501004802579826, hillclimb: 0.0, final value: 1.03750100480258
+    Move : ( turn counter ), minimum: 2.0, occurrence: 23, occWeight: 0.13617278360175927, avgMinWeight: 0.0432539122066922, hillclimb: 0.0, final value: 1.907081128604933
+Expansion number of depth 3 is 114
+  iterative Depth 4
+    Move : ( turn counter ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.04601828328033828, hillclimb: 0.0, final value: 1.0460182832803382
+    Move : thrust, minimum: 1.0, occurrence: 5, occWeight: 0.06989700043360189, avgMinWeight: 0.040000316923581095, hillclimb: 0.0, final value: 0.9701033164899792
+    Move : ( turn clock ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.04601828328033828, hillclimb: 0.0, final value: 1.0460182832803382
+Expansion number of depth 4 is 325
+  iterative Depth 5
+    Move : ( turn clock ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.04891262100909583, hillclimb: 0.0, final value: 1.0489126210090958
+    Move : thrust, minimum: 1.0, occurrence: 5, occWeight: 0.06989700043360189, avgMinWeight: 0.04367969452094633, hillclimb: 0.0, final value: 0.9737826940873444
+    Move : ( turn counter ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.04891977483111916, hillclimb: 0.0, final value: 1.0489197748311192
+Expansion number of depth 5 is 864
+Selecting move thrust with distance 0.9737826940873444
+Average time taken : 8214.3 ms
+
+Current state : 
+  [( true ( heading south ) ), ( true ( step 11 ) ), ( true ( east-speed 0 ) ), ( true ( y 20 ) ), ( true ( north-speed 2 ) ), ( true ( x 15 ) )]
+This is turn 10
+  iterative Depth 0
+    Move : thrust, minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 2.030102999566398
+    Move : ( turn clock ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 2.030102999566398
+    Move : ( turn counter ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 2.030102999566398
+Expansion number of depth 0 is 3
+  iterative Depth 1
+    Move : ( turn counter ), minimum: 2.0, occurrence: 3, occWeight: 0.047712125471966245, avgMinWeight: 0.034242268082220625, hillclimb: 0.0, final value: 1.9865301426102542
+    Move : thrust, minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.025527250510330605, hillclimb: 0.0, final value: 1.0255272505103306
+    Move : ( turn clock ), minimum: 2.0, occurrence: 3, occWeight: 0.047712125471966245, avgMinWeight: 0.034242268082220625, hillclimb: 0.0, final value: 1.9865301426102542
+Expansion number of depth 1 is 12
+  iterative Depth 2
+    Move : thrust, minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.032033515085936784, hillclimb: 0.0, final value: 1.0320335150859368
+    Move : ( turn counter ), minimum: 2.0, occurrence: 8, occWeight: 0.09030899869919436, avgMinWeight: 0.038321675185133124, hillclimb: 0.0, final value: 1.948012676485939
+    Move : ( turn clock ), minimum: 2.0, occurrence: 8, occWeight: 0.09030899869919436, avgMinWeight: 0.04045705875710507, hillclimb: 0.0, final value: 1.9501480600579109
+Expansion number of depth 2 is 33
+  iterative Depth 3
+    Move : thrust, minimum: 1.0, occurrence: 3, occWeight: 0.047712125471966245, avgMinWeight: 0.03703564870399491, hillclimb: 0.0, final value: 0.9893235232320287
+    Move : ( turn counter ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03774183415274359, hillclimb: 0.0, final value: 1.0377418341527436
+    Move : ( turn clock ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.043572856956143734, hillclimb: 0.0, final value: 1.0435728569561438
+Expansion number of depth 3 is 82
+  iterative Depth 4
+    Move : thrust, minimum: 1.0, occurrence: 3, occWeight: 0.047712125471966245, avgMinWeight: 0.04459858457941683, hillclimb: 0.0, final value: 0.9968864591074506
+    Move : ( turn clock ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.04586378490256493, hillclimb: 0.0, final value: 1.045863784902565
+    Move : ( turn counter ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.039378404890087995, hillclimb: 0.0, final value: 1.039378404890088
+Expansion number of depth 4 is 201
+Selecting move thrust with distance 0.9968864591074506
+Average time taken : 7470.818181818182 ms
+
+Current state : 
+  [( true ( north-speed 1 ) ), ( true ( heading south ) ), ( true ( east-speed 0 ) ), ( true ( step 12 ) ), ( true ( y 2 ) ), ( true ( x 15 ) )]
+This is turn 11
+  iterative Depth 0
+    Move : thrust, minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.017609125905568124, hillclimb: 0.0, final value: 1.0176091259055682
+    Move : ( turn counter ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 2.030102999566398
+    Move : ( turn clock ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 2.030102999566398
+Expansion number of depth 0 is 3
+  iterative Depth 1
+    Move : ( turn counter ), minimum: 2.0, occurrence: 3, occWeight: 0.047712125471966245, avgMinWeight: 0.034242268082220625, hillclimb: 0.0, final value: 1.9865301426102542
+    Move : thrust, minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.017609125905568124, hillclimb: 0.0, final value: 1.0176091259055682
+    Move : ( turn clock ), minimum: 2.0, occurrence: 3, occWeight: 0.047712125471966245, avgMinWeight: 0.034242268082220625, hillclimb: 0.0, final value: 1.9865301426102542
+Expansion number of depth 1 is 9
+  iterative Depth 2
+    Move : ( turn clock ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03912066260130692, hillclimb: 0.0, final value: 1.039120662601307
+    Move : ( turn counter ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03912066260130692, hillclimb: 0.0, final value: 1.039120662601307
+    Move : thrust, minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.017609125905568124, hillclimb: 0.0, final value: 1.0176091259055682
+Expansion number of depth 2 is 25
+  iterative Depth 3
+    Move : ( turn counter ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.04613269875364305, hillclimb: 0.0, final value: 1.046132698753643
+    Move : ( turn clock ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.04613269875364305, hillclimb: 0.0, final value: 1.046132698753643
+    Move : thrust, minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.017609125905568124, hillclimb: 0.0, final value: 1.0176091259055682
+Expansion number of depth 3 is 55
+Selecting move ( turn clock ) with distance 1.0176091259055682
+Average time taken : 6849.166666666667 ms
+
+Current state : 
+  [( true ( north-speed 1 ) ), ( true ( heading west ) ), ( true ( y 3 ) ), ( true ( east-speed 0 ) ), ( true ( step 13 ) ), ( true ( x 15 ) )]
+This is turn 12
+  iterative Depth 0
+    Move : ( turn clock ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 2.030102999566398
+    Move : thrust, minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03979400086720376, hillclimb: 0.0, final value: 3.0397940008672037
+    Move : ( turn counter ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 2.030102999566398
+Expansion number of depth 0 is 3
+  iterative Depth 1
+    Move : ( turn clock ), minimum: 2.0, occurrence: 4, occWeight: 0.06020599913279624, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 1.9698970004336018
+    Move : ( turn counter ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.025527250510330605, hillclimb: 0.0, final value: 1.0255272505103306
+    Move : thrust, minimum: 3.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.053147891704225514, hillclimb: 0.0, final value: 3.0531478917042256
+Expansion number of depth 1 is 12
+  iterative Depth 2
+    Move : thrust, minimum: 3.0, occurrence: 2, occWeight: 0.03010299956639812, avgMinWeight: 0.05698753079565612, hillclimb: 0.0, final value: 3.0268845312292583
+    Move : ( turn clock ), minimum: 2.0, occurrence: 8, occWeight: 0.09030899869919436, avgMinWeight: 0.03388185565533809, hillclimb: 0.0, final value: 1.943572856956144
+    Move : ( turn counter ), minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.032033515085936784, hillclimb: 0.0, final value: 1.0320335150859368
+Expansion number of depth 2 is 33
+Selecting move ( turn counter ) with distance 1.0320335150859368
+Average time taken : 6322.692307692308 ms
+
+Current state : 
+  [( true ( north-speed 1 ) ), ( true ( heading south ) ), ( true ( y 4 ) ), ( true ( east-speed 0 ) ), ( true ( step 14 ) ), ( true ( x 15 ) )]
+This is turn 13
+  iterative Depth 0
+    Move : thrust, minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.017609125905568124, hillclimb: 0.0, final value: 1.0176091259055682
+    Move : ( turn counter ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 2.030102999566398
+    Move : ( turn clock ), minimum: 2.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.03010299956639812, hillclimb: 0.0, final value: 2.030102999566398
+Expansion number of depth 0 is 3
+  iterative Depth 1
+    Move : ( turn clock ), minimum: 2.0, occurrence: 3, occWeight: 0.047712125471966245, avgMinWeight: 0.034242268082220625, hillclimb: 0.0, final value: 1.9865301426102542
+    Move : ( turn counter ), minimum: 2.0, occurrence: 3, occWeight: 0.047712125471966245, avgMinWeight: 0.034242268082220625, hillclimb: 0.0, final value: 1.9865301426102542
+    Move : thrust, minimum: 1.0, occurrence: 1, occWeight: 0.0, avgMinWeight: 0.017609125905568124, hillclimb: 0.0, final value: 1.0176091259055682
+Expansion number of depth 1 is 9
+Selecting move thrust with distance 1.0176091259055682
+Average time taken : 5871.142857142857 ms
+
